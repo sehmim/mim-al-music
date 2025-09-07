@@ -1,24 +1,7 @@
 import { Quote } from "lucide-react";
+import content from "@/data/content.json";
 
 const Press = () => {
-  const quotes = [
-    {
-      text: "Mim Al's sound is a revelation – raw, unfiltered, and absolutely electrifying.",
-      author: "Rock & Sound Magazine",
-      role: "Music Critics"
-    },
-    {
-      text: "A twist on rock that we never saw coming. Brilliant and chaotic in all the right ways.",
-      author: "Underground Music Review",
-      role: "Featured Artist"
-    },
-    {
-      text: "The future of rock music is here, and it sounds like nothing you've heard before.",
-      author: "Alternative Press",
-      role: "Editor's Pick"
-    }
-  ];
-
   return (
     <section className="py-20 px-4 relative">
       {/* Background Gradient */}
@@ -26,11 +9,11 @@ const Press = () => {
       
       <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="section-heading text-center">
-          Press & Reviews
+          {content.press.heading}
         </h2>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {quotes.map((quote, index) => (
+          {content.press.quotes.map((quote, index) => (
             <div key={index} className="album-card group text-center">
               <Quote className="w-8 h-8 mx-auto mb-6 text-primary electric-glow" />
               
@@ -53,20 +36,20 @@ const Press = () => {
         {/* Call to Action */}
         <div className="text-center mt-16 space-y-4">
           <p className="text-muted-foreground">
-            Want to feature Mim Al? Get in touch for press kits and interviews.
+            {content.press.callToAction.description}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="mailto:press@mimal.music" 
+              href={`mailto:${content.press.callToAction.buttons.primary.email}`} 
               className="btn-hero inline-flex items-center justify-center"
             >
-              Press Inquiries
+              {content.press.callToAction.buttons.primary.text}
             </a>
             <a 
-              href="#" 
+              href={content.press.callToAction.buttons.secondary.url} 
               className="btn-secondary inline-flex items-center justify-center"
             >
-              Download Press Kit
+              {content.press.callToAction.buttons.secondary.text}
             </a>
           </div>
         </div>

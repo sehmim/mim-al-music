@@ -1,4 +1,5 @@
 import { Music, Mail, MapPin } from "lucide-react";
+import content from "@/data/content.json";
 
 const Footer = () => {
   return (
@@ -12,27 +13,26 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <Music className="w-8 h-8 text-primary electric-glow" />
-              <span className="font-display font-bold text-2xl">MIM AL</span>
+              <span className="font-display font-bold text-2xl">{content.footer.brand.name}</span>
             </div>
             
             <p className="text-muted-foreground leading-relaxed mb-6 max-w-md">
-              Rock with a twist. Unconventional sounds that challenge expectations 
-              and create something entirely new in the music landscape.
+              {content.footer.brand.description}
             </p>
             
             <div className="flex items-center gap-3 text-sm text-muted-foreground">
               <MapPin className="w-4 h-4" />
-              <span>Based in Nashville, TN</span>
+              <span>{content.footer.brand.location}</span>
             </div>
           </div>
           
           {/* Quick Links */}
           <div>
             <h4 className="font-display font-bold text-lg mb-4 text-foreground">
-              Quick Links
+              {content.footer.quickLinks.heading}
             </h4>
             <ul className="space-y-3">
-              {["Latest Releases", "Tour Dates", "About", "Press Kit", "Contact"].map((link) => (
+              {content.footer.quickLinks.links.map((link) => (
                 <li key={link}>
                   <a 
                     href="#" 
@@ -48,24 +48,19 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h4 className="font-display font-bold text-lg mb-4 text-foreground">
-              Get in Touch
+              {content.footer.contact.heading}
             </h4>
             <div className="space-y-3">
-              <a 
-                href="mailto:hello@mimal.music"
-                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Mail className="w-4 h-4" />
-                <span>hello@mimal.music</span>
-              </a>
-              
-              <a 
-                href="mailto:booking@mimal.music"
-                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Mail className="w-4 h-4" />
-                <span>booking@mimal.music</span>
-              </a>
+              {content.footer.contact.emails.map((email, index) => (
+                <a 
+                  key={index}
+                  href={`mailto:${email.address}`}
+                  className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>{email.label}</span>
+                </a>
+              ))}
             </div>
           </div>
         </div>
@@ -74,16 +69,15 @@ const Footer = () => {
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-muted-foreground text-sm">
-              © 2025 Mim Al. All rights reserved.
+              {content.footer.legal.copyright}
             </div>
             
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                Terms of Service
-              </a>
+              {content.footer.legal.links.map((link, index) => (
+                <a key={index} href={link.url} className="text-muted-foreground hover:text-primary transition-colors">
+                  {link.text}
+                </a>
+              ))}
             </div>
           </div>
         </div>

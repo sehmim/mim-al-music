@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Play, Music } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
+import content from "@/data/content.json";
 
 const Hero = () => {
   return (
@@ -24,28 +25,27 @@ const Hero = () => {
         
         <h1 
           className="text-6xl md:text-8xl lg:text-9xl font-display font-black mb-6 glitch"
-          data-text="MIM AL"
+          data-text={content.hero.title}
         >
-          MIM AL
+          {content.hero.title}
         </h1>
         
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-          Rock with a twist
+          {content.hero.subtitle}
         </h2>
         
         <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-          Unconventional sounds, electric energy, and rock that breaks all the rules. 
-          Welcome to the twisted world of Mim Al.
+          {content.hero.description}
         </p>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <Button className="btn-hero group" size="lg">
             <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-            Listen Now
+            {content.hero.buttons.primary}
           </Button>
           
           <Button className="btn-secondary" size="lg">
-            Follow on Spotify
+            {content.hero.buttons.secondary}
           </Button>
         </div>
         

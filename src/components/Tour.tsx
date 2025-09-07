@@ -1,42 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Ticket } from "lucide-react";
+import content from "@/data/content.json";
 
 const Tour = () => {
-  const shows = [
-    {
-      date: "APR 15",
-      year: "2025",
-      venue: "The Electric Lounge",
-      city: "Nashville, TN",
-      status: "On Sale",
-      ticketUrl: "#"
-    },
-    {
-      date: "APR 22",
-      year: "2025", 
-      venue: "Underground Club",
-      city: "Austin, TX",
-      status: "Sold Out",
-      ticketUrl: "#"
-    },
-    {
-      date: "MAY 05",
-      year: "2025",
-      venue: "Rock Factory",
-      city: "Denver, CO", 
-      status: "Coming Soon",
-      ticketUrl: "#"
-    },
-    {
-      date: "MAY 18",
-      year: "2025",
-      venue: "The Amp",
-      city: "Portland, OR",
-      status: "On Sale",
-      ticketUrl: "#"
-    }
-  ];
-
   return (
     <section className="py-20 px-4 relative">
       {/* Background Effects */}
@@ -44,11 +10,11 @@ const Tour = () => {
       
       <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="section-heading text-center">
-          Tour Dates
+          {content.tour.heading}
         </h2>
         
         <div className="space-y-4 max-w-4xl mx-auto">
-          {shows.map((show, index) => (
+          {content.tour.shows.map((show, index) => (
             <div key={index} className="album-card group">
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                 {/* Date */}
@@ -108,20 +74,20 @@ const Tour = () => {
         {/* Newsletter Signup for Tour Updates */}
         <div className="mt-16 text-center album-card max-w-2xl mx-auto">
           <h3 className="font-display font-bold text-xl mb-4">
-            Never Miss a Show
+            {content.tour.newsletter.heading}
           </h3>
           <p className="text-muted-foreground mb-6">
-            Get notified when new tour dates are announced in your area.
+            {content.tour.newsletter.description}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input 
               type="email" 
-              placeholder="Your email address"
+              placeholder={content.tour.newsletter.placeholder}
               className="flex-1 px-4 py-3 bg-input border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
             />
             <Button className="btn-secondary">
-              Subscribe
+              {content.tour.newsletter.button}
             </Button>
           </div>
         </div>

@@ -1,0 +1,220 @@
+{
+  "hero": {
+    "title": "MIM AL",
+    "subtitle": "Rock with a twist",
+    "description": "Unconventional sounds, electric energy, and rock that breaks all the rules. Welcome to the twisted world of Mim Al.",
+    "buttons": {
+      "primary": "Listen Now",
+      "secondary": "Follow on Spotify"
+    }
+  },
+  "releases": [
+    {
+      "title": "Not So Special",
+      "date": "Jan 17, 2025",
+      "image": "album-not-so-special.jpg",
+      "description": "A raw exploration of feeling ordinary in an extraordinary world",
+      "streamingUrl": "#"
+    },
+    {
+      "title": "Dim Out the Lights",
+      "date": "Feb 7, 2025",
+      "image": "album-dim-out-lights.jpg",
+      "description": "When darkness becomes your comfort zone",
+      "streamingUrl": "#"
+    },
+    {
+      "title": "CHICKEN WITH It's HEAD CUT OFF",
+      "date": "Mar 31, 2025",
+      "image": "album-chicken-head.jpg",
+      "description": "Chaotic energy meets purposeful madness",
+      "streamingUrl": "#"
+    }
+  ],
+  "about": {
+    "heading": "About the Artist",
+    "paragraphs": [
+      "Mim Al isn't your typical rock artist. Born from the collision of raw emotion and electric experimentation, this sound defies conventional boundaries and creates something entirely new.",
+      "With a twist that keeps listeners guessing, Mim Al's music explores the spaces between chaos and control, darkness and light, ordinary and extraordinary. Each track is a journey through uncharted sonic territory.",
+      "From the raw energy of \"CHICKEN WITH It's HEAD CUT OFF\" to the introspective depths of \"Dim Out the Lights,\" every release challenges expectations and pushes the envelope of what rock music can be."
+    ],
+    "buttons": {
+      "primary": "Discover the Music",
+      "secondary": "Join the Club"
+    },
+    "features": [
+      {
+        "icon": "Music2",
+        "title": "Unconventional Sound",
+        "description": "Breaking rules and creating new ones"
+      },
+      {
+        "icon": "Zap",
+        "title": "Electric Energy",
+        "description": "Raw power meets artistic precision"
+      },
+      {
+        "icon": "Heart",
+        "title": "Authentic Expression",
+        "description": "Every note tells a story, every song reveals a truth"
+      }
+    ]
+  },
+  "press": {
+    "heading": "Press & Reviews",
+    "quotes": [
+      {
+        "text": "Mim Al's sound is a revelation – raw, unfiltered, and absolutely electrifying.",
+        "author": "Rock & Sound Magazine",
+        "role": "Music Critics"
+      },
+      {
+        "text": "A twist on rock that we never saw coming. Brilliant and chaotic in all the right ways.",
+        "author": "Underground Music Review",
+        "role": "Featured Artist"
+      },
+      {
+        "text": "The future of rock music is here, and it sounds like nothing you've heard before.",
+        "author": "Alternative Press",
+        "role": "Editor's Pick"
+      }
+    ],
+    "callToAction": {
+      "description": "Want to feature Mim Al? Get in touch for press kits and interviews.",
+      "buttons": {
+        "primary": {
+          "text": "Press Inquiries",
+          "email": "press@mimal.music"
+        },
+        "secondary": {
+          "text": "Download Press Kit", 
+          "url": "#"
+        }
+      }
+    }
+  },
+  "tour": {
+    "heading": "Tour Dates",
+    "shows": [
+      {
+        "date": "APR 15",
+        "year": "2025",
+        "venue": "The Electric Lounge",
+        "city": "Nashville, TN",
+        "status": "On Sale",
+        "ticketUrl": "#"
+      },
+      {
+        "date": "APR 22",
+        "year": "2025",
+        "venue": "Underground Club",
+        "city": "Austin, TX",
+        "status": "Sold Out",
+        "ticketUrl": "#"
+      },
+      {
+        "date": "MAY 05",
+        "year": "2025",
+        "venue": "Rock Factory",
+        "city": "Denver, CO",
+        "status": "Coming Soon",
+        "ticketUrl": "#"
+      },
+      {
+        "date": "MAY 18",
+        "year": "2025",
+        "venue": "The Amp",
+        "city": "Portland, OR",
+        "status": "On Sale",
+        "ticketUrl": "#"
+      }
+    ],
+    "newsletter": {
+      "heading": "Never Miss a Show",
+      "description": "Get notified when new tour dates are announced in your area.",
+      "placeholder": "Your email address",
+      "button": "Subscribe"
+    }
+  },
+  "social": {
+    "heading": "Follow & Subscribe",
+    "platforms": [
+      {
+        "platform": "Spotify",
+        "icon": "Music",
+        "url": "#",
+        "followers": "12K",
+        "description": "Latest tracks & playlists"
+      },
+      {
+        "platform": "Instagram",
+        "icon": "Instagram",
+        "url": "#",
+        "followers": "8.5K",
+        "description": "Behind the scenes"
+      },
+      {
+        "platform": "Twitter",
+        "icon": "Twitter",
+        "url": "#",
+        "followers": "5.2K",
+        "description": "Real-time updates"
+      },
+      {
+        "platform": "YouTube",
+        "icon": "Youtube",
+        "url": "#",
+        "followers": "15K",
+        "description": "Music videos & live sessions"
+      }
+    ],
+    "newsletter": {
+      "heading": "Join the Club",
+      "description": "Get exclusive access to new releases, behind-the-scenes content, early ticket access, and special fan-only experiences.",
+      "placeholder": "Enter your email",
+      "button": "Join Now",
+      "disclaimer": "No spam, just the good stuff. Unsubscribe anytime."
+    },
+    "streaming": {
+      "heading": "Stream Everywhere",
+      "platforms": ["Spotify", "Apple Music", "YouTube Music", "SoundCloud", "Bandcamp"]
+    }
+  },
+  "footer": {
+    "brand": {
+      "name": "MIM AL",
+      "description": "Rock with a twist. Unconventional sounds that challenge expectations and create something entirely new in the music landscape.",
+      "location": "Based in Nashville, TN"
+    },
+    "quickLinks": {
+      "heading": "Quick Links",
+      "links": ["Latest Releases", "Tour Dates", "About", "Press Kit", "Contact"]
+    },
+    "contact": {
+      "heading": "Get in Touch",
+      "emails": [
+        {
+          "label": "hello@mimal.music",
+          "address": "hello@mimal.music"
+        },
+        {
+          "label": "booking@mimal.music", 
+          "address": "booking@mimal.music"
+        }
+      ]
+    },
+    "legal": {
+      "copyright": "© 2025 Mim Al. All rights reserved.",
+      "links": [
+        {
+          "text": "Privacy Policy",
+          "url": "#"
+        },
+        {
+          "text": "Terms of Service",
+          "url": "#"
+        }
+      ]
+    }
+  }
+}

@@ -7,39 +7,16 @@ import {
   Mail,
   ExternalLink
 } from "lucide-react";
+import content from "@/data/content.json";
+
+const iconMap = {
+  Music,
+  Instagram,
+  Twitter,
+  Youtube
+};
 
 const Social = () => {
-  const socialLinks = [
-    {
-      platform: "Spotify",
-      icon: Music,
-      url: "#",
-      followers: "12K",
-      description: "Latest tracks & playlists"
-    },
-    {
-      platform: "Instagram",
-      icon: Instagram,
-      url: "#", 
-      followers: "8.5K",
-      description: "Behind the scenes"
-    },
-    {
-      platform: "Twitter", 
-      icon: Twitter,
-      url: "#",
-      followers: "5.2K", 
-      description: "Real-time updates"
-    },
-    {
-      platform: "YouTube",
-      icon: Youtube,
-      url: "#",
-      followers: "15K",
-      description: "Music videos & live sessions"
-    }
-  ];
-
   return (
     <section className="py-20 px-4 relative">
       {/* Electric Background Effects */}
@@ -48,13 +25,13 @@ const Social = () => {
       
       <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="section-heading text-center">
-          Follow & Subscribe
+          {content.social.heading}
         </h2>
         
         {/* Social Platforms Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {socialLinks.map((social, index) => {
-            const IconComponent = social.icon;
+          {content.social.platforms.map((social, index) => {
+            const IconComponent = iconMap[social.icon];
             return (
               <a 
                 key={index}
@@ -89,38 +66,37 @@ const Social = () => {
           <Mail className="w-16 h-16 mx-auto mb-6 text-secondary pink-glow" />
           
           <h3 className="font-display font-bold text-2xl mb-4">
-            Join the Club
+            {content.social.newsletter.heading}
           </h3>
           
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Get exclusive access to new releases, behind-the-scenes content, early ticket access, 
-            and special fan-only experiences.
+            {content.social.newsletter.description}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto mb-6">
             <input 
               type="email" 
-              placeholder="Enter your email"
+              placeholder={content.social.newsletter.placeholder}
               className="flex-1 px-6 py-4 bg-input border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-colors"
             />
             <Button className="btn-secondary" size="lg">
-              Join Now
+              {content.social.newsletter.button}
             </Button>
           </div>
           
           <p className="text-xs text-muted-foreground">
-            No spam, just the good stuff. Unsubscribe anytime.
+            {content.social.newsletter.disclaimer}
           </p>
         </div>
         
         {/* Streaming Platforms */}
         <div className="mt-16 text-center">
           <h4 className="font-display font-bold text-xl mb-8 text-foreground">
-            Stream Everywhere
+            {content.social.streaming.heading}
           </h4>
           
           <div className="flex flex-wrap justify-center gap-4">
-            {["Spotify", "Apple Music", "YouTube Music", "SoundCloud", "Bandcamp"].map((platform) => (
+            {content.social.streaming.platforms.map((platform) => (
               <Button key={platform} variant="outline" className="border-border hover:border-primary/50">
                 {platform}
               </Button>

@@ -3,30 +3,13 @@ import { Play, ExternalLink } from "lucide-react";
 import albumNotSoSpecial from "@/assets/album-not-so-special.jpg";
 import albumDimOutLights from "@/assets/album-dim-out-lights.jpg";
 import albumChickenHead from "@/assets/album-chicken-head.jpg";
+import content from "@/data/content.json";
 
-const releases = [
-  {
-    title: "Not So Special",
-    date: "Jan 17, 2025",
-    image: albumNotSoSpecial,
-    description: "A raw exploration of feeling ordinary in an extraordinary world",
-    streamingUrl: "#"
-  },
-  {
-    title: "Dim Out the Lights",
-    date: "Feb 7, 2025",
-    image: albumDimOutLights,
-    description: "When darkness becomes your comfort zone",
-    streamingUrl: "#"
-  },
-  {
-    title: "CHICKEN WITH It's HEAD CUT OFF",
-    date: "Mar 31, 2025",
-    image: albumChickenHead,
-    description: "Chaotic energy meets purposeful madness",
-    streamingUrl: "#"
-  }
-];
+const imageMap = {
+  "album-not-so-special.jpg": albumNotSoSpecial,
+  "album-dim-out-lights.jpg": albumDimOutLights,
+  "album-chicken-head.jpg": albumChickenHead
+};
 
 const LatestReleases = () => {
   return (
@@ -40,12 +23,12 @@ const LatestReleases = () => {
         </h2>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {releases.map((release, index) => (
+          {content.releases.map((release, index) => (
             <div key={index} className="album-card group">
               {/* Album Cover */}
               <div className="relative mb-6 overflow-hidden rounded-lg">
                 <img 
-                  src={release.image} 
+                  src={imageMap[release.image]} 
                   alt={release.title}
                   className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110"
                 />
