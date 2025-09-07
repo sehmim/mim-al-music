@@ -14,21 +14,63 @@
       "date": "Jan 17, 2025",
       "image": "album-not-so-special.jpg",
       "description": "A raw exploration of feeling ordinary in an extraordinary world",
-      "streamingUrl": "#"
+      "streamingUrl": "#",
+      "slug": "not-so-special",
+      "blog": {
+        "content": [
+          "In a world that constantly tells us we need to be extraordinary, 'Not So Special' dares to embrace the beauty of the ordinary. This track emerged from late-night studio sessions where the weight of expectations felt heavier than the guitar itself.",
+          "The opening riff came to me during one of those moments when you're staring at your reflection, wondering if you're living up to everyone's idea of who you should be. The distorted guitars mirror that internal noise – the static of self-doubt mixed with the clarity of self-acceptance.",
+          "Lyrically, this song is about finding power in admitting you're not the chosen one, not the exception, not the main character in everyone else's story. And that's perfectly fine. There's something liberating about saying 'I'm not so special' and meaning it as a celebration, not a defeat.",
+          "The production intentionally captures the raw, unpolished moments. We left in the amp buzz, the slight timing inconsistencies, the human imperfections that make music real. Because being 'not so special' doesn't mean being less than – it means being authentically yourself.",
+          "This track sets the tone for everything Mim Al represents: rock music that doesn't pretend to have all the answers, but isn't afraid to ask the uncomfortable questions."
+        ],
+        "inspiration": "Written during a period of questioning what it means to be 'special' in an age of social media perfection and constant comparison.",
+        "recordingNotes": "Recorded in a single take at 2 AM, using a vintage Telecaster through a cranked Marshall stack. The reverb you hear is natural room acoustics.",
+        "musicVideo": "#",
+        "lyrics": "# (Verse 1)\nStaring at the mirror, same face every day\nNothing's really different, nothing's changed my way\nThey keep telling stories 'bout the chosen few\nBut I'm just standing here, and I'm nothing new\n\n# (Chorus) \nI'm not so special, and that's alright\nNot the main character in your spotlight\nJust another voice in the endless crowd\nNot so special, but I'm singing loud"
+      }
     },
     {
       "title": "Dim Out the Lights",
       "date": "Feb 7, 2025",
       "image": "album-dim-out-lights.jpg",
       "description": "When darkness becomes your comfort zone",
-      "streamingUrl": "#"
+      "streamingUrl": "#",
+      "slug": "dim-out-the-lights",
+      "blog": {
+        "content": [
+          "There's something about darkness that feels like home. Not in a depressive way, but in the way that shadows provide refuge from the relentless brightness of the world's expectations. 'Dim Out the Lights' was born from that feeling.",
+          "This track explores the space between hiding and healing. Sometimes you need to turn down the lights not to disappear, but to finally see yourself clearly. The verses whisper secrets that only emerge in low light, while the chorus explodes with the energy of someone who's found their power in the shadows.",
+          "The guitar work intentionally shifts between clean, intimate tones and heavily distorted walls of sound. It's the musical equivalent of moving from candlelight to strobe lights – both can blind you, both can reveal truth.",
+          "What started as a simple chord progression late one evening became an anthem for everyone who's ever felt more comfortable in the margins than center stage. The darkness isn't the enemy here – it's the canvas where real colors finally show.",
+          "The bridge section features some of my most vulnerable vocal work, recorded in near-complete darkness to capture the intimacy that only comes when you can't see yourself performing. Sometimes the best art happens when you stop watching yourself create it."
+        ],
+        "inspiration": "Inspired by those late-night drives when the city lights blur past your window and you feel most like yourself.",
+        "recordingNotes": "The entire vocal track was recorded with the studio lights dimmed to a single candle. The ambient sounds you hear are actually from that candle flickering during recording.",
+        "musicVideo": "#",
+        "lyrics": "# (Verse 1)\nFluorescent lights burn my eyes\nToo bright to see the truth inside\nGive me shadows, give me space\nTo find myself in this dark embrace\n\n# (Chorus)\nDim out the lights, let me breathe\nIn the darkness, I believe\nNot hiding away, just finding my sight\nDim out the lights, dim out the lights"
+      }
     },
     {
       "title": "CHICKEN WITH It's HEAD CUT OFF",
       "date": "Mar 31, 2025",
       "image": "album-chicken-head.jpg",
       "description": "Chaotic energy meets purposeful madness",
-      "streamingUrl": "#"
+      "streamingUrl": "#",
+      "slug": "chicken-with-its-head-cut-off",
+      "blog": {
+        "content": [
+          "Sometimes you need to embrace the chaos to find the method. 'CHICKEN WITH It's HEAD CUT OFF' is pure, unfiltered energy channeled through power chords and primal screams. It's the sound of beautiful madness.",
+          "The title says everything and nothing. We've all felt like headless chickens at some point – running around with purpose we can't quite name, moving with energy we can't quite control. But here's the thing: that chicken is still moving, still fighting, still alive.",
+          "This track throws conventional song structure out the window. Time signatures shift without warning, melodies appear and disappear like thoughts in a fever dream, and the rhythm section pounds like a heart under extreme stress. It's controlled chaos – every seemingly random element serves the greater madness.",
+          "The recording process was as chaotic as the song itself. We set up in a circle, played it live, and let the energy dictate where we went. No click tracks, no safety nets, just pure instinct and electricity. Some of the best moments happened when everything seemed to be falling apart.",
+          "Lyrically, it's about finding power in the moments when everything feels out of control. Sometimes the most honest thing you can do is admit you're running around like a chicken with its head cut off – and then make it into art."
+        ],
+        "inspiration": "Written after a particularly chaotic day where nothing went according to plan, but somehow everything worked out.",
+        "recordingNotes": "Recorded live in the studio with all musicians playing simultaneously. The sound of the room is as important as the instruments – you're hearing the space react to the chaos.",
+        "musicVideo": "#",
+        "lyrics": "# (Verse 1)\nRunning circles, no direction\nPure momentum, no reflection\nCut the head but still I move\nIn the chaos, finding groove\n\n# (Chorus)\nChicken with its head cut off\nStill dancing, never soft\nMadness with a method clear\nEmbrace the chaos, push through fear"
+      }
     }
   ],
   "about": {

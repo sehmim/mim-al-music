@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 import albumNotSoSpecial from "@/assets/album-not-so-special.jpg";
 import albumDimOutLights from "@/assets/album-dim-out-lights.jpg";
 import albumChickenHead from "@/assets/album-chicken-head.jpg";
@@ -24,7 +25,7 @@ const LatestReleases = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {content.releases.map((release, index) => (
-            <div key={index} className="album-card group">
+            <Link key={index} to={`/blog/${release.slug}`} className="album-card group block hover:scale-105 transition-transform duration-300">
               {/* Album Cover */}
               <div className="relative mb-6 overflow-hidden rounded-lg">
                 <img 
@@ -69,7 +70,7 @@ const LatestReleases = () => {
                   </Button>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         
