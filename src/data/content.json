@@ -1,8 +1,8 @@
 {
   "hero": {
     "title": "MIM AL",
-    "subtitle": "Rock with a twist",
-    "description": "Unconventional sounds, electric energy, and rock that breaks all the rules. Welcome to the twisted world of Mim Al.",
+    "subtitle": "Instrumental Guitarist from Canada",
+    "description": "Crafting instrumental melodies that make the guitar sing on Spotify. Join me on a musical journey where every note tells a story.",
     "buttons": {
       "primary": "Listen Now",
       "secondary": "Follow on Spotify"
@@ -13,91 +13,133 @@
       "title": "Not So Special",
       "date": "Jan 17, 2025",
       "image": "album-not-so-special.jpg",
-      "description": "A raw exploration of feeling ordinary in an extraordinary world",
-      "streamingUrl": "#",
+      "description": "Ambient guitar melodies exploring the beauty in simplicity",
+      "streamingUrl": "https://open.spotify.com/artist/4pRyem81jKHIJd1dhnwZ7T",
       "slug": "not-so-special",
       "blog": {
         "content": [
-          "In a world that constantly tells us we need to be extraordinary, 'Not So Special' dares to embrace the beauty of the ordinary. This track emerged from late-night studio sessions where the weight of expectations felt heavier than the guitar itself.",
-          "The opening riff came to me during one of those moments when you're staring at your reflection, wondering if you're living up to everyone's idea of who you should be. The distorted guitars mirror that internal noise – the static of self-doubt mixed with the clarity of self-acceptance.",
-          "Lyrically, this song is about finding power in admitting you're not the chosen one, not the exception, not the main character in everyone else's story. And that's perfectly fine. There's something liberating about saying 'I'm not so special' and meaning it as a celebration, not a defeat.",
-          "The production intentionally captures the raw, unpolished moments. We left in the amp buzz, the slight timing inconsistencies, the human imperfections that make music real. Because being 'not so special' doesn't mean being less than – it means being authentically yourself.",
-          "This track sets the tone for everything Mim Al represents: rock music that doesn't pretend to have all the answers, but isn't afraid to ask the uncomfortable questions."
+          "In a world of complex compositions, 'Not So Special' finds beauty in simplicity. This instrumental track emerged from late-night studio sessions where the guitar became a voice for unspoken emotions.",
+          "The opening melody came to me during one of those quiet moments of reflection. Each note carries the weight of introspection, creating an ambient soundscape that speaks without words.",
+          "This piece explores the concept that not everything needs to be extraordinary to be meaningful. Sometimes the most profound statements come from the gentlest touches on the strings.",
+          "The recording captures the raw, intimate moments between artist and instrument. Every sustain, every gentle bend tells part of the story of finding peace in being authentically yourself.",
+          "This track represents the core of what Mim Al's instrumental journey is about: guitar music that doesn't need lyrics to communicate deep emotional truths."
         ],
-        "inspiration": "Written during a period of questioning what it means to be 'special' in an age of social media perfection and constant comparison.",
-        "recordingNotes": "Recorded in a single take at 2 AM, using a vintage Telecaster through a cranked Marshall stack. The reverb you hear is natural room acoustics.",
+        "inspiration": "Written during a period of embracing minimalism and finding beauty in simple, honest guitar melodies.",
+        "recordingNotes": "Recorded in a single take using a clean Telecaster through a warm tube amp, capturing the natural room acoustics.",
         "musicVideo": "#",
-        "lyrics": "# (Verse 1)\nStaring at the mirror, same face every day\nNothing's really different, nothing's changed my way\nThey keep telling stories 'bout the chosen few\nBut I'm just standing here, and I'm nothing new\n\n# (Chorus) \nI'm not so special, and that's alright\nNot the main character in your spotlight\nJust another voice in the endless crowd\nNot so special, but I'm singing loud"
+        "lyrics": ""
       }
     },
     {
       "title": "Dim Out the Lights",
       "date": "Feb 7, 2025",
       "image": "album-dim-out-lights.jpg",
-      "description": "When darkness becomes your comfort zone",
-      "streamingUrl": "#",
+      "description": "Atmospheric instrumental piece embracing shadows and ambient tones",
+      "streamingUrl": "https://open.spotify.com/artist/4pRyem81jKHIJd1dhnwZ7T",
       "slug": "dim-out-the-lights",
       "blog": {
         "content": [
-          "There's something about darkness that feels like home. Not in a depressive way, but in the way that shadows provide refuge from the relentless brightness of the world's expectations. 'Dim Out the Lights' was born from that feeling.",
-          "This track explores the space between hiding and healing. Sometimes you need to turn down the lights not to disappear, but to finally see yourself clearly. The verses whisper secrets that only emerge in low light, while the chorus explodes with the energy of someone who's found their power in the shadows.",
-          "The guitar work intentionally shifts between clean, intimate tones and heavily distorted walls of sound. It's the musical equivalent of moving from candlelight to strobe lights – both can blind you, both can reveal truth.",
-          "What started as a simple chord progression late one evening became an anthem for everyone who's ever felt more comfortable in the margins than center stage. The darkness isn't the enemy here – it's the canvas where real colors finally show.",
-          "The bridge section features some of my most vulnerable vocal work, recorded in near-complete darkness to capture the intimacy that only comes when you can't see yourself performing. Sometimes the best art happens when you stop watching yourself create it."
+          "There's something magical about music in low light. 'Dim Out the Lights' was born from that intimate space where guitar and atmosphere merge into something ethereal.",
+          "This instrumental track explores the sonic territory between ambient and melodic guitar work. The piece moves through different emotional landscapes, all painted with careful note choices and atmospheric textures.",
+          "The guitar work shifts between clean, crystalline tones and warm, saturated passages. It's the musical equivalent of watching shadows dance on the wall - familiar yet mysterious.",
+          "What started as a simple chord progression became an exploration of space and silence. The pauses between notes are as important as the notes themselves, creating a breathing, living composition.",
+          "This track showcases the more ambient side of instrumental guitar, where melody serves emotion rather than technical display."
         ],
-        "inspiration": "Inspired by those late-night drives when the city lights blur past your window and you feel most like yourself.",
-        "recordingNotes": "The entire vocal track was recorded with the studio lights dimmed to a single candle. The ambient sounds you hear are actually from that candle flickering during recording.",
+        "inspiration": "Inspired by the peaceful solitude of evening hours when the world quiets down and music can truly be heard.",
+        "recordingNotes": "Recorded with ambient microphone placement to capture the natural reverb of the room, creating an intimate listening experience.",
         "musicVideo": "#",
-        "lyrics": "# (Verse 1)\nFluorescent lights burn my eyes\nToo bright to see the truth inside\nGive me shadows, give me space\nTo find myself in this dark embrace\n\n# (Chorus)\nDim out the lights, let me breathe\nIn the darkness, I believe\nNot hiding away, just finding my sight\nDim out the lights, dim out the lights"
+        "lyrics": ""
       }
     },
     {
       "title": "CHICKEN WITH It's HEAD CUT OFF",
       "date": "Mar 31, 2025",
       "image": "album-chicken-head.jpg",
-      "description": "Chaotic energy meets purposeful madness",
-      "streamingUrl": "#",
+      "description": "Dynamic instrumental exploring chaotic beauty and structured improvisation",
+      "streamingUrl": "https://open.spotify.com/artist/4pRyem81jKHIJd1dhnwZ7T",
       "slug": "chicken-with-its-head-cut-off",
       "blog": {
         "content": [
-          "Sometimes you need to embrace the chaos to find the method. 'CHICKEN WITH It's HEAD CUT OFF' is pure, unfiltered energy channeled through power chords and primal screams. It's the sound of beautiful madness.",
-          "The title says everything and nothing. We've all felt like headless chickens at some point – running around with purpose we can't quite name, moving with energy we can't quite control. But here's the thing: that chicken is still moving, still fighting, still alive.",
-          "This track throws conventional song structure out the window. Time signatures shift without warning, melodies appear and disappear like thoughts in a fever dream, and the rhythm section pounds like a heart under extreme stress. It's controlled chaos – every seemingly random element serves the greater madness.",
-          "The recording process was as chaotic as the song itself. We set up in a circle, played it live, and let the energy dictate where we went. No click tracks, no safety nets, just pure instinct and electricity. Some of the best moments happened when everything seemed to be falling apart.",
-          "Lyrically, it's about finding power in the moments when everything feels out of control. Sometimes the most honest thing you can do is admit you're running around like a chicken with its head cut off – and then make it into art."
+          "Sometimes the most beautiful music comes from controlled chaos. 'CHICKEN WITH It's HEAD CUT OFF' is an instrumental journey through the organized madness of creative expression.",
+          "This track breaks conventional instrumental guitar boundaries. Time signatures shift, melodies appear and disappear like thoughts in a stream of consciousness, creating a unique sonic experience.",
+          "The guitar work here is both technical and emotional, demonstrating that virtuosity can serve expression rather than dominate it. Each seemingly chaotic passage serves the greater musical narrative.",
+          "The recording process embraced spontaneity while maintaining musical coherence. The result is an instrumental piece that feels both composed and improvised.",
+          "This represents the more adventurous side of Mim Al's instrumental catalog - where technical skill meets fearless creativity."
         ],
-        "inspiration": "Written after a particularly chaotic day where nothing went according to plan, but somehow everything worked out.",
-        "recordingNotes": "Recorded live in the studio with all musicians playing simultaneously. The sound of the room is as important as the instruments – you're hearing the space react to the chaos.",
+        "inspiration": "Created during a burst of creative energy, exploring what happens when structure meets spontaneity in instrumental music.",
+        "recordingNotes": "Recorded live in the studio with minimal overdubs, capturing the raw energy and spontaneous musical decisions.",
         "musicVideo": "#",
-        "lyrics": "# (Verse 1)\nRunning circles, no direction\nPure momentum, no reflection\nCut the head but still I move\nIn the chaos, finding groove\n\n# (Chorus)\nChicken with its head cut off\nStill dancing, never soft\nMadness with a method clear\nEmbrace the chaos, push through fear"
+        "lyrics": ""
+      }
+    },
+    {
+      "title": "NoCebo",
+      "date": "Oct 15, 2024",
+      "image": "album-not-so-special.jpg",
+      "description": "Contemplative instrumental exploring the power of musical healing",
+      "streamingUrl": "https://open.spotify.com/artist/4pRyem81jKHIJd1dhnwZ7T",
+      "slug": "nocebo",
+      "blog": {
+        "content": [
+          "Music has the power to heal, and 'NoCebo' explores this concept through gentle instrumental guitar work. The title refers to the opposite of placebo - the belief that something can harm when it actually helps.",
+          "This piece challenges the listener to find comfort in unexpected harmonic territories. What might initially sound melancholic reveals layers of hope and resolution through careful listening.",
+          "The guitar work here is deliberately restrained, focusing on the emotional impact of each note rather than technical display. Every bend, every sustain serves the greater emotional arc of the piece.",
+          "Recorded during a reflective period, this track represents the therapeutic aspect of instrumental music - both for the player and the listener.",
+          "NoCebo stands as a meditation on the healing power of honest musical expression, where vulnerability becomes strength."
+        ],
+        "inspiration": "Written during a period of personal reflection on the healing power of music and the importance of emotional honesty in art.",
+        "recordingNotes": "Recorded with a focus on natural dynamics and authentic performance, using minimal processing to preserve the raw emotional content.",
+        "musicVideo": "#",
+        "lyrics": ""
+      }
+    },
+    {
+      "title": "Sudden Confusion",
+      "date": "Aug 22, 2024",
+      "image": "album-dim-out-lights.jpg",
+      "description": "Intricate instrumental capturing moments of uncertainty and clarity",
+      "streamingUrl": "https://open.spotify.com/artist/4pRyem81jKHIJd1dhnwZ7T",
+      "slug": "sudden-confusion",
+      "blog": {
+        "content": [
+          "Life's unexpected moments often create the most honest music. 'Sudden Confusion' captures that feeling of being caught off-guard by circumstances, translated into instrumental guitar language.",
+          "The composition moves through different emotional states - from uncertainty to clarity, from chaos to resolution. Each section represents a different aspect of processing unexpected change.",
+          "Technically, this piece showcases advanced guitar techniques in service of emotional storytelling. Complex passages give way to simple, heartfelt melodies, mirroring how confusion can lead to clarity.",
+          "The recording captures the spontaneous nature of the composition, with several sections recorded in single takes to preserve the authentic emotional response to the musical ideas.",
+          "This track demonstrates how instrumental music can tell complex emotional stories without the need for words."
+        ],
+        "inspiration": "Created during a period of major life changes, exploring how music can help process and understand complex emotions.",
+        "recordingNotes": "Features layered guitar parts recorded over several sessions, building the emotional complexity gradually through the arrangement process.",
+        "musicVideo": "#",
+        "lyrics": ""
       }
     }
   ],
   "about": {
     "heading": "About the Artist",
     "paragraphs": [
-      "Mim Al isn't your typical rock artist. Born from the collision of raw emotion and electric experimentation, this sound defies conventional boundaries and creates something entirely new.",
-      "With a twist that keeps listeners guessing, Mim Al's music explores the spaces between chaos and control, darkness and light, ordinary and extraordinary. Each track is a journey through uncharted sonic territory.",
-      "From the raw energy of \"CHICKEN WITH It's HEAD CUT OFF\" to the introspective depths of \"Dim Out the Lights,\" every release challenges expectations and pushes the envelope of what rock music can be."
+      "Mim Al is a Canadian instrumental guitarist crafting melodic compositions that transcend language barriers. With a focus on ambient melodies and emotional storytelling through guitar, each piece invites listeners into a world where every note carries meaning.",
+      "From the contemplative depths of \"NoCebo\" to the dynamic energy of \"CHICKEN WITH It's HEAD CUT OFF,\" Mim Al's instrumental catalog explores the full spectrum of human emotion through carefully crafted guitar work.",
+      "Based in Canada, Mim Al creates music that bridges the gap between technical proficiency and emotional authenticity, proving that instrumental guitar can communicate as powerfully as any lyrics."
     ],
     "buttons": {
       "primary": "Discover the Music",
-      "secondary": "Join the Club"
+      "secondary": "Follow on Spotify"
     },
     "features": [
       {
         "icon": "Music2",
-        "title": "Unconventional Sound",
-        "description": "Breaking rules and creating new ones"
+        "title": "Melodic Instrumentals",
+        "description": "Guitar compositions that tell stories without words"
       },
       {
         "icon": "Zap",
-        "title": "Electric Energy",
-        "description": "Raw power meets artistic precision"
+        "title": "Ambient Atmospheres",
+        "description": "Creating immersive sonic landscapes through guitar"
       },
       {
         "icon": "Heart",
-        "title": "Authentic Expression",
+        "title": "Emotional Expression",
         "description": "Every note tells a story, every song reveals a truth"
       }
     ]
