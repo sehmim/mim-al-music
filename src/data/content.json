@@ -375,6 +375,30 @@
         "city": "Montreal, QC",
         "status": "On Sale",
         "ticketUrl": "https://www.instagram.com/mimthehuman/"
+      },
+      {
+        "date": "DEC 15",
+        "year": "2024",
+        "venue": "Bar Le Ritz PDB",
+        "city": "Montreal, QC",
+        "status": "Past Show",
+        "ticketUrl": "https://www.instagram.com/mimthehuman/"
+      },
+      {
+        "date": "NOV 8",
+        "year": "2024",
+        "venue": "Café Campus",
+        "city": "Montreal, QC",
+        "status": "Past Show",
+        "ticketUrl": "https://www.instagram.com/mimthehuman/"
+      },
+      {
+        "date": "OCT 20",
+        "year": "2024",
+        "venue": "La Sala Rossa",
+        "city": "Montreal, QC",
+        "status": "Past Show",
+        "ticketUrl": "https://www.instagram.com/mimthehuman/"
       }
     ],
     "newsletter": {

@@ -178,6 +178,11 @@
     box-shadow: var(--shadow-pink);
   }
 
+  /* Gradient glow background effects */
+  .gradient-glow-bg {
+    background: var(--gradient-glow);
+  }
+
   /* Rock-style button hover effects */
   .rock-hover {
     transition: all 0.3s ease;

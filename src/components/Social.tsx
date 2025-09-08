@@ -21,8 +21,8 @@ const Social = () => {
   return (
     <section className="py-20 px-4 relative">
       {/* Electric Background Effects */}
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-gradient-glow opacity-20 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-gradient-glow opacity-15 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-0 w-96 h-96 opacity-20 rounded-full blur-3xl gradient-glow-bg" />
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 opacity-15 rounded-full blur-3xl gradient-glow-bg" />
       
       <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="section-heading text-center">

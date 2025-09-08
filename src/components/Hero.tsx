@@ -19,8 +19,8 @@ const Hero = () => {
       <div className="absolute inset-0 bg-background/5 backdrop-blur-sm" />
       
       {/* Electric Glow Effects */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-glow opacity-30 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-glow opacity-20 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 opacity-30 rounded-full blur-3xl gradient-glow-bg" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 opacity-20 rounded-full blur-3xl gradient-glow-bg" />
       
       {/* Hero Content */}
       <div className="relative z-10 text-center px-4 max-w-6xl mx-auto flex items-center justify-center min-h-screen">

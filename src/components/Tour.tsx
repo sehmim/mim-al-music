@@ -1,8 +1,30 @@
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, Ticket } from "lucide-react";
+import { Calendar, MapPin, Ticket, Play } from "lucide-react";
 import content from "@/data/content.json";
 
 const Tour = () => {
+  // Sort shows: upcoming first, then past shows
+  const sortedShows = [...content.tour.shows].sort((a, b) => {
+    const dateA = new Date(`${a.date} ${a.year}`);
+    const dateB = new Date(`${b.date} ${b.year}`);
+    const now = new Date();
+    
+    const aIsPast = dateA < now;
+    const bIsPast = dateB < now;
+    
+    // If one is past and one is future, future comes first
+    if (aIsPast && !bIsPast) return 1;
+    if (!aIsPast && bIsPast) return -1;
+    
+    // If both are past or both are future, sort by date
+    return dateA.getTime() - dateB.getTime();
+  });
+
+  const isShowPast = (show: any) => {
+    const showDate = new Date(`${show.date} ${show.year}`);
+    return showDate < new Date();
+  };
+
   return (
     <section className="py-20 px-4 relative">
       {/* Background Effects */}
@@ -14,7 +36,9 @@ const Tour = () => {
         </h2>
         
         <div className="space-y-4 max-w-4xl mx-auto">
-          {content.tour.shows.map((show, index) => (
+          {sortedShows.map((show, index) => {
+            const isPast = isShowPast(show);
+            return (
             <div key={index} className="album-card group">
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                 {/* Date */}
@@ -46,29 +70,50 @@ const Tour = () => {
                 <div className="flex items-center gap-4">
                   <div className="text-right">
                     <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      show.status === "Sold Out" 
+                      isPast
+                        ? "bg-muted text-muted-foreground"
+                        : show.status === "Sold Out" 
                         ? "bg-destructive/20 text-destructive"
                         : show.status === "On Sale"
                         ? "bg-primary/20 text-primary"
                         : "bg-muted text-muted-foreground"
                     }`}>
-                      {show.status}
+                      {isPast ? "Past Show" : show.status}
                     </span>
                   </div>
                   
                   <Button 
-                    className={show.status === "Sold Out" ? "opacity-50 cursor-not-allowed" : "btn-hero"}
-                    disabled={show.status === "Sold Out"}
+                    className={isPast ? "btn-secondary" : (show.status === "Sold Out" ? "opacity-50 cursor-not-allowed" : "btn-hero")}
+                    disabled={show.status === "Sold Out" && !isPast}
                     size="sm"
+                    onClick={() => {
+                      if (isPast) {
+                        // For past shows, could link to clips or social media
+                        window.open(show.ticketUrl, '_blank');
+                      } else {
+                        // For future shows, link to tickets
+                        window.open(show.ticketUrl, '_blank');
+                      }
+                    }}
                   >
-                    <Ticket className="w-4 h-4 mr-2" />
-                    {show.status === "Sold Out" ? "Sold Out" : 
-                     show.status === "Coming Soon" ? "Notify Me" : "Get Tickets"}
+                    {isPast ? (
+                      <>
+                        <Play className="w-4 h-4 mr-2" />
+                        See Clips from Show
+                      </>
+                    ) : (
+                      <>
+                        <Ticket className="w-4 h-4 mr-2" />
+                        {show.status === "Sold Out" ? "Sold Out" : 
+                         show.status === "Coming Soon" ? "Notify Me" : "Get Tickets"}
+                      </>
+                    )}
                   </Button>
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
         
         {/* Newsletter Signup for Tour Updates */}
