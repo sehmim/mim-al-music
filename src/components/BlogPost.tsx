@@ -67,10 +67,6 @@ const BlogPost = () => {
                   <Play className="w-4 h-4 mr-2" />
                   Stream Now
                 </Button>
-                <Button variant="outline" className="border-border hover:border-primary/50">
-                  <Music className="w-4 h-4 mr-2" />
-                  Watch Music Video
-                </Button>
               </div>
             </div>
             
@@ -101,7 +97,7 @@ const BlogPost = () => {
             {/* Inspiration Section */}
             <div className="mt-16 p-8 bg-muted/20 rounded-lg">
               <h3 className="text-xl font-display font-bold text-foreground mb-4">
-                The Inspiration
+                Lyrics
               </h3>
               <p className="text-muted-foreground leading-relaxed">
                 {release.blog.inspiration}
