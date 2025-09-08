@@ -11,10 +11,11 @@
   "releases": [
     {
       "title": "Not So Special",
-      "date": "Jan 17, 2025",
+      "date": "2025",
       "image": "album-not-so-special.jpg",
-      "description": "Ambient guitar melodies exploring the beauty in simplicity",
-      "streamingUrl": "https://open.spotify.com/artist/4pRyem81jKHIJd1dhnwZ7T",
+      "description": "A raw exploration of feeling ordinary in an extraordinary world",
+      "streamingUrl": "https://open.spotify.com/track/4djpxwXjiMc6IR6XbpUc6i?si=e39ba646bffc4434",
+      "duration": "4:04",
       "slug": "not-so-special",
       "blog": {
         "content": [
@@ -32,10 +33,11 @@
     },
     {
       "title": "Dim Out the Lights",
-      "date": "Feb 7, 2025",
+      "date": "2025",
       "image": "album-dim-out-lights.jpg",
-      "description": "Atmospheric instrumental piece embracing shadows and ambient tones",
-      "streamingUrl": "https://open.spotify.com/artist/4pRyem81jKHIJd1dhnwZ7T",
+      "description": "When darkness becomes your comfort zone",
+      "streamingUrl": "https://open.spotify.com/track/6RlBBsV7eof5HRTh87NG44?si=007a9a254f0145f0",
+      "duration": "3:47",
       "slug": "dim-out-the-lights",
       "blog": {
         "content": [
@@ -53,10 +55,12 @@
     },
     {
       "title": "CHICKEN WITH It's HEAD CUT OFF",
-      "date": "Mar 31, 2025",
+      "date": "2025",
       "image": "album-chicken-head.jpg",
-      "description": "Dynamic instrumental exploring chaotic beauty and structured improvisation",
-      "streamingUrl": "https://open.spotify.com/artist/4pRyem81jKHIJd1dhnwZ7T",
+      "description": "Chaotic energy meets purposeful madness",
+      "streamingUrl": "https://open.spotify.com/track/5GgVx2r2VRldqxXcA2Z0KY?si=691bb9305e1943f3",
+      "duration": "4:52",
+      "plays": "10,038",
       "slug": "chicken-with-its-head-cut-off",
       "blog": {
         "content": [
@@ -74,10 +78,12 @@
     },
     {
       "title": "NoCebo",
-      "date": "Oct 15, 2024",
+      "date": "2024",
       "image": "album-not-so-special.jpg",
       "description": "Contemplative instrumental exploring the power of musical healing",
-      "streamingUrl": "https://open.spotify.com/artist/4pRyem81jKHIJd1dhnwZ7T",
+      "streamingUrl": "https://open.spotify.com/track/7cOMfAWQ5NiuT4JX5qbiLh?si=13f879c4dbaf4399",
+      "duration": "3:45",
+      "collaborators": ["Loowi", "MYIASIS"],
       "slug": "nocebo",
       "blog": {
         "content": [
@@ -95,10 +101,11 @@
     },
     {
       "title": "Sudden Confusion",
-      "date": "Aug 22, 2024",
+      "date": "2024",
       "image": "album-dim-out-lights.jpg",
       "description": "Intricate instrumental capturing moments of uncertainty and clarity",
-      "streamingUrl": "https://open.spotify.com/artist/4pRyem81jKHIJd1dhnwZ7T",
+      "streamingUrl": "https://open.spotify.com/track/1YfxSUKd5WB1dhHZ1i3two?si=1672081eb66d45ba",
+      "duration": "1:32",
       "slug": "sudden-confusion",
       "blog": {
         "content": [
@@ -110,6 +117,50 @@
         ],
         "inspiration": "Created during a period of major life changes, exploring how music can help process and understand complex emotions.",
         "recordingNotes": "Features layered guitar parts recorded over several sessions, building the emotional complexity gradually through the arrangement process.",
+        "musicVideo": "#",
+        "lyrics": ""
+      }
+    },
+    {
+      "title": "Contrast in May",
+      "date": "2021",
+      "image": "album-not-so-special.jpg",
+      "description": "4-track EP exploring seasonal emotions through instrumental guitar",
+      "streamingUrl": "https://open.spotify.com/album/4CtaVYDyx6NPP9fZjWWkKd?si=GlNeOmGdQUS0ustLjvL-KQ",
+      "duration": "10:57",
+      "trackCount": "4 songs",
+      "slug": "contrast-in-may",
+      "blog": {
+        "content": [
+          "Contrast in May represents the full spectrum of seasonal emotional change captured in four distinct instrumental pieces. Each track corresponds to a season, creating a complete emotional journey.",
+          "The EP features Fall (Bleeze), Summer (Green), Spring (Hidden Tattoos), and Winter (Feeling Doodoo) - each piece reflecting the unique emotional palette of its corresponding season.",
+          "This collection showcases the evolution of Mim Al's sound over time, demonstrating how instrumental guitar can capture the nuanced feelings that come with seasonal transitions.",
+          "The recording process spanned several months, allowing each track to be created during its corresponding season for authentic emotional resonance."
+        ],
+        "inspiration": "Inspired by the cyclical nature of seasons and how they mirror our internal emotional landscapes.",
+        "recordingNotes": "Each track was recorded during its corresponding season to capture the authentic emotional essence of that time of year.",
+        "musicVideo": "#",
+        "lyrics": ""
+      }
+    },
+    {
+      "title": "Bleeze",
+      "date": "2020",
+      "image": "album-dim-out-lights.jpg",
+      "description": "The breakout single that started it all",
+      "streamingUrl": "https://open.spotify.com/track/239Df3gmlDv2ixHorci8yw?si=61fc2419951c4892",
+      "duration": "3:00",
+      "plays": "10,874",
+      "slug": "bleeze",
+      "blog": {
+        "content": [
+          "Bleeze was the track that started everything. What began as a simple guitar idea became the foundation for Mim Al's entire musical journey.",
+          "This instrumental piece captures the raw energy and emotional honesty that would become signature elements of the Mim Al sound. Every note feels necessary, nothing is wasted.",
+          "The recording process was intentionally minimal - just guitar, amp, and honest expression. This stripped-down approach allowed the emotion to shine through without any studio tricks.",
+          "Years later, Bleeze still represents the core philosophy: authentic expression through instrumental guitar, where the music speaks for itself."
+        ],
+        "inspiration": "The first genuine expression of the Mim Al sound - honest, direct, and emotionally resonant.",
+        "recordingNotes": "Recorded in a single session with minimal overdubs, capturing the pure essence of the original musical idea.",
         "musicVideo": "#",
         "lyrics": ""
       }

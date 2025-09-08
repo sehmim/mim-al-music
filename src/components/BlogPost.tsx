@@ -63,7 +63,10 @@ const BlogPost = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="btn-hero">
+                <Button 
+                  className="btn-hero"
+                  onClick={() => window.open(release.streamingUrl, '_blank')}
+                >
                   <Play className="w-4 h-4 mr-2" />
                   Stream Now
                 </Button>
@@ -141,11 +144,20 @@ const BlogPost = () => {
             Stream "{release.title}" on all major platforms and dive into the full sonic experience.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="btn-hero" size="lg">
+            <Button 
+              className="btn-hero" 
+              size="lg"
+              onClick={() => window.open(release.streamingUrl, '_blank')}
+            >
               <Play className="w-5 h-5 mr-2" />
               Stream on Spotify
             </Button>
-            <Button variant="outline" className="border-border hover:border-primary/50" size="lg">
+            <Button 
+              variant="outline" 
+              className="border-border hover:border-primary/50" 
+              size="lg"
+              onClick={() => navigate("/")}
+            >
               <ExternalLink className="w-5 h-5 mr-2" />
               More Releases
             </Button>
