@@ -12,7 +12,7 @@
     {
       "title": "Not So Special",
       "date": "2025",
-      "image": "album-not-so-special.jpg",
+      "image": "not-so-special.jpg",
       "description": "A raw exploration of feeling ordinary in an extraordinary world",
       "streamingUrl": "https://open.spotify.com/track/4djpxwXjiMc6IR6XbpUc6i?si=e39ba646bffc4434",
       "duration": "4:04",
@@ -28,45 +28,14 @@
         "inspiration": "Written during a period of embracing minimalism and finding beauty in simple, honest guitar melodies.",
         "recordingNotes": "Recorded in a single take using a clean Telecaster through a warm tube amp, capturing the natural room acoustics.",
         "musicVideo": "#",
-        "lyrics": "",
-        "assets": [
-          {
-            "type": "image",
-            "url": "album-not-so-special.jpg",
-            "caption": "Album artwork for Not So Special",
-            "alt": "Not So Special album cover"
-          },
-          {
-            "type": "image",
-            "url": "not-so-special-studio.jpg",
-            "caption": "Behind the scenes in the studio during recording",
-            "alt": "Studio recording session"
-          },
-          {
-            "type": "audio",
-            "url": "not-so-special-preview.mp3",
-            "caption": "30-second preview of the track",
-            "duration": "0:30"
-          },
-          {
-            "type": "video",
-            "url": "not-so-special-making-of.mp4",
-            "caption": "Making of 'Not So Special' - Studio footage",
-            "duration": "2:15"
-          },
-          {
-            "type": "image",
-            "url": "guitar-setup-not-so-special.jpg",
-            "caption": "The guitar and amp setup used for this recording",
-            "alt": "Guitar and amplifier setup"
-          }
-        ]
+        "lyrics": "Not so special\n\nI hope this time\nLuck is on my side\nI know for sure\nI will be this time\nFor you\n\nYou choose.\nWhat is the right time.\nWhen the sky is clear\nAnd the stars are aligned\nFor you\n\n\nMy eyes are cold\nBut my vision can't deny\nThat you would choose\nThe one who would lie,\nWhen the sky is clear\nAnd the starts are aligned\nIf you dont believe\nIt won't be this time\n\nFor you",
+        "assets": []
       }
     },
     {
       "title": "Dim Out the Lights",
       "date": "2025",
-      "image": "album-dim-out-lights.jpg",
+      "image": "dim-out-the-lights.jpg",
       "description": "When darkness becomes your comfort zone",
       "streamingUrl": "https://open.spotify.com/track/6RlBBsV7eof5HRTh87NG44?si=007a9a254f0145f0",
       "duration": "3:47",
@@ -86,27 +55,9 @@
         "assets": [
           {
             "type": "image",
-            "url": "album-dim-out-lights.jpg",
+            "url": "dim-out-the-lights.jpg",
             "caption": "Album artwork capturing the moody atmosphere",
             "alt": "Dim Out the Lights album cover"
-          },
-          {
-            "type": "image",
-            "url": "https://picsum.photos/800/600?random=4",
-            "caption": "Evening studio session with natural lighting",
-            "alt": "Evening studio recording"
-          },
-          {
-            "type": "image",
-            "url": "https://picsum.photos/800/600?random=5",
-            "caption": "Ambient microphone setup used for room reverb",
-            "alt": "Recording equipment setup"
-          },
-          {
-            "type": "audio",
-            "url": "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav",
-            "caption": "Room tone and ambient sound captured during recording",
-            "duration": "0:45"
           }
         ]
       }
@@ -114,7 +65,7 @@
     {
       "title": "CHICKEN WITH It's HEAD CUT OFF",
       "date": "2025",
-      "image": "album-chicken-head.jpg",
+      "image": "chicken-with-head-cut-off.jpeg",
       "description": "Chaotic energy meets purposeful madness",
       "streamingUrl": "https://open.spotify.com/track/5GgVx2r2VRldqxXcA2Z0KY?si=691bb9305e1943f3",
       "duration": "4:52",
@@ -122,46 +73,26 @@
       "slug": "chicken-with-its-head-cut-off",
       "blog": {
         "content": [
-          "Sometimes the most beautiful music comes from controlled chaos. 'CHICKEN WITH It's HEAD CUT OFF' is an instrumental journey through the organized madness of creative expression.",
-          "This track breaks conventional instrumental guitar boundaries. Time signatures shift, melodies appear and disappear like thoughts in a stream of consciousness, creating a unique sonic experience.",
-          "The guitar work here is both technical and emotional, demonstrating that virtuosity can serve expression rather than dominate it. Each seemingly chaotic passage serves the greater musical narrative.",
-          "The recording process embraced spontaneity while maintaining musical coherence. The result is an instrumental piece that feels both composed and improvised.",
-          "This represents the more adventurous side of Mim Al's instrumental catalog - where technical skill meets fearless creativity."
+          "Teaming up with Montreal powerhouse Yung Kang Ra, MIM AL has delivered one of his most ambitious collaborations to date. This track pushes beyond genres, fusing the raw aggression of metal with the grit and swagger of hip hop. Yung Kang Ra's explosive vocals and razor-sharp lyricism cut through heavy guitar riffs and pounding drums, while MIM AL grounds the chaos with a bold, unflinching vision. The result is a song that refuses to be ignored—loud, intense, and unapologetically alive.",
+          "The song itself is a whirlwind of emotions: rage, defiance, self-reflection, and relentless energy. From the primal hook repeating \"fucked up, lucked out\" to verses that explore the highs of ambition and the lows of destructive cycles, it captures the chaos of modern life with brutal honesty. Adding to the chaos is a blazing guitar solo and an unexpected yet powerful saxophone performance by <a href=\"https://www.instagram.com/nath_biss_/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:text-secondary transition-colors underline\">Nathan Bissonette</a>, giving the track an edge that's both chaotic and strangely elegant.",
+          "For MIM AL, this release marks a turning point. Stepping outside of his comfort zone, he's proven his ability to blur lines between genres and carve out his own sonic identity. It's more than just a collaboration—it's a statement piece. With Yung Kang Ra and Ramsden by his side, MIM AL has created a track that not only showcases his evolution as an artist but also sets a new standard for the kind of fearless, genre-breaking music coming out of Montreal's underground scene."
         ],
         "inspiration": "Lyrics for CHICKEN WITH It's HEAD CUT OFF",
-        "recordingNotes": "Recorded live in the studio with minimal overdubs, capturing the raw energy and spontaneous musical decisions.",
+        "recordingNotes": "The majority of the track was recorded at the legendary Breakglass Studio in Montreal, where MIM AL and Yung Kang Ra laid down the foundation of the song. With the expertise of engineer <a href=\"https://www.instagram.com/jalil_appeal/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:text-secondary transition-colors underline\">Jalil Khayat</a> guiding the sessions, every layer of sound was captured with precision. The final mix and master were handled by <a href=\"https://www.instagram.com/daniel.sutarz/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:text-secondary transition-colors underline\">Daniel Sultarz</a>, whose touch elevated the track into the explosive, polished masterpiece it became.",
         "musicVideo": "#",
         "lyrics": "Fucked up\nLucked out\nGet fucked\nFucked off\nStuck now\nRunnin round\nChicken w his head cut off\n[Repeat 3x]\n\n——\n\nI been rolling in the deep this just a intermission\nI been fuckin wit these bad bitches gettin busy\nI been gettin my name spread round this whole city\nI'm really him, fuck wimme\n\nI been tearing up the stage that be like every week\nI got shortys staring at me know they tryna freak\nGot shit on, thats what they see in me\nPlease\nGet out my way, I'm tryna move you know I'm vip\n\nYes im vip\nVery indignant person\nI pull up to your show and make all y'all niggas feel worthless\nGet on the mic I've been known to cause hysteria\nYou get on w me be careful I might just bury ya\n\nStill fucked\nFucked up\nNo luck\nStill stuck\nChase wins each day\nGet lost get up\nWins are sparse\nAnd not enough\nWant my flesh to feel a rush\nWhy can't I?\nWhy can't I give it up?\n\n—— \nGuit solo\nYeah\nGuit solo\n——\n\nI been rolling in the deep this just a intermission\nI been fuckin wit these bad bitches gettin busy\nI been gettin my name spread round this whole city\nI'm really him, fuck wimme\n\nChasin ass not enough\nChasin cash not enough\nGot a rash feelin rough\nI'm fucked up\nFucked up\n\nI been rolling in the deep this just a intermission\nEvery day I feel so weak because I'm chasing women\nI just wanna feel alright so I say lord forgive me\nBut chase the same damn things don't think the lord gon hear me\n\nChasin ass not enough\nChasin cash not enough\nGot a rash feelin rough\nI'm fucked up\n(Ayo)\nFucked up\nFucked up\nYah\nChicken w its head cut off\nAhhhh\nYuh\nYahh\nYahh\n\n— Sax solo —\n\nRamsden, a young dragon\nI spit heat on repeat stop asking\nI clean up in these streets like a napkin\nLike 23 i ball hog no passing\nGaggin hoes w the dick I'm nasty\nSavagely how I spit but I'm fancy\n\nPass me the joint Ima cough gon keep smoking\nThey like rams you got weed? say you know it\nI'm a wicked feller\nWhen I touch the mic you know it's gon be stellar\nBars in my head like wine locked\nIn the cellar\nMaster when it comes to arranging the letters\nStay steady making gold with the bare bones setup\nI'm ready no heads up\nI go …\nAyo\n\n—\n\nFucked up\nLucked out\nGet fucked\nFucked off\nStuck now\nRunnin round\nChicken w his head cut off\n[Repeat 2x]\n\n— Yuh! —\n\nI been rolling in the deep this just a intermission\nEvery day I feel so weak because I'm chasing women\nI just wanna feel alright so I say lord forgive me\nBut chase the same damn things don't think the lord gon hear me\n\nChasin ass not enough\nChasin cash not enough\nGot a rash feelin rough\nI'm fucked up\nFucked up\n[Repeat 13x]",
         "assets": [
           {
             "type": "image",
-            "url": "album-chicken-head.jpg",
+            "url": "chicken-with-head-cut-off.jpeg",
             "caption": "Official album artwork for CHICKEN WITH It's HEAD CUT OFF",
             "alt": "CHICKEN WITH It's HEAD CUT OFF album cover"
           },
           {
             "type": "image",
-            "url": "https://picsum.photos/800/600?random=1",
-            "caption": "Behind the scenes in the studio during recording session",
-            "alt": "Studio recording session"
-          },
-          {
-            "type": "image",
-            "url": "https://picsum.photos/800/600?random=2",
-            "caption": "Guitar and amp setup used for the chaotic energy sections",
-            "alt": "Guitar amplifier setup"
-          },
-          {
-            "type": "image",
-            "url": "https://picsum.photos/800/600?random=3",
-            "caption": "Collaborative moment with Yung Kang Ra during production",
-            "alt": "Artist collaboration"
-          },
-          {
-            "type": "video",
-            "url": "https://sample-videos.com/zip/10/mp4/360/BigBuckBunny_320x180_1mb.mp4",
-            "caption": "Making of 'CHICKEN WITH It's HEAD CUT OFF' - Studio footage",
-            "duration": "3:14"
+            "url": "idea.jpg",
+            "caption": "Conceptual artwork and creative inspiration for the track",
+            "alt": "Creative concept artwork for CHICKEN WITH It's HEAD CUT OFF"
           }
         ]
       }
@@ -169,7 +100,7 @@
     {
       "title": "NoCebo",
       "date": "2024",
-      "image": "album-not-so-special.jpg",
+      "image": "nocebo.jpg",
       "description": "Contemplative instrumental exploring the power of musical healing",
       "streamingUrl": "https://open.spotify.com/track/7cOMfAWQ5NiuT4JX5qbiLh?si=13f879c4dbaf4399",
       "duration": "3:45",
@@ -192,7 +123,7 @@
     {
       "title": "Sudden Confusion",
       "date": "2024",
-      "image": "album-dim-out-lights.jpg",
+      "image": "sudden-confusion.jpg",
       "description": "Intricate instrumental capturing moments of uncertainty and clarity",
       "streamingUrl": "https://open.spotify.com/track/1YfxSUKd5WB1dhHZ1i3two?si=1672081eb66d45ba",
       "duration": "1:32",
@@ -214,7 +145,7 @@
     {
       "title": "Contrast in May",
       "date": "2021",
-      "image": "album-not-so-special.jpg",
+      "image": "contrast-in-may.jpg",
       "description": "4-track EP exploring seasonal emotions through instrumental guitar",
       "streamingUrl": "https://open.spotify.com/album/4CtaVYDyx6NPP9fZjWWkKd?si=GlNeOmGdQUS0ustLjvL-KQ",
       "duration": "10:57",
@@ -236,7 +167,7 @@
     {
       "title": "Bleeze",
       "date": "2020",
-      "image": "album-dim-out-lights.jpg",
+      "image": "bleeze.jpg",
       "description": "The breakout single that started it all",
       "streamingUrl": "https://open.spotify.com/track/239Df3gmlDv2ixHorci8yw?si=61fc2419951c4892",
       "duration": "3:00",
@@ -256,7 +187,7 @@
         "assets": [
           {
             "type": "image",
-            "url": "album-dim-out-lights.jpg",
+            "url": "bleeze.jpg",
             "caption": "The humble beginnings - original artwork for Bleeze",
             "alt": "Bleeze single cover"
           },
@@ -292,7 +223,7 @@
     "heading": "About the Artist",
     "paragraphs": [
       "Behind MIM AL lives MimTheHuman—the authentic voice that refuses to settle for surface-level art.",
-      "Mim Al is a Bangladeshi-Canadian guitarist, singer-songwriter, and producer crafting indie rock, math rock, midwest emo, and alternative rock compositions that challenge expectations. With intricate guitar work and emotionally driven melodies, each track explores the spaces between chaos and control, creating something entirely new in the rock landscape."
+      "Mim Al is a Bangladeshi-Canadian guitarist, singer-songwriter, and producer known for crafting dynamic indie rock, math rock, midwest emo, and alternative rock compositions that push boundaries. Drawing inspiration from artists such as Plini, Polyphia, Intervals, Tom Misch, Slash, Paul Gilbert, CHON, and Hot Mulligan, Mim Al creates a sound that bridges progressive guitar mastery with modern rock energy."
     ],
     "buttons": {
       "primary": "Discover the Music",

@@ -3,15 +3,25 @@ import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Play, ExternalLink, Music, Calendar } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import albumNotSoSpecial from "@/assets/album-not-so-special.jpg";
-import albumDimOutLights from "@/assets/album-dim-out-lights.jpg";
-import albumChickenHead from "@/assets/album-chicken-head.jpg";
+import notSoSpecial from "@/assets/not-so-special.jpg";
+import dimOutLights from "@/assets/dim-out-the-lights.jpg";
+import chickenHead from "@/assets/chicken-with-head-cut-off.jpeg";
+import bleezeImage from "@/assets/bleeze.jpg";
+import noceboImage from "@/assets/nocebo.jpg";
+import suddenConfusionImage from "@/assets/sudden-confusion.jpg";
+import contrastInMayImage from "@/assets/contrast-in-may.jpg";
+import ideaImage from "@/assets/idea.jpg";
 import content from "@/data/content.json";
 
 const imageMap = {
-  "album-not-so-special.jpg": albumNotSoSpecial,
-  "album-dim-out-lights.jpg": albumDimOutLights,
-  "album-chicken-head.jpg": albumChickenHead
+  "not-so-special.jpg": notSoSpecial,
+  "dim-out-the-lights.jpg": dimOutLights,
+  "chicken-with-head-cut-off.jpeg": chickenHead,
+  "bleeze.jpg": bleezeImage,
+  "nocebo.jpg": noceboImage,
+  "sudden-confusion.jpg": suddenConfusionImage,
+  "contrast-in-may.jpg": contrastInMayImage,
+  "idea.jpg": ideaImage
 };
 
 const BlogPost = () => {
@@ -97,19 +107,17 @@ const BlogPost = () => {
           <div className="prose prose-lg max-w-none">
             <div className="space-y-8">
               {release.blog.content.map((paragraph, index) => (
-                <p key={index} className="text-muted-foreground leading-relaxed text-lg">
-                  {paragraph}
-                </p>
+                <div 
+                  key={index} 
+                  className="text-muted-foreground leading-relaxed text-lg"
+                  dangerouslySetInnerHTML={{ __html: paragraph }}
+                />
               ))}
             </div>
-            
             
             {/* Assets Gallery */}
             {release.blog.assets && release.blog.assets.length > 0 && (
               <div className="mt-16">
-                <h3 className="text-2xl font-display font-bold text-foreground mb-8">
-                  Gallery & Media
-                </h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   {release.blog.assets.map((asset, index) => (
                     <div key={index} className="bg-card border border-border rounded-lg overflow-hidden">
@@ -170,6 +178,17 @@ const BlogPost = () => {
               </div>
             )}
 
+            {/* Recording Notes */}
+            <div className="mt-8 p-8 bg-primary/5 rounded-lg border border-primary/10">
+              <h3 className="text-xl font-display font-bold text-foreground mb-4">
+                Recording Notes
+              </h3>
+              <div 
+                className="text-muted-foreground leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: release.blog.recordingNotes }}
+              />
+            </div>
+            
             {/* Lyrics Section */}
             {release.blog.lyrics && (
               <div className="mt-16">
@@ -183,15 +202,6 @@ const BlogPost = () => {
                 </div>
               </div>
             )}
-            {/* Recording Notes */}
-            <div className="mt-8 p-8 bg-primary/5 rounded-lg border border-primary/10">
-              <h3 className="text-xl font-display font-bold text-foreground mb-4">
-                Recording Notes
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {release.blog.recordingNotes}
-              </p>
-            </div>
           </div>
         </div>
       </section>

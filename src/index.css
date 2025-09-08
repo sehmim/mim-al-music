@@ -229,6 +229,11 @@
     @apply hover:shadow-[0_0_30px_hsl(var(--primary)/0.2)];
   }
 
+  /* Mobile active card styling */
+  .album-card.mobile-active {
+    @apply scale-105 shadow-2xl shadow-primary/20 border-primary/50;
+  }
+
   /* Section headings */
   .section-heading {
     @apply text-3xl md:text-4xl font-display font-bold mb-8;

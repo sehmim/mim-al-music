@@ -27,7 +27,7 @@ const Hero = () => {
         {/* Title with Glass Background Wrapper */}
         <div className="bg-background/30 backdrop-blur-xl rounded-xl border border-white/20 shadow-2xl p-5">
           <h1 
-            className="text-8xl md:text-[12rem] lg:text-[16rem] xl:text-[16rem] font-display font-black glitch-static leading-none hero-title-enhanced"
+            className="text-6xl md:text-[12rem] lg:text-[16rem] xl:text-[16rem] font-display font-black glitch-static leading-none hero-title-enhanced"
             data-text="MIM AL"
           >
             MIM AL
