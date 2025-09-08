@@ -24,16 +24,16 @@ const Hero = () => {
       
       {/* Hero Content */}
       <div className="relative z-10 text-center px-4 max-w-6xl mx-auto flex items-center justify-center min-h-screen">
-        {/* Title Background Glass */}
-        <div className="backdrop-blur-lg"></div>
-        
-        <h1 
-          className="relative text-8xl md:text-[12rem] lg:text-[16rem] xl:text-[16rem] font-display font-black glitch-static leading-none"
-          data-text="MIM AL"
-        >
-          MIM AL
-          <span aria-hidden className="slice">MIM AL</span>
-        </h1>
+        {/* Title with Glass Background Wrapper */}
+        <div className="bg-background/30 backdrop-blur-xl rounded-xl border border-white/20 shadow-2xl p-5">
+          <h1 
+            className="text-8xl md:text-[12rem] lg:text-[16rem] xl:text-[16rem] font-display font-black glitch-static leading-none hero-title-enhanced"
+            data-text="MIM AL"
+          >
+            MIM AL
+            <span aria-hidden className="slice">MIM AL</span>
+          </h1>
+        </div>
       </div>
     </section>
   );

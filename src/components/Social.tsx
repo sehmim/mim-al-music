@@ -13,7 +13,8 @@ const iconMap = {
   Music,
   Instagram,
   Twitter,
-  Youtube
+  Youtube,
+  Mail
 };
 
 const Social = () => {
@@ -29,14 +30,15 @@ const Social = () => {
         </h2>
         
         {/* Social Platforms Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16 justify-items-center max-w-4xl mx-auto">
           {content.social.platforms.map((social, index) => {
             const IconComponent = iconMap[social.icon];
+            const isEmail = social.platform === "Email";
             return (
               <a 
                 key={index}
                 href={social.url}
-                className="album-card group text-center hover:scale-105 transition-transform duration-300"
+                className="album-card group text-center hover:scale-105 transition-transform duration-300 w-full max-w-sm"
               >
                 <IconComponent className="w-12 h-12 mx-auto mb-4 text-primary electric-glow group-hover:text-secondary transition-colors" />
                 
@@ -44,16 +46,14 @@ const Social = () => {
                   {social.platform}
                 </h3>
                 
-                <div className="text-secondary font-bold mb-2">
-                  {social.followers} followers
-                </div>
-                
                 <p className="text-muted-foreground text-sm mb-4">
                   {social.description}
                 </p>
                 
                 <div className="flex items-center justify-center gap-2 text-primary group-hover:text-secondary transition-colors">
-                  <span className="text-sm font-medium">Follow</span>
+                  <span className="text-sm font-medium">
+                    {isEmail ? 'Contact' : 'Follow'}
+                  </span>
                   <ExternalLink className="w-4 h-4" />
                 </div>
               </a>
@@ -61,48 +61,6 @@ const Social = () => {
           })}
         </div>
         
-        {/* Newsletter Signup */}
-        <div className="album-card max-w-3xl mx-auto text-center">
-          <Mail className="w-16 h-16 mx-auto mb-6 text-secondary pink-glow" />
-          
-          <h3 className="font-display font-bold text-2xl mb-4">
-            {content.social.newsletter.heading}
-          </h3>
-          
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            {content.social.newsletter.description}
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto mb-6">
-            <input 
-              type="email" 
-              placeholder={content.social.newsletter.placeholder}
-              className="flex-1 px-6 py-4 bg-input border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-colors"
-            />
-            <Button className="btn-secondary" size="lg">
-              {content.social.newsletter.button}
-            </Button>
-          </div>
-          
-          <p className="text-xs text-muted-foreground">
-            {content.social.newsletter.disclaimer}
-          </p>
-        </div>
-        
-        {/* Streaming Platforms */}
-        <div className="mt-16 text-center">
-          <h4 className="font-display font-bold text-xl mb-8 text-foreground">
-            {content.social.streaming.heading}
-          </h4>
-          
-          <div className="flex flex-wrap justify-center gap-4">
-            {content.social.streaming.platforms.map((platform) => (
-              <Button key={platform} variant="outline" className="border-border hover:border-primary/50">
-                {platform}
-              </Button>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

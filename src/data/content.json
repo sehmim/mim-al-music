@@ -180,36 +180,28 @@
     "heading": "Tour Dates",
     "shows": [
       {
-        "date": "APR 15",
+        "date": "MAY 22",
         "year": "2025",
-        "venue": "The Electric Lounge",
-        "city": "Nashville, TN",
+        "venue": "Toscadura",
+        "city": "Montreal, QC",
         "status": "On Sale",
-        "ticketUrl": "#"
+        "ticketUrl": "https://www.instagram.com/mimthehuman/"
       },
       {
-        "date": "APR 22",
+        "date": "AUG 31",
         "year": "2025",
-        "venue": "Underground Club",
-        "city": "Austin, TX",
-        "status": "Sold Out",
-        "ticketUrl": "#"
-      },
-      {
-        "date": "MAY 05",
-        "year": "2025",
-        "venue": "Rock Factory",
-        "city": "Denver, CO",
-        "status": "Coming Soon",
-        "ticketUrl": "#"
-      },
-      {
-        "date": "MAY 18",
-        "year": "2025",
-        "venue": "The Amp",
-        "city": "Portland, OR",
+        "venue": "P'tit Ours",
+        "city": "Montreal, QC",
         "status": "On Sale",
-        "ticketUrl": "#"
+        "ticketUrl": "https://www.instagram.com/mimthehuman/"
+      },
+      {
+        "date": "SEP 17",
+        "year": "2025",
+        "venue": "Casa Del Popolo",
+        "city": "Montreal, QC",
+        "status": "On Sale",
+        "ticketUrl": "https://www.instagram.com/mimthehuman/"
       }
     ],
     "newsletter": {
@@ -225,30 +217,23 @@
       {
         "platform": "Spotify",
         "icon": "Music",
-        "url": "#",
-        "followers": "12K",
+        "url": "https://open.spotify.com/artist/4pRyem81jKHIJd1dhnwZ7T?si=SbsYITmBTL6tPorhOoKqNQ",
+        "followers": "90",
         "description": "Latest tracks & playlists"
       },
       {
         "platform": "Instagram",
         "icon": "Instagram",
-        "url": "#",
-        "followers": "8.5K",
+        "url": "https://www.instagram.com/mimthehuman/",
+        "followers": "37",
         "description": "Behind the scenes"
       },
       {
-        "platform": "Twitter",
-        "icon": "Twitter",
-        "url": "#",
-        "followers": "5.2K",
-        "description": "Real-time updates"
-      },
-      {
-        "platform": "YouTube",
-        "icon": "Youtube",
-        "url": "#",
-        "followers": "15K",
-        "description": "Music videos & live sessions"
+        "platform": "Email",
+        "icon": "Mail",
+        "url": "mailto:Sehmim.al@gmail.com?subject=Booking Inquiry - Mim Al&body=Hi Mim Al,%0A%0AI'm interested in booking you for an event.%0A%0AEvent Details:%0A- Date:%0A- Venue:%0A- Location:%0A- Type of Event:%0A- Expected Audience Size:%0A- Budget Range:%0A%0APlease let me know your availability and requirements.%0A%0AThank you!%0A%0ABest regards,",
+        "followers": "",
+        "description": "Booking inquiries"
       }
     ],
     "newsletter": {
@@ -274,15 +259,15 @@
       "links": []
     },
     "contact": {
-      "heading": "Get in Touch",
+      "heading": "",
       "emails": [
         {
-          "label": "hello@mimal.music",
-          "address": "hello@mimal.music"
+          "label": "",
+          "address": ""
         },
         {
-          "label": "booking@mimal.music", 
-          "address": "booking@mimal.music"
+          "label": "", 
+          "address": ""
         }
       ]
     },

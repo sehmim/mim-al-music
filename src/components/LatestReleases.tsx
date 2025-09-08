@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Play, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import albumNotSoSpecial from "@/assets/album-not-so-special.jpg";
 import albumDimOutLights from "@/assets/album-dim-out-lights.jpg";
 import albumChickenHead from "@/assets/album-chicken-head.jpg";
@@ -13,6 +14,9 @@ const imageMap = {
 };
 
 const LatestReleases = () => {
+  const [showAll, setShowAll] = useState(false);
+  const displayedReleases = showAll ? content.releases : content.releases.slice(0, 3);
+
   return (
     <section className="py-20 px-4 relative">
       {/* Background Effects */}
@@ -24,7 +28,7 @@ const LatestReleases = () => {
         </h2>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {content.releases.map((release, index) => (
+          {displayedReleases.map((release, index) => (
             <Link key={index} to={`/blog/${release.slug}`} className="album-card group block hover:scale-105 transition-transform duration-300">
               {/* Album Cover */}
               <div className="relative mb-6 overflow-hidden rounded-lg">
@@ -44,7 +48,7 @@ const LatestReleases = () => {
               </div>
               
               {/* Album Info */}
-              <div className="space-y-4">
+              <div className="">
                 <div>
                   <h3 className="text-xl font-display font-bold text-foreground mb-1">
                     {release.title}
@@ -57,29 +61,23 @@ const LatestReleases = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   {release.description}
                 </p>
-                
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Button className="btn-hero flex-1" size="sm">
-                    <Play className="w-4 h-4 mr-2" />
-                    Stream Now
-                  </Button>
-                  
-                  <Button variant="outline" size="sm" className="border-border hover:border-primary/50">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Share
-                  </Button>
-                </div>
               </div>
             </Link>
           ))}
         </div>
         
         {/* Call to Action */}
-        <div className="text-center mt-16">
-          <Button className="btn-secondary" size="lg">
-            View All Releases
-          </Button>
-        </div>
+        {content.releases.length > 3 && (
+          <div className="text-center mt-16">
+            <Button 
+              className="btn-secondary" 
+              size="lg"
+              onClick={() => setShowAll(!showAll)}
+            >
+              {showAll ? 'Show Less' : 'View All Releases'}
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
