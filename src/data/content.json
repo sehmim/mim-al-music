@@ -28,7 +28,39 @@
         "inspiration": "Written during a period of embracing minimalism and finding beauty in simple, honest guitar melodies.",
         "recordingNotes": "Recorded in a single take using a clean Telecaster through a warm tube amp, capturing the natural room acoustics.",
         "musicVideo": "#",
-        "lyrics": ""
+        "lyrics": "",
+        "assets": [
+          {
+            "type": "image",
+            "url": "album-not-so-special.jpg",
+            "caption": "Album artwork for Not So Special",
+            "alt": "Not So Special album cover"
+          },
+          {
+            "type": "image",
+            "url": "not-so-special-studio.jpg",
+            "caption": "Behind the scenes in the studio during recording",
+            "alt": "Studio recording session"
+          },
+          {
+            "type": "audio",
+            "url": "not-so-special-preview.mp3",
+            "caption": "30-second preview of the track",
+            "duration": "0:30"
+          },
+          {
+            "type": "video",
+            "url": "not-so-special-making-of.mp4",
+            "caption": "Making of 'Not So Special' - Studio footage",
+            "duration": "2:15"
+          },
+          {
+            "type": "image",
+            "url": "guitar-setup-not-so-special.jpg",
+            "caption": "The guitar and amp setup used for this recording",
+            "alt": "Guitar and amplifier setup"
+          }
+        ]
       }
     },
     {
@@ -50,7 +82,33 @@
         "inspiration": "Inspired by the peaceful solitude of evening hours when the world quiets down and music can truly be heard.",
         "recordingNotes": "Recorded with ambient microphone placement to capture the natural reverb of the room, creating an intimate listening experience.",
         "musicVideo": "#",
-        "lyrics": ""
+        "lyrics": "",
+        "assets": [
+          {
+            "type": "image",
+            "url": "album-dim-out-lights.jpg",
+            "caption": "Album artwork capturing the moody atmosphere",
+            "alt": "Dim Out the Lights album cover"
+          },
+          {
+            "type": "image",
+            "url": "https://picsum.photos/800/600?random=4",
+            "caption": "Evening studio session with natural lighting",
+            "alt": "Evening studio recording"
+          },
+          {
+            "type": "image",
+            "url": "https://picsum.photos/800/600?random=5",
+            "caption": "Ambient microphone setup used for room reverb",
+            "alt": "Recording equipment setup"
+          },
+          {
+            "type": "audio",
+            "url": "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav",
+            "caption": "Room tone and ambient sound captured during recording",
+            "duration": "0:45"
+          }
+        ]
       }
     },
     {
@@ -70,10 +128,42 @@
           "The recording process embraced spontaneity while maintaining musical coherence. The result is an instrumental piece that feels both composed and improvised.",
           "This represents the more adventurous side of Mim Al's instrumental catalog - where technical skill meets fearless creativity."
         ],
-        "inspiration": "Created during a burst of creative energy, exploring what happens when structure meets spontaneity in instrumental music.",
+        "inspiration": "Lyrics for CHICKEN WITH It's HEAD CUT OFF",
         "recordingNotes": "Recorded live in the studio with minimal overdubs, capturing the raw energy and spontaneous musical decisions.",
         "musicVideo": "#",
-        "lyrics": ""
+        "lyrics": "Fucked up\nLucked out\nGet fucked\nFucked off\nStuck now\nRunnin round\nChicken w his head cut off\n[Repeat 3x]\n\n——\n\nI been rolling in the deep this just a intermission\nI been fuckin wit these bad bitches gettin busy\nI been gettin my name spread round this whole city\nI'm really him, fuck wimme\n\nI been tearing up the stage that be like every week\nI got shortys staring at me know they tryna freak\nGot shit on, thats what they see in me\nPlease\nGet out my way, I'm tryna move you know I'm vip\n\nYes im vip\nVery indignant person\nI pull up to your show and make all y'all niggas feel worthless\nGet on the mic I've been known to cause hysteria\nYou get on w me be careful I might just bury ya\n\nStill fucked\nFucked up\nNo luck\nStill stuck\nChase wins each day\nGet lost get up\nWins are sparse\nAnd not enough\nWant my flesh to feel a rush\nWhy can't I?\nWhy can't I give it up?\n\n—— \nGuit solo\nYeah\nGuit solo\n——\n\nI been rolling in the deep this just a intermission\nI been fuckin wit these bad bitches gettin busy\nI been gettin my name spread round this whole city\nI'm really him, fuck wimme\n\nChasin ass not enough\nChasin cash not enough\nGot a rash feelin rough\nI'm fucked up\nFucked up\n\nI been rolling in the deep this just a intermission\nEvery day I feel so weak because I'm chasing women\nI just wanna feel alright so I say lord forgive me\nBut chase the same damn things don't think the lord gon hear me\n\nChasin ass not enough\nChasin cash not enough\nGot a rash feelin rough\nI'm fucked up\n(Ayo)\nFucked up\nFucked up\nYah\nChicken w its head cut off\nAhhhh\nYuh\nYahh\nYahh\n\n— Sax solo —\n\nRamsden, a young dragon\nI spit heat on repeat stop asking\nI clean up in these streets like a napkin\nLike 23 i ball hog no passing\nGaggin hoes w the dick I'm nasty\nSavagely how I spit but I'm fancy\n\nPass me the joint Ima cough gon keep smoking\nThey like rams you got weed? say you know it\nI'm a wicked feller\nWhen I touch the mic you know it's gon be stellar\nBars in my head like wine locked\nIn the cellar\nMaster when it comes to arranging the letters\nStay steady making gold with the bare bones setup\nI'm ready no heads up\nI go …\nAyo\n\n—\n\nFucked up\nLucked out\nGet fucked\nFucked off\nStuck now\nRunnin round\nChicken w his head cut off\n[Repeat 2x]\n\n— Yuh! —\n\nI been rolling in the deep this just a intermission\nEvery day I feel so weak because I'm chasing women\nI just wanna feel alright so I say lord forgive me\nBut chase the same damn things don't think the lord gon hear me\n\nChasin ass not enough\nChasin cash not enough\nGot a rash feelin rough\nI'm fucked up\nFucked up\n[Repeat 13x]",
+        "assets": [
+          {
+            "type": "image",
+            "url": "album-chicken-head.jpg",
+            "caption": "Official album artwork for CHICKEN WITH It's HEAD CUT OFF",
+            "alt": "CHICKEN WITH It's HEAD CUT OFF album cover"
+          },
+          {
+            "type": "image",
+            "url": "https://picsum.photos/800/600?random=1",
+            "caption": "Behind the scenes in the studio during recording session",
+            "alt": "Studio recording session"
+          },
+          {
+            "type": "image",
+            "url": "https://picsum.photos/800/600?random=2",
+            "caption": "Guitar and amp setup used for the chaotic energy sections",
+            "alt": "Guitar amplifier setup"
+          },
+          {
+            "type": "image",
+            "url": "https://picsum.photos/800/600?random=3",
+            "caption": "Collaborative moment with Yung Kang Ra during production",
+            "alt": "Artist collaboration"
+          },
+          {
+            "type": "video",
+            "url": "https://sample-videos.com/zip/10/mp4/360/BigBuckBunny_320x180_1mb.mp4",
+            "caption": "Making of 'CHICKEN WITH It's HEAD CUT OFF' - Studio footage",
+            "duration": "3:14"
+          }
+        ]
       }
     },
     {
@@ -162,7 +252,39 @@
         "inspiration": "The first genuine expression of the Mim Al sound - honest, direct, and emotionally resonant.",
         "recordingNotes": "Recorded in a single session with minimal overdubs, capturing the pure essence of the original musical idea.",
         "musicVideo": "#",
-        "lyrics": ""
+        "lyrics": "",
+        "assets": [
+          {
+            "type": "image",
+            "url": "album-dim-out-lights.jpg",
+            "caption": "The humble beginnings - original artwork for Bleeze",
+            "alt": "Bleeze single cover"
+          },
+          {
+            "type": "image",
+            "url": "https://picsum.photos/800/600?random=6",
+            "caption": "The original home studio setup where it all began",
+            "alt": "Home studio recording setup"
+          },
+          {
+            "type": "image",
+            "url": "https://picsum.photos/800/600?random=7",
+            "caption": "Guitar used for the original Bleeze recording",
+            "alt": "Electric guitar"
+          },
+          {
+            "type": "image",
+            "url": "https://picsum.photos/800/600?random=8",
+            "caption": "Handwritten notes from the original composition",
+            "alt": "Music composition notes"
+          },
+          {
+            "type": "audio",
+            "url": "https://www.soundjay.com/misc/sounds/clock-ticking-3.wav",
+            "caption": "Raw demo recording of the original guitar idea",
+            "duration": "1:12"
+          }
+        ]
       }
     }
   ],

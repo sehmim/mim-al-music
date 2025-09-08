@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Play, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import albumNotSoSpecial from "@/assets/album-not-so-special.jpg";
 import albumDimOutLights from "@/assets/album-dim-out-lights.jpg";
 import albumChickenHead from "@/assets/album-chicken-head.jpg";
@@ -16,6 +16,19 @@ const imageMap = {
 const LatestReleases = () => {
   const [showAll, setShowAll] = useState(false);
   const displayedReleases = showAll ? content.releases : content.releases.slice(0, 3);
+
+  // Listen for custom event to show all releases
+  useEffect(() => {
+    const handleShowAllReleases = () => {
+      setShowAll(true);
+    };
+
+    window.addEventListener('showAllReleases', handleShowAllReleases);
+    
+    return () => {
+      window.removeEventListener('showAllReleases', handleShowAllReleases);
+    };
+  }, []);
 
   return (
     <section className="py-20 px-4 relative">

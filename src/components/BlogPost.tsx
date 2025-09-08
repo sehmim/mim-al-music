@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Play, ExternalLink, Music, Calendar } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -18,6 +19,11 @@ const BlogPost = () => {
   const navigate = useNavigate();
   
   const release = content.releases.find(r => r.slug === slug);
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
   
   if (!release) {
     return (
@@ -97,26 +103,73 @@ const BlogPost = () => {
               ))}
             </div>
             
-            {/* Inspiration Section */}
-            <div className="mt-16 p-8 bg-muted/20 rounded-lg">
-              <h3 className="text-xl font-display font-bold text-foreground mb-4">
-                Lyrics
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {release.blog.inspiration}
-              </p>
-            </div>
             
-            {/* Recording Notes */}
-            <div className="mt-8 p-8 bg-primary/5 rounded-lg border border-primary/10">
-              <h3 className="text-xl font-display font-bold text-foreground mb-4">
-                Recording Notes
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {release.blog.recordingNotes}
-              </p>
-            </div>
-            
+            {/* Assets Gallery */}
+            {release.blog.assets && release.blog.assets.length > 0 && (
+              <div className="mt-16">
+                <h3 className="text-2xl font-display font-bold text-foreground mb-8">
+                  Gallery & Media
+                </h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {release.blog.assets.map((asset, index) => (
+                    <div key={index} className="bg-card border border-border rounded-lg overflow-hidden">
+                      {asset.type === 'image' && (
+                        <div>
+                          <img 
+                            src={imageMap[asset.url] || `/assets/${asset.url}`}
+                            alt={asset.alt || asset.caption}
+                            className="w-full h-64 object-cover"
+                          />
+                          <div className="p-4">
+                            <p className="text-sm text-muted-foreground">{asset.caption}</p>
+                          </div>
+                        </div>
+                      )}
+                      
+                      {asset.type === 'audio' && (
+                        <div className="p-6">
+                          <div className="flex items-center gap-3 mb-3">
+                            <Music className="w-5 h-5 text-primary" />
+                            <span className="font-medium text-foreground">Audio Preview</span>
+                            {asset.duration && (
+                              <Badge variant="secondary">{asset.duration}</Badge>
+                            )}
+                          </div>
+                          <audio controls className="w-full mb-3">
+                            <source src={`/assets/${asset.url}`} type="audio/mpeg" />
+                            Your browser does not support the audio element.
+                          </audio>
+                          <p className="text-sm text-muted-foreground">{asset.caption}</p>
+                        </div>
+                      )}
+                      
+                      {asset.type === 'video' && (
+                        <div>
+                          <video 
+                            controls 
+                            className="w-full h-64 object-cover"
+                            poster={`/assets/${asset.url.replace('.mp4', '-thumb.jpg')}`}
+                          >
+                            <source src={`/assets/${asset.url}`} type="video/mp4" />
+                            Your browser does not support the video element.
+                          </video>
+                          <div className="p-4">
+                            <div className="flex items-center gap-2 mb-2">
+                              <span className="font-medium text-foreground">Video</span>
+                              {asset.duration && (
+                                <Badge variant="secondary">{asset.duration}</Badge>
+                              )}
+                            </div>
+                            <p className="text-sm text-muted-foreground">{asset.caption}</p>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Lyrics Section */}
             {release.blog.lyrics && (
               <div className="mt-16">
@@ -130,6 +183,15 @@ const BlogPost = () => {
                 </div>
               </div>
             )}
+            {/* Recording Notes */}
+            <div className="mt-8 p-8 bg-primary/5 rounded-lg border border-primary/10">
+              <h3 className="text-xl font-display font-bold text-foreground mb-4">
+                Recording Notes
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {release.blog.recordingNotes}
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -156,7 +218,13 @@ const BlogPost = () => {
               variant="outline" 
               className="border-border hover:border-primary/50" 
               size="lg"
-              onClick={() => navigate("/")}
+              onClick={() => {
+                navigate("/");
+                // Small delay to ensure navigation completes, then trigger show all
+                setTimeout(() => {
+                  window.dispatchEvent(new CustomEvent('showAllReleases'));
+                }, 100);
+              }}
             >
               <ExternalLink className="w-5 h-5 mr-2" />
               More Releases
