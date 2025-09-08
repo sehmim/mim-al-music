@@ -1,12 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Music2, Zap, Heart } from "lucide-react";
 import content from "@/data/content.json";
-
-const iconMap = {
-  Music2,
-  Zap,
-  Heart
-};
+import mimAlImg from "@/assets/mim-al.jpg";
 
 const About = () => {
   return (
@@ -31,34 +25,17 @@ const About = () => {
                 </p>
               ))}
             </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 pt-6">
-              <Button className="btn-hero">
-                {content.about.buttons.primary}
-              </Button>
-              
-              <Button className="btn-secondary">
-                {content.about.buttons.secondary}
-              </Button>
-            </div>
           </div>
-          
-          {/* Features Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {content.about.features.map((feature, index) => {
-              const IconComponent = iconMap[feature.icon];
-              return (
-                <div key={index} className={`album-card text-center p-8 ${feature.icon === 'Heart' ? 'sm:col-span-2' : ''}`}>
-                  <IconComponent className={`w-12 h-12 mx-auto mb-4 ${
-                    feature.icon === 'Zap' ? 'text-secondary pink-glow' : 'text-primary electric-glow'
-                  }`} />
-                  <h3 className="font-display font-bold text-lg mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground text-sm">
-                    {feature.description}
-                  </p>
-                </div>
-              );
-            })}
+
+          {/* Right-side Image */}
+          <div className="relative">
+            <div className="rounded-2xl overflow-hidden border border-border shadow-[0_0_40px_hsl(var(--primary)/0.15)]">
+              <img
+                src={mimAlImg}
+                alt="Mim Al portrait"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>

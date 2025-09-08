@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "MIM AL",
-    "subtitle": "Instrumental Guitarist from Canada",
+    "subtitle": "Instrumental Guitarist, singer song writter, producer, session guitarist from Canada",
     "description": "Crafting instrumental melodies that make the guitar sing on Spotify. Join me on a musical journey where every note tells a story.",
     "buttons": {
       "primary": "Listen Now",
@@ -118,9 +118,8 @@
   "about": {
     "heading": "About the Artist",
     "paragraphs": [
-      "Mim Al is a Canadian instrumental guitarist crafting melodic compositions that transcend language barriers. With a focus on ambient melodies and emotional storytelling through guitar, each piece invites listeners into a world where every note carries meaning.",
-      "From the contemplative depths of \"NoCebo\" to the dynamic energy of \"CHICKEN WITH It's HEAD CUT OFF,\" Mim Al's instrumental catalog explores the full spectrum of human emotion through carefully crafted guitar work.",
-      "Based in Canada, Mim Al creates music that bridges the gap between technical proficiency and emotional authenticity, proving that instrumental guitar can communicate as powerfully as any lyrics."
+      "Behind MIM AL lives MimTheHuman—the authentic voice that refuses to settle for surface-level art.",
+      "Mim Al is a Canadian instrumental guitarist crafting melodic compositions that transcend language barriers. With a focus on ambient melodies and emotional storytelling through guitar, each piece invites listeners into a world where every note carries meaning."
     ],
     "buttons": {
       "primary": "Discover the Music",
@@ -267,12 +266,12 @@
   "footer": {
     "brand": {
       "name": "MIM AL",
-      "description": "Rock with a twist. Unconventional sounds that challenge expectations and create something entirely new in the music landscape.",
-      "location": "Based in Nashville, TN"
+      "description": "",
+      "location": "Montreal, QC"
     },
     "quickLinks": {
-      "heading": "Quick Links",
-      "links": ["Latest Releases", "Tour Dates", "About", "Press Kit", "Contact"]
+      "heading": "",
+      "links": []
     },
     "contact": {
       "heading": "Get in Touch",

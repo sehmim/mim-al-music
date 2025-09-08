@@ -107,11 +107,6 @@
     height: 100%;
   }
 
-  .glitch::before {
-    animation: glitch-1 0.5s infinite;
-    color: hsl(var(--primary));
-    z-index: -1;
-  }
 
   .glitch::after {
     animation: glitch-2 0.5s infinite;
@@ -119,15 +114,59 @@
     z-index: -2;
   }
 
+  /* Static glitch (no movement) - intensified color flicker and slices */
+  .glitch-static {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .glitch-static::before,
+  .glitch-static::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .glitch-static::before {
+    color: hsl(var(--primary));
+    z-index: -1;
+    text-shadow: 0 0 14px hsl(var(--primary) / 0.9), 0 0 28px hsl(var(--primary) / 0.7);
+    mix-blend-mode: screen;
+    animation: glitch-flicker-1 0.55s infinite steps(1, end);
+    clip-path: polygon(0 0,100% 0,100% 35%,0 40%);
+  }
+
+  .glitch-static::after {
+    color: hsl(var(--secondary));
+    z-index: -2;
+    text-shadow: 0 0 14px hsl(var(--secondary) / 0.9), 0 0 28px hsl(var(--secondary) / 0.7);
+    mix-blend-mode: screen;
+    animation: glitch-flicker-2 0.6s infinite steps(1, end);
+    clip-path: polygon(0 60%,100% 55%,100% 100%,0 100%);
+  }
+
+  /* Optional middle slice via child span for extra pop */
+  .glitch-static > .slice {
+    position: absolute;
+    inset: 0;
+    color: hsl(var(--foreground));
+    text-shadow: 0 0 12px hsl(var(--secondary) / 0.7), 0 0 24px hsl(var(--primary) / 0.6);
+    mix-blend-mode: lighten;
+    clip-path: polygon(0 38%,100% 42%,100% 58%,0 54%);
+    animation: glitch-flicker-3 0.5s infinite steps(1, end);
+    pointer-events: none;
+  }
+
   /* Electric glow animations */
   .electric-glow {
     box-shadow: var(--shadow-electric);
-    animation: pulse-electric 2s ease-in-out infinite alternate;
   }
 
   .pink-glow {
     box-shadow: var(--shadow-pink);
-    animation: pulse-pink 2s ease-in-out infinite alternate;
   }
 
   /* Rock-style button hover effects */
@@ -227,4 +266,20 @@
   to {
     box-shadow: 0 0 40px hsl(var(--secondary) / 0.6);
   }
+}
+
+/* Glitch flicker keyframes (no movement) */
+@keyframes glitch-flicker-1 {
+  0%, 12%, 20%, 28%, 100% { opacity: 0.8; }
+  10%, 18%, 26% { opacity: 0.4; }
+}
+
+@keyframes glitch-flicker-2 {
+  0%, 14%, 22%, 30%, 100% { opacity: 0.8; }
+  8%, 16%, 24% { opacity: 0.5; }
+}
+
+@keyframes glitch-flicker-3 {
+  0%, 18%, 36%, 100% { opacity: 0.85; }
+  12%, 30% { opacity: 0.3; }
 }
