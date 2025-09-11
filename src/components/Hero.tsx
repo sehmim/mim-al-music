@@ -1,20 +1,15 @@
- 
 import content from '../data/content.json';
+import heroGif from '../assets/hero-background.gif';
 
 const Hero = () => {
-  const { video } = content.hero;
-  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video */}
+      {/* Background GIF */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <iframe
-          className="absolute top-1/2 left-1/2 w-[180%] h-[180%] -translate-x-1/2 -translate-y-1/2 md:w-[120%] md:h-[120%] lg:w-full lg:h-full"
-          src={`https://www.youtube.com/embed/${video.youtubeId}?autoplay=1&mute=1&controls=0&showinfo=0&modestbranding=1&loop=1&playlist=${video.youtubeId}&iv_load_policy=3&rel=0&playsinline=1&start=14`}
-          title={video.title}
-          allow="autoplay; fullscreen; picture-in-picture"
-          referrerPolicy="strict-origin-when-cross-origin"
-          frameBorder="0"
+        <img
+          src={heroGif}
+          alt="MIM AL background animation"
+          className="absolute top-1/2 left-1/2 w-[180%] h-[180%] -translate-x-1/2 -translate-y-1/2 md:w-[120%] md:h-[120%] lg:w-full lg:h-full object-cover"
         />
       </div>
       {/* Light glass + gradient overlays */}
