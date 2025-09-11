@@ -131,10 +131,6 @@ const LatestReleases = () => {
                     {release.date}
                   </p>
                 </div>
-                
-                <p className="text-muted-foreground leading-relaxed">
-                  {release.description}
-                </p>
               </div>
             </Link>
           ))}
