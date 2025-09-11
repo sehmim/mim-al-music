@@ -5,9 +5,12 @@ import {
   Twitter, 
   Youtube, 
   Mail,
-  ExternalLink
+  ExternalLink,
+  CheckCircle,
+  AlertCircle
 } from "lucide-react";
 import content from "@/data/content.json";
+import { useEmailCapture } from "@/hooks/use-email-capture";
 
 const iconMap = {
   Music,
@@ -18,6 +21,8 @@ const iconMap = {
 };
 
 const Social = () => {
+  const { email, isLoading, isSuccess, error, setEmail, submitEmail, handleKeyPress } = useEmailCapture();
+
   return (
     <section className="py-20 px-4 relative">
       {/* Electric Background Effects */}
@@ -59,6 +64,58 @@ const Social = () => {
               </a>
             );
           })}
+        </div>
+        
+        {/* Newsletter Signup */}
+        <div className="text-center album-card max-w-2xl mx-auto">
+          <h3 className="font-display font-bold text-xl mb-4">
+            {content.social.newsletter.heading}
+          </h3>
+          <p className="text-muted-foreground mb-6">
+            {content.social.newsletter.description}
+          </p>
+          
+          {isSuccess ? (
+            <div className="flex items-center justify-center gap-2 text-green-600 mb-4">
+              <CheckCircle className="w-5 h-5" />
+              <span className="font-medium">Welcome to the club! Check your email for confirmation.</span>
+            </div>
+          ) : (
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <div className="flex-1">
+                <input 
+                  type="email" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  onKeyPress={(e) => handleKeyPress(e, 'newsletter')}
+                  placeholder={content.social.newsletter.placeholder}
+                  className={`w-full px-4 py-3 bg-input border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-colors ${
+                    error ? 'border-red-500 focus:ring-red-500' : 'border-border focus:ring-primary'
+                  }`}
+                  disabled={isLoading}
+                  aria-label="Email address for newsletter"
+                  autoComplete="email"
+                />
+                {error && (
+                  <div className="flex items-center gap-1 mt-2 text-red-500 text-sm">
+                    <AlertCircle className="w-4 h-4" />
+                    <span>{error}</span>
+                  </div>
+                )}
+              </div>
+              <Button 
+                className="btn-hero"
+                onClick={() => submitEmail('newsletter')}
+                disabled={isLoading}
+              >
+                {isLoading ? 'Joining...' : content.social.newsletter.button}
+              </Button>
+            </div>
+          )}
+          
+          <p className="text-xs text-muted-foreground mt-4">
+            {content.social.newsletter.disclaimer}
+          </p>
         </div>
         
       </div>

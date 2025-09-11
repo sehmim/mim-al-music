@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, Ticket, Play } from "lucide-react";
+import { Calendar, MapPin, Ticket, Play, CheckCircle, AlertCircle } from "lucide-react";
 import content from "@/data/content.json";
+import { useEmailCapture } from "@/hooks/use-email-capture";
 
 const Tour = () => {
+  const { email, isLoading, isSuccess, error, setEmail, submitEmail, handleKeyPress } = useEmailCapture();
+  
   // Sort shows: upcoming first, then past shows
   const sortedShows = [...content.tour.shows].sort((a, b) => {
     const dateA = new Date(`${a.date} ${a.year}`);
@@ -125,16 +128,43 @@ const Tour = () => {
             {content.tour.newsletter.description}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input 
-              type="email" 
-              placeholder={content.tour.newsletter.placeholder}
-              className="flex-1 px-4 py-3 bg-input border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-            />
-            <Button className="btn-secondary">
-              {content.tour.newsletter.button}
-            </Button>
-          </div>
+          {isSuccess ? (
+            <div className="flex items-center justify-center gap-2 text-green-600 mb-4">
+              <CheckCircle className="w-5 h-5" />
+              <span className="font-medium">Thanks! You're subscribed to tour updates.</span>
+            </div>
+          ) : (
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <div className="flex-1">
+                <input 
+                  type="email" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  onKeyPress={(e) => handleKeyPress(e, 'tour')}
+                  placeholder={content.tour.newsletter.placeholder}
+                  className={`w-full px-4 py-3 bg-input border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-colors ${
+                    error ? 'border-red-500 focus:ring-red-500' : 'border-border focus:ring-primary'
+                  }`}
+                  disabled={isLoading}
+                  aria-label="Email address for tour updates"
+                  autoComplete="email"
+                />
+                {error && (
+                  <div className="flex items-center gap-1 mt-2 text-red-500 text-sm">
+                    <AlertCircle className="w-4 h-4" />
+                    <span>{error}</span>
+                  </div>
+                )}
+              </div>
+              <Button 
+                className="btn-secondary"
+                onClick={() => submitEmail('tour')}
+                disabled={isLoading}
+              >
+                {isLoading ? 'Subscribing...' : content.tour.newsletter.button}
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </section>
