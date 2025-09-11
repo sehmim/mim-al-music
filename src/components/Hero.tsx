@@ -1,5 +1,4 @@
 import content from '../data/content.json';
-import heroGif from '../assets/hero-background.gif';
 
 const Hero = () => {
   return (
@@ -7,9 +6,21 @@ const Hero = () => {
       {/* Background GIF */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <img
-          src={heroGif}
+          src="https://i.imgur.com/EDC4KKj.gif"
           alt="MIM AL background animation"
-          className="absolute top-1/2 left-1/2 w-[180%] h-[180%] -translate-x-1/2 -translate-y-1/2 md:w-[120%] md:h-[120%] lg:w-full lg:h-full object-cover"
+          className="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 object-cover"
+          style={{
+            filter: 'blur(2px)',
+            maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)',
+            WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)'
+          }}
+        />
+        {/* Additional blur overlay for edges */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.8) 100%)'
+          }}
         />
       </div>
       {/* Light glass + gradient overlays */}
