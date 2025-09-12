@@ -193,6 +193,10 @@
       "platforms": ["Spotify", "Apple Music", "YouTube Music", "SoundCloud", "Bandcamp"]
     }
   },
+  "otherProjects": {
+    "heading": "অন্যান্য প্রকল্প",
+    "visitButton": "প্রকল্প দেখুন"
+  },
   "footer": {
     "brand": {
       "name": "MIM AL",

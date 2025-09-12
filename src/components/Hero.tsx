@@ -1,7 +1,9 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useHighlight } from '@/hooks/use-highlight';
 
 const Hero = () => {
   const { content } = useLanguage();
+  const { ref, isHighlighted } = useHighlight<HTMLDivElement>();
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -36,7 +38,12 @@ const Hero = () => {
       {/* Hero Content */}
       <div className="relative z-10 text-center px-4 max-w-6xl mx-auto flex items-center justify-center min-h-screen">
         {/* Title with Glass Background Wrapper */}
-        <div className="bg-background/30 backdrop-blur-xl rounded-xl border border-white/20 shadow-2xl p-5">
+        <div 
+          ref={ref}
+          className={`bg-background/30 backdrop-blur-xl rounded-xl border border-white/20 shadow-2xl p-5 highlight-section ${
+            isHighlighted ? 'highlighted' : ''
+          }`}
+        >
           <h1 
             className="text-6xl md:text-[12rem] lg:text-[16rem] xl:text-[16rem] font-display font-black glitch-static leading-none hero-title-enhanced"
             data-text={content.hero.title}

@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useHighlight } from "@/hooks/use-highlight";
 import mimAlImg from "@/assets/mim-al.jpg";
 
 const About = () => {
   const { content } = useLanguage();
+  const { ref: textRef, isHighlighted: isTextHighlighted } = useHighlight<HTMLDivElement>();
+  const { ref: imageRef, isHighlighted: isImageHighlighted } = useHighlight<HTMLDivElement>();
   
   return (
     <section className="py-20 px-4 relative">
@@ -20,7 +23,12 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="space-y-6">
-            <div className="space-y-4">
+            <div 
+              ref={textRef}
+              className={`space-y-4 highlight-text ${
+                isTextHighlighted ? 'highlighted' : ''
+              }`}
+            >
               {content.about.paragraphs.map((paragraph, index) => (
                 <p key={index} className="text-lg text-muted-foreground leading-relaxed">
                   {paragraph}
@@ -31,7 +39,12 @@ const About = () => {
 
           {/* Right-side Image */}
           <div className="relative">
-            <div className="rounded-2xl overflow-hidden border border-border shadow-[0_0_40px_hsl(var(--primary)/0.15)]">
+            <div 
+              ref={imageRef}
+              className={`rounded-2xl overflow-hidden border border-border shadow-[0_0_40px_hsl(var(--primary)/0.15)] highlight-image ${
+                isImageHighlighted ? 'highlighted' : ''
+              }`}
+            >
               <img
                 src={mimAlImg}
                 alt="Mim Al portrait"

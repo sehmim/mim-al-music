@@ -359,6 +359,10 @@
       "platforms": ["Spotify", "Apple Music", "YouTube Music", "SoundCloud", "Bandcamp"]
     }
   },
+  "otherProjects": {
+    "heading": "Autres Projets",
+    "visitButton": "Visiter le Projet"
+  },
   "footer": {
     "brand": {
       "name": "MIM AL",

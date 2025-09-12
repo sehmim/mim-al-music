@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Press from "@/components/Press";
 import Tour from "@/components/Tour";
 import Social from "@/components/Social";
+import OtherProjects from "@/components/OtherProjects";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -15,6 +16,7 @@ const Index = () => {
       {/* <Press /> */}
       <Tour />
       <Social />
+      <OtherProjects />
       <Footer />
     </main>
   );
