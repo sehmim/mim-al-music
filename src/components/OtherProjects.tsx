@@ -16,9 +16,38 @@ const projectImages: { [key: string]: string } = {
   "mimthehuman-placeholder.jpg": mimthehumanImg,
 };
 
+// Individual Project Card Component
+const ProjectCard = ({ project }: { project: any }) => {
+  const { ref, isHighlighted } = useHighlight<HTMLAnchorElement>();
+  
+  return (
+    <a
+      ref={ref}
+      href={project.projectLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`album-card group text-center hover:scale-105 transition-all duration-300 block cursor-pointer highlight-section ${
+        isHighlighted ? 'highlighted' : ''
+      }`}
+    >
+      <div className="relative mb-4 overflow-hidden rounded-lg">
+        <img
+          src={projectImages[project.projectImg] || project.projectImg}
+          alt={`${project.projectName} project image`}
+          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      </div>
+      
+      <h3 className="text-xl font-display font-bold text-primary group-hover:text-secondary transition-colors">
+        {project.projectName}
+      </h3>
+    </a>
+  );
+};
+
 const OtherProjects = () => {
   const { content } = useLanguage();
-  const { ref, isHighlighted } = useHighlight<HTMLDivElement>();
 
   return (
     <section className="py-20 px-4 relative">
@@ -32,33 +61,9 @@ const OtherProjects = () => {
           {content.otherProjects?.heading || "Other Projects"}
         </h2>
         
-        <div 
-          ref={ref}
-          className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 highlight-section ${
-            isHighlighted ? 'highlighted' : ''
-          }`}
-        >
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {projectsData.projects.map((project, index) => (
-            <a
-              key={index}
-              href={project.projectLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="album-card group text-center hover:scale-105 transition-all duration-300 block cursor-pointer"
-            >
-              <div className="relative mb-4 overflow-hidden rounded-lg">
-                <img
-                  src={projectImages[project.projectImg] || project.projectImg}
-                  alt={`${project.projectName} project image`}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              
-              <h3 className="text-xl font-display font-bold text-primary group-hover:text-secondary transition-colors">
-                {project.projectName}
-              </h3>
-            </a>
+            <ProjectCard key={index} project={project} />
           ))}
         </div>
       </div>
@@ -67,3 +72,4 @@ const OtherProjects = () => {
 };
 
 export default OtherProjects;
+

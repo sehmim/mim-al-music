@@ -13,10 +13,9 @@ const Index = () => {
       <Hero />
       <About />
       <LatestReleases />
-      {/* <Press /> */}
       <Tour />
-      <Social />
       <OtherProjects />
+      <Social />
       <Footer />
     </main>
   );
