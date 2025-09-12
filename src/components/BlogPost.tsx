@@ -11,7 +11,7 @@ import noceboImage from "@/assets/nocebo.jpg";
 import suddenConfusionImage from "@/assets/sudden-confusion.jpg";
 import contrastInMayImage from "@/assets/contrast-in-may.jpg";
 import ideaImage from "@/assets/idea.jpg";
-import content from "@/data/content.json";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const imageMap = {
   "not-so-special.jpg": notSoSpecial,
@@ -25,6 +25,7 @@ const imageMap = {
 };
 
 const BlogPost = () => {
+  const { content } = useLanguage();
   const { slug } = useParams();
   const navigate = useNavigate();
   

@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Ticket, Play, CheckCircle, AlertCircle } from "lucide-react";
-import content from "@/data/content.json";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { useEmailCapture } from "@/hooks/use-email-capture";
 
 const Tour = () => {
+  const { content, language } = useLanguage();
   const { email, isLoading, isSuccess, error, setEmail, submitEmail, handleKeyPress } = useEmailCapture();
   
   // Sort shows: upcoming first, then past shows
@@ -23,7 +24,7 @@ const Tour = () => {
     return dateA.getTime() - dateB.getTime();
   });
 
-  const isShowPast = (show: any) => {
+  const isShowPast = (show: { date: string; year: string }) => {
     const showDate = new Date(`${show.date} ${show.year}`);
     return showDate < new Date();
   };
@@ -42,8 +43,8 @@ const Tour = () => {
           {sortedShows.map((show, index) => {
             const isPast = isShowPast(show);
             return (
-            <div key={index} className="album-card group">
-              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+            <div key={index} className={`album-card group ${!isPast ? 'upcoming-show' : ''}`}>
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 lg:gap-8">
                 {/* Date */}
                 <div className="flex items-center gap-4">
                   <div className="text-center min-w-[80px]">
@@ -71,8 +72,8 @@ const Tour = () => {
                 
                 {/* Status & Tickets */}
                 <div className="flex items-center gap-4">
-                  <div className="text-right">
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                  <div className="flex items-center justify-end min-w-[100px]">
+                    <span className={`status-badge ${
                       isPast
                         ? "bg-muted text-muted-foreground"
                         : show.status === "Sold Out" 
@@ -81,12 +82,16 @@ const Tour = () => {
                         ? "bg-primary/20 text-primary"
                         : "bg-muted text-muted-foreground"
                     }`}>
-                      {isPast ? "Past Show" : show.status}
+                      {isPast ? (
+                        language === 'fr' ? "Spectacle Passé" : 
+                        language === 'bn' ? "পাস্ট শো" : 
+                        "Past Show"
+                      ) : show.status}
                     </span>
                   </div>
                   
                   <Button 
-                    className={isPast ? "btn-secondary" : (show.status === "Sold Out" ? "opacity-50 cursor-not-allowed" : "btn-hero")}
+                    className={`${isPast ? "btn-secondary" : (show.status === "Sold Out" ? "opacity-50 cursor-not-allowed" : "btn-hero")} whitespace-nowrap`}
                     disabled={show.status === "Sold Out" && !isPast}
                     size="sm"
                     onClick={() => {
@@ -102,13 +107,26 @@ const Tour = () => {
                     {isPast ? (
                       <>
                         <Play className="w-4 h-4 mr-2" />
-                        See Clips from Show
+                        {language === 'fr' ? "Clips du Spectacle" : 
+                         language === 'bn' ? "শো থেকে ক্লিপস" : 
+                         "Clips from Show"}
                       </>
                     ) : (
                       <>
                         <Ticket className="w-4 h-4 mr-2" />
-                        {show.status === "Sold Out" ? "Sold Out" : 
-                         show.status === "Coming Soon" ? "Notify Me" : "Get Tickets"}
+                        {show.status === "Sold Out" ? (
+                          language === 'fr' ? "Épuisé" : 
+                          language === 'bn' ? "বিক্রি শেষ" : 
+                          "Sold Out"
+                        ) : 
+                         show.status === "Coming Soon" ? (
+                           language === 'fr' ? "Me Notifier" : 
+                           language === 'bn' ? "আমাকে জানান" : 
+                           "Notify Me"
+                         ) : 
+                         (language === 'fr' ? "Obtenir Billets" : 
+                          language === 'bn' ? "টিকিট পান" : 
+                          "Get Tickets")}
                       </>
                     )}
                   </Button>
@@ -131,7 +149,11 @@ const Tour = () => {
           {isSuccess ? (
             <div className="flex items-center justify-center gap-2 text-green-600 mb-4">
               <CheckCircle className="w-5 h-5" />
-              <span className="font-medium">Thanks! You're subscribed to tour updates.</span>
+              <span className="font-medium">
+                {language === 'fr' ? "Merci ! Vous êtes abonné aux mises à jour de tournée." : 
+                 language === 'bn' ? "ধন্যবাদ! আপনি ট্যুর আপডেটের জন্য সাবস্ক্রাইব করেছেন।" : 
+                 "Thanks! You're subscribed to tour updates."}
+              </span>
             </div>
           ) : (
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
@@ -161,11 +183,16 @@ const Tour = () => {
                 onClick={() => submitEmail('tour')}
                 disabled={isLoading}
               >
-                {isLoading ? 'Subscribing...' : content.tour.newsletter.button}
+                {isLoading ? (
+                  language === 'fr' ? 'Abonnement...' : 
+                  language === 'bn' ? 'সাবস্ক্রাইব হচ্ছে...' : 
+                  'Subscribing...'
+                ) : content.tour.newsletter.button}
               </Button>
             </div>
           )}
         </div>
+        
       </div>
     </section>
   );

@@ -355,13 +355,6 @@
         "description": "Booking inquiries"
       }
     ],
-    "newsletter": {
-      "heading": "Join the Club",
-      "description": "Get exclusive access to new releases, behind-the-scenes content, early ticket access, and special fan-only experiences.",
-      "placeholder": "Enter your email",
-      "button": "Join Now",
-      "disclaimer": "No spam, just the good stuff. Unsubscribe anytime."
-    },
     "streaming": {
       "heading": "Stream Everywhere",
       "platforms": ["Spotify", "Apple Music", "YouTube Music", "SoundCloud", "Bandcamp"]

@@ -1,7 +1,9 @@
 import { Quote } from "lucide-react";
-import content from "@/data/content.json";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Press = () => {
+  const { content } = useLanguage();
+  
   return (
     <section className="py-20 px-4 relative">
       {/* Background Gradient */}

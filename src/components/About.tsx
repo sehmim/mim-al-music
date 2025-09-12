@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
-import content from "@/data/content.json";
+import { useLanguage } from "@/contexts/LanguageContext";
 import mimAlImg from "@/assets/mim-al.jpg";
 
 const About = () => {
+  const { content } = useLanguage();
+  
   return (
     <section className="py-20 px-4 relative">
       {/* Background Pattern */}

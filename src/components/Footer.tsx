@@ -1,7 +1,9 @@
 import { Music, Mail, MapPin } from "lucide-react";
-import content from "@/data/content.json";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { content } = useLanguage();
+  
   return (
     <footer className="py-16 px-4 border-t border-border relative">
       {/* Background Gradient */}

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { sendEmail, storeEmailLocally, EmailData } from '@/lib/emailjs';
 
 interface EmailCaptureState {
   email: string;
@@ -10,9 +9,9 @@ interface EmailCaptureState {
 
 interface EmailCaptureActions {
   setEmail: (email: string) => void;
-  submitEmail: (type: 'tour' | 'newsletter') => Promise<void>;
-  handleKeyPress: (e: React.KeyboardEvent, type: 'tour' | 'newsletter') => void;
+  submitEmail: (source: string) => Promise<void>;
   reset: () => void;
+  handleKeyPress: (e: React.KeyboardEvent, source: string) => void;
 }
 
 export const useEmailCapture = (): EmailCaptureState & EmailCaptureActions => {
@@ -26,10 +25,28 @@ export const useEmailCapture = (): EmailCaptureState & EmailCaptureActions => {
     return emailRegex.test(email);
   };
 
-  const submitEmail = async (type: 'tour' | 'newsletter'): Promise<void> => {
-    // Clear previous errors
-    setError(null);
-    
+  const storeEmailLocally = (email: string, source: string) => {
+    try {
+      const existingEmails = JSON.parse(localStorage.getItem('captured_emails') || '[]');
+      const newEmail = {
+        email,
+        source,
+        timestamp: new Date().toISOString(),
+        id: Date.now().toString()
+      };
+      
+      // Check if email already exists
+      const exists = existingEmails.some((item: any) => item.email === email);
+      if (!exists) {
+        existingEmails.push(newEmail);
+        localStorage.setItem('captured_emails', JSON.stringify(existingEmails));
+      }
+    } catch (error) {
+      console.error('Error storing email locally:', error);
+    }
+  };
+
+  const submitEmail = async (source: string) => {
     if (!email.trim()) {
       setError('Please enter your email address');
       return;
@@ -41,43 +58,23 @@ export const useEmailCapture = (): EmailCaptureState & EmailCaptureActions => {
     }
 
     setIsLoading(true);
+    setError(null);
 
     try {
-      const emailData: EmailData = {
-        email: email.trim(),
-        type,
-        timestamp: new Date().toISOString(),
-      };
-
-      // Try to send email via EmailJS first
-      try {
-        await sendEmail(emailData);
-        console.log(`Email sent successfully for ${type}:`, email);
-      } catch (emailError) {
-        console.warn('EmailJS failed, storing locally:', emailError);
-        // Fallback to localStorage if EmailJS fails
-        storeEmailLocally(emailData);
-      }
+      // For now, just store locally since we removed EmailJS
+      storeEmailLocally(email, source);
       
       setIsSuccess(true);
+      setEmail('');
       
-      // Reset form after 5 seconds to give user time to see success message
+      // Reset success state after 5 seconds
       setTimeout(() => {
-        reset();
+        setIsSuccess(false);
       }, 5000);
-      
-    } catch (err) {
-      console.error('Email capture failed:', err);
+    } catch (error) {
       setError('Something went wrong. Please try again.');
     } finally {
       setIsLoading(false);
-    }
-  };
-
-  const handleKeyPress = (e: React.KeyboardEvent, type: 'tour' | 'newsletter') => {
-    if (e.key === 'Enter' && !isLoading) {
-      e.preventDefault();
-      submitEmail(type);
     }
   };
 
@@ -88,6 +85,13 @@ export const useEmailCapture = (): EmailCaptureState & EmailCaptureActions => {
     setError(null);
   };
 
+  const handleKeyPress = (e: React.KeyboardEvent, source: string) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      submitEmail(source);
+    }
+  };
+
   return {
     email,
     isLoading,
@@ -95,7 +99,7 @@ export const useEmailCapture = (): EmailCaptureState & EmailCaptureActions => {
     error,
     setEmail,
     submitEmail,
-    handleKeyPress,
     reset,
+    handleKeyPress
   };
 };

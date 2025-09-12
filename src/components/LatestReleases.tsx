@@ -10,7 +10,7 @@ import noceboImage from "@/assets/nocebo.jpg";
 import suddenConfusionImage from "@/assets/sudden-confusion.jpg";
 import contrastInMayImage from "@/assets/contrast-in-may.jpg";
 import ideaImage from "@/assets/idea.jpg";
-import content from "@/data/content.json";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const imageMap = {
   "not-so-special.jpg": notSoSpecial,
@@ -24,6 +24,7 @@ const imageMap = {
 };
 
 const LatestReleases = () => {
+  const { content } = useLanguage();
   const [showAll, setShowAll] = useState(false);
   const [activeCard, setActiveCard] = useState<number | null>(null);
   const cardRefs = useRef<(HTMLAnchorElement | null)[]>([]);
