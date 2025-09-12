@@ -39,9 +39,12 @@ const OtherProjects = () => {
           }`}
         >
           {projectsData.projects.map((project, index) => (
-            <div
+            <a
               key={index}
-              className="album-card group text-center hover:scale-105 transition-all duration-300"
+              href={project.projectLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="album-card group text-center hover:scale-105 transition-all duration-300 block cursor-pointer"
             >
               <div className="relative mb-4 overflow-hidden rounded-lg">
                 <img
@@ -52,23 +55,10 @@ const OtherProjects = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               
-              <h3 className="text-xl font-display font-bold mb-2 text-primary group-hover:text-secondary transition-colors">
+              <h3 className="text-xl font-display font-bold text-primary group-hover:text-secondary transition-colors">
                 {project.projectName}
               </h3>
-              
-              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                {project.description}
-              </p>
-              
-              <a
-                href={project.projectLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary inline-block text-sm px-4 py-2"
-              >
-                {content.otherProjects?.visitButton || "Visit Project"}
-              </a>
-            </div>
+            </a>
           ))}
         </div>
       </div>
