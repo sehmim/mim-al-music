@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Play, ExternalLink, Music, Calendar } from "lucide-react";
+import { ArrowLeft, Play, ExternalLink, Music, Calendar, Smartphone, Youtube } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import notSoSpecial from "@/assets/not-so-special.jpg";
 import dimOutLights from "@/assets/dim-out-the-lights.jpg";
@@ -79,14 +79,34 @@ const BlogPost = () => {
                 {release.description}
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
                 <Button 
-                  className="btn-hero"
+                  className="btn-hero flex-shrink-0"
                   onClick={() => window.open(release.streamingUrl, '_blank')}
                 >
                   <Play className="w-4 h-4 mr-2" />
-                  Stream Now
+                  Spotify
                 </Button>
+                {release.appleMusicUrl && (
+                  <Button 
+                    variant="outline" 
+                    className="border-border hover:border-primary/50 flex-shrink-0" 
+                    onClick={() => window.open(release.appleMusicUrl, '_blank')}
+                  >
+                    <Smartphone className="w-4 h-4 mr-2" />
+                    Apple Music
+                  </Button>
+                )}
+                {release.youtubeMusicUrl && (
+                  <Button 
+                    variant="outline" 
+                    className="border-border hover:border-primary/50 flex-shrink-0" 
+                    onClick={() => window.open(release.youtubeMusicUrl, '_blank')}
+                  >
+                    <Youtube className="w-4 h-4 mr-2" />
+                    YouTube Music
+                  </Button>
+                )}
               </div>
             </div>
             
@@ -225,6 +245,28 @@ const BlogPost = () => {
               <Play className="w-5 h-5 mr-2" />
               Stream on Spotify
             </Button>
+            {release.appleMusicUrl && (
+              <Button 
+                variant="outline" 
+                className="border-border hover:border-primary/50" 
+                size="lg"
+                onClick={() => window.open(release.appleMusicUrl, '_blank')}
+              >
+                <Smartphone className="w-5 h-5 mr-2" />
+                Apple Music
+              </Button>
+            )}
+            {release.youtubeMusicUrl && (
+              <Button 
+                variant="outline" 
+                className="border-border hover:border-primary/50" 
+                size="lg"
+                onClick={() => window.open(release.youtubeMusicUrl, '_blank')}
+              >
+                <Youtube className="w-5 h-5 mr-2" />
+                YouTube Music
+              </Button>
+            )}
             <Button 
               variant="outline" 
               className="border-border hover:border-primary/50" 

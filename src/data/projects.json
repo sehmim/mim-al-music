@@ -7,22 +7,10 @@
       "description": "Alternative rock band exploring the depths of human experience through powerful melodies and introspective lyrics."
     },
     {
-      "projectName": "Sir Louie Band",
-      "projectImg": "sir-louie-band.png",
-      "projectLink": "https://www.youtube.com/watch?v=erDu2869QAc&list=RDerDu2869QAc&start_radio=1",
-      "description": "Blues and rock fusion project bringing classic sounds to modern audiences with soulful performances."
-    },
-    {
       "projectName": "Spectral Lights",
       "projectImg": "spectral-lights.jpg",
       "projectLink": "https://www.instagram.com/spectral.lights/",
       "description": "Experimental electronic and ambient project creating ethereal soundscapes and atmospheric compositions."
-    },
-    {
-      "projectName": "MimTheHuman",
-      "projectImg": "mimthehuman-placeholder.jpg",
-      "projectLink": "https://open.spotify.com/artist/0OzCetehVSJjbZfM9m0em8?si=Z1N7yKT-QO-rg0JjBT9yxg",
-      "description": "Solo project exploring the authentic voice that refuses to settle for surface-level art, pushing creative boundaries."
     }
   ]
 }

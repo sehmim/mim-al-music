@@ -11,9 +11,9 @@ const Index = () => {
   return (
     <main className="min-h-screen">
       <Hero />
-      <About />
       <LatestReleases />
       <Tour />
+      <About />
       <OtherProjects />
       <Social />
       <Footer />
