@@ -94,6 +94,68 @@
       }
     ]
   },
+  "services": {
+    "heading": "সেবা",
+    "subheading": "সেশন গিটার বা বেস, মিক্সিং এবং মাস্টারিং, বা স্টুডিও কাজের জন্য আমাকে নিয়োগ করুন।",
+    "offers": [
+      {
+        "title": "সেশন গিটারিস্ট / বেসিস্ট",
+        "description": "আপনার রেকর্ডের জন্য পেশাদার ট্র্যাক, রিমোট বা ইন-স্টুডিও।",
+        "bullets": [
+          "ইলেকট্রিক/অ্যাকোস্টিক/১২-স্ট্রিং গিটার",
+          "বেস লাইন এবং রিদম সেকশন", 
+          "রিভিশনের সাথে দ্রুত টার্নআরাউন্ড",
+          "বহু ধারা: রক, ইন্ডি, অল্টারনেটিভ, ম্যাথ রক"
+        ],
+        "ctas": [
+          {
+            "label": "কোট চাই",
+            "url": "mailto:Sehmim.al@gmail.com?subject=Session%20Guitar/Bass%20Inquiry&body=Hi Mim Al,%0A%0AI'm interested in hiring you for session work.%0A%0AProject Details:%0A- Type of work (guitar/bass):%0A- Genre:%0A- Timeline:%0A- Budget:%0A- Reference tracks:%0A%0APlease let me know your availability and rates.%0A%0AThank you!"
+          },
+          {
+            "label": "নমুনা শুনুন",
+            "url": "https://open.spotify.com/artist/4pRyem81jKHIJd1dhnwZ7T?si=SbsYITmBTL6tPorhOoKqNQ"
+          }
+        ]
+      },
+      {
+        "title": "মিক্সিং ও মাস্টারিং",
+        "description": "রেডিও-রেডি মিক্স এবং আপনার সাউন্ডের জন্য প্রতিযোগিতামূলক মাস্টার।",
+        "bullets": [
+          "স্টেম মিক্সিং এবং সম্পূর্ণ প্রোডাকশন",
+          "ভোকাল টিউনিং এবং এডিটিং",
+          "স্ট্রিমিং-অপ্টিমাইজড মাস্টারিং",
+          "বহু ফরম্যাট ডেলিভারি"
+        ],
+        "ctas": [
+          {
+            "label": "মিক্স শুরু করুন",
+            "url": "mailto:Sehmim.al@gmail.com?subject=Mixing%20and%20Mastering%20Inquiry&body=Hi Mim Al,%0A%0AI'm interested in your mixing and mastering services.%0A%0AProject Details:%0A- Number of tracks:%0A- Genre:%0A- Timeline:%0A- Reference tracks:%0A- Budget:%0A%0APlease let me know your rates and process.%0A%0AThank you!"
+          }
+        ]
+      },
+      {
+        "title": "স্টুডিও আর্টিস্ট",
+        "description": "সহযোগিতা, সহ-রচনা, এবং স্টুডিও ফিচার।",
+        "bullets": [
+          "লিড লাইন এবং সোলো",
+          "স্তরিত টেক্সচার এবং পরিবেশ",
+          "আরেঞ্জমেন্ট সাপোর্ট",
+          "সহ-রচনা এবং কম্পোজিশন"
+        ],
+        "ctas": [
+          {
+            "label": "সহযোগিতা করুন",
+            "url": "mailto:Sehmim.al@gmail.com?subject=Studio%20Artist%20Collaboration&body=Hi Mim Al,%0A%0AI'm interested in collaborating with you on a project.%0A%0AProject Details:%0A- Type of collaboration:%0A- Genre:%0A- Timeline:%0A- Your role:%0A- Budget:%0A%0APlease let me know your availability and terms.%0A%0AThank you!"
+          }
+        ]
+      }
+    ],
+    "primaryCta": {
+      "label": "আমাকে নিয়োগ করুন",
+      "url": "mailto:Sehmim.al@gmail.com?subject=Hire%20Mim%20Al%20-%20General%20Inquiry&body=Hi Mim Al,%0A%0AI'm interested in your services.%0A%0AProject Details:%0A- Type of work needed:%0A- Timeline:%0A- Budget:%0A- Additional details:%0A%0APlease let me know your availability and rates.%0A%0AThank you!"
+    }
+  },
   "press": {
     "heading": "প্রেস ও রিভিউ",
     "quotes": [
@@ -126,11 +188,19 @@
     "heading": "ট্যুরের তারিখ",
     "shows": [
       {
+        "date": "সেপ্টেম্বর 28",
+        "year": "2025",
+        "venue": "Turbo Haus",
+        "city": "মন্ট্রিয়ল, QC",
+        "status": "নতুন শো",
+        "ticketUrl": "https://www.instagram.com/p/DO_roPGEc6W/"
+      },
+      {
         "date": "মে 22",
         "year": "2025",
         "venue": "Toscadura",
         "city": "মন্ট্রিয়ল, QC",
-        "status": "বিক্রিতে",
+        "status": "পূর্বের শো",
         "ticketUrl": "https://www.instagram.com/mimthehuman/"
       },
       {
@@ -138,15 +208,15 @@
         "year": "2025",
         "venue": "P'tit Ours",
         "city": "মন্ট্রিয়ল, QC",
-        "status": "বিক্রিতে",
+        "status": "পূর্বের শো",
         "ticketUrl": "https://www.instagram.com/mimthehuman/"
       },
       {
         "date": "সেপ্টেম্বর 17",
-        "year": "2025",
+        "year": "2024",
         "venue": "Casa Del Popolo",
         "city": "মন্ট্রিয়ল, QC",
-        "status": "বিক্রিতে",
+        "status": "পূর্বের শো",
         "ticketUrl": "https://tickets.venuepilot.com/e/dante-s-paradise-and-dollhouse-2025-09-17-casa-del-popolo-montreal-9cc03e"
       },
       {

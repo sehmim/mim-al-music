@@ -64,59 +64,48 @@ const BlogPost = () => {
             Back to Home
           </Button>
           
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <Badge variant="secondary" className="mb-4">
-                <Calendar className="w-3 h-3 mr-1" />
-                {release.date}
-              </Badge>
-              
-              <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6 leading-tight">
-                {release.title}
-              </h1>
-              
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                {release.description}
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
-                <Button 
-                  className="btn-hero flex-shrink-0"
-                  onClick={() => window.open(release.streamingUrl, '_blank')}
-                >
-                  <Play className="w-4 h-4 mr-2" />
-                  Spotify
-                </Button>
-                {release.appleMusicUrl && (
-                  <Button 
-                    variant="outline" 
-                    className="border-border hover:border-primary/50 flex-shrink-0" 
-                    onClick={() => window.open(release.appleMusicUrl, '_blank')}
-                  >
-                    <Smartphone className="w-4 h-4 mr-2" />
-                    Apple Music
-                  </Button>
-                )}
-                {release.youtubeMusicUrl && (
-                  <Button 
-                    variant="outline" 
-                    className="border-border hover:border-primary/50 flex-shrink-0" 
-                    onClick={() => window.open(release.youtubeMusicUrl, '_blank')}
-                  >
-                    <Youtube className="w-4 h-4 mr-2" />
-                    YouTube Music
-                  </Button>
-                )}
-              </div>
-            </div>
+          <div className="text-center max-w-3xl mx-auto">
+            <Badge variant="secondary" className="mb-4">
+              <Calendar className="w-3 h-3 mr-1" />
+              {release.date}
+            </Badge>
             
-            <div className="relative">
-              <img 
-                src={imageMap[release.image]} 
-                alt={release.title}
-                className="w-full aspect-square object-cover rounded-lg shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-lg" />
+            <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6 leading-tight">
+              {release.title}
+            </h1>
+            
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              {release.description}
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 flex-wrap justify-center">
+              <Button 
+                className="btn-hero flex-shrink-0"
+                onClick={() => window.open(release.streamingUrl, '_blank')}
+              >
+                <Play className="w-4 h-4 mr-2" />
+                Spotify
+              </Button>
+              {release.appleMusicUrl && (
+                <Button 
+                  variant="outline" 
+                  className="border-border hover:border-primary/50 flex-shrink-0" 
+                  onClick={() => window.open(release.appleMusicUrl, '_blank')}
+                >
+                  <Smartphone className="w-4 h-4 mr-2" />
+                  Apple Music
+                </Button>
+              )}
+              {release.youtubeMusicUrl && (
+                <Button 
+                  variant="outline" 
+                  className="border-border hover:border-primary/50 flex-shrink-0" 
+                  onClick={() => window.open(release.youtubeMusicUrl, '_blank')}
+                >
+                  <Youtube className="w-4 h-4 mr-2" />
+                  YouTube Music
+                </Button>
+              )}
             </div>
           </div>
         </div>
