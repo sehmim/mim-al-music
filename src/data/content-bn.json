@@ -188,6 +188,14 @@
     "heading": "ট্যুরের তারিখ",
     "shows": [
       {
+        "date": "জানুয়ারি 9",
+        "year": "2026",
+        "venue": "Barfly",
+        "city": "মন্ট্রিয়ল, QC",
+        "status": "নতুন শো",
+        "ticketUrl": "https://www.instagram.com/mimthehuman/"
+      },
+      {
         "date": "সেপ্টেম্বর 28",
         "year": "2025",
         "venue": "Turbo Haus",
@@ -212,12 +220,20 @@
         "ticketUrl": "https://www.instagram.com/mimthehuman/"
       },
       {
+        "date": "ডিসেম্বর 3",
+        "year": "2025",
+        "venue": "L'Escogriffe Bar",
+        "city": "মন্ট্রিয়ল, QC",
+        "status": "পূর্বের শো",
+        "ticketUrl": "https://www.youtube.com/shorts/a3-yqYkVMjc?t=23&feature=share"
+      },
+      {
         "date": "সেপ্টেম্বর 17",
         "year": "2024",
         "venue": "Casa Del Popolo",
         "city": "মন্ট্রিয়ল, QC",
         "status": "পূর্বের শো",
-        "ticketUrl": "https://tickets.venuepilot.com/e/dante-s-paradise-and-dollhouse-2025-09-17-casa-del-popolo-montreal-9cc03e"
+        "ticketUrl": "https://www.youtube.com/watch?v=zW2MA6EUZAI"
       },
       {
         "date": "অক্টোবর 20",

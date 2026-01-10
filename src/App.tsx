@@ -9,6 +9,7 @@ import LanguageDropdown from "./components/LanguageDropdown";
 import Index from "./pages/Index";
 import BlogPost from "./components/BlogPost";
 import NotFound from "./pages/NotFound";
+import ExcelDownloader from "./pages/ExcelDownloader";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const AppContent = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/payments-report" element={<ExcelDownloader />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

@@ -354,6 +354,14 @@
     "heading": "Dates de Tournée",
     "shows": [
       {
+        "date": "JANV 9",
+        "year": "2026",
+        "venue": "Barfly",
+        "city": "Montréal, QC",
+        "status": "Nouveau Spectacle",
+        "ticketUrl": "https://www.instagram.com/mimthehuman/"
+      },
+      {
         "date": "SEPT 28",
         "year": "2025",
         "venue": "Turbo Haus",
@@ -378,12 +386,20 @@
         "ticketUrl": "https://www.instagram.com/mimthehuman/"
       },
       {
+        "date": "DÉC 3",
+        "year": "2025",
+        "venue": "L'Escogriffe Bar",
+        "city": "Montréal, QC",
+        "status": "Spectacle Passé",
+        "ticketUrl": "https://www.youtube.com/shorts/a3-yqYkVMjc?t=23&feature=share"
+      },
+      {
         "date": "SEPT 17",
         "year": "2024",
         "venue": "Casa Del Popolo",
         "city": "Montréal, QC",
         "status": "Spectacle Passé",
-        "ticketUrl": "https://tickets.venuepilot.com/e/dante-s-paradise-and-dollhouse-2025-09-17-casa-del-popolo-montreal-9cc03e"
+        "ticketUrl": "https://www.youtube.com/watch?v=zW2MA6EUZAI"
       },
       {
         "date": "OCT 20",

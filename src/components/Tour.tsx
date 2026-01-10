@@ -20,7 +20,8 @@ const TourDate = ({ show, language }: {
   
   const isShowPast = (show: { date: string; year: string }) => {
     const showDate = new Date(`${show.date} ${show.year}`);
-    const today = new Date('2025-09-11'); // September 11, 2025
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Reset time to midnight for accurate date comparison
     return showDate < today;
   };
 
@@ -96,9 +97,9 @@ const TourDate = ({ show, language }: {
             {isPast ? (
               <>
                 <Play className="w-4 h-4 mr-2" />
-                {language === 'fr' ? "Clips du Spectacle" : 
-                 language === 'bn' ? "শো থেকে ক্লিপস" : 
-                 "Clips from Show"}
+                {language === 'fr' ? "Clips du Spectacle" :
+                 language === 'bn' ? "শো থেকে ক্লিপস" :
+                 "Clips from the Show"}
               </>
             ) : (
               <>
