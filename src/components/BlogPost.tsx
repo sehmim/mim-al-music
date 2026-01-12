@@ -24,12 +24,34 @@ const imageMap = {
   "idea.jpg": ideaImage
 };
 
+const getYoutubeEmbedUrl = (url: string) => {
+  if (!url || url === "#") return null;
+  try {
+    const parsed = new URL(url);
+    let videoId = "";
+
+    if (parsed.hostname.includes("youtu.be")) {
+      videoId = parsed.pathname.replace("/", "");
+    } else {
+      videoId = parsed.searchParams.get("v") || "";
+    }
+
+    if (!videoId) return null;
+    return `https://www.youtube.com/embed/${videoId}`;
+  } catch {
+    return null;
+  }
+};
+
 const BlogPost = () => {
   const { content } = useLanguage();
   const { slug } = useParams();
   const navigate = useNavigate();
   
   const release = content.releases.find(r => r.slug === slug);
+  const musicVideoEmbed = release?.blog?.musicVideo
+    ? getYoutubeEmbedUrl(release.blog.musicVideo)
+    : null;
 
   // Scroll to top when component mounts
   useEffect(() => {
@@ -184,6 +206,24 @@ const BlogPost = () => {
                       )}
                     </div>
                   ))}
+                </div>
+              </div>
+            )}
+
+            {/* Music Video */}
+            {musicVideoEmbed && (
+              <div className="mt-12">
+                <h3 className="text-2xl font-display font-bold text-foreground mb-6">
+                  Video
+                </h3>
+                <div className="aspect-video w-full overflow-hidden rounded-lg border border-border bg-black">
+                  <iframe
+                    className="w-full h-full"
+                    src={musicVideoEmbed}
+                    title={`${release.title} video`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
                 </div>
               </div>
             )}

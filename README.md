@@ -4,6 +4,8 @@
 
 A music artist website built with modern web technologies.
 
+## About this website
+
 ## How can I edit this code?
 
 There are several ways of editing your application.
@@ -54,6 +56,11 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## Test
+
+- testing 1
+- New test file: `tests/example.test.ts`
+
 ## How can I deploy this project?
 
 You can deploy this project using any static hosting service such as Vercel, Netlify, or GitHub Pages.
@@ -64,3 +71,5 @@ npm run build
 ```
 
 Then deploy the `dist` folder to your preferred hosting service.
+
+## Test Title
