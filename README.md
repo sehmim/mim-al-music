@@ -56,10 +56,9 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## Test
+## Testing
 
-- testing 1
-- New test file: `tests/example.test.ts`
+Testing
 
 ## How can I deploy this project?
 
