@@ -108,7 +108,7 @@ const Hero = () => {
           {/* Linktree-style Links */}
           <div className="flex flex-col gap-3 w-full max-w-xs">
             <a
-              href="https://open.spotify.com/artist/YOUR_SPOTIFY_ID"
+              href="https://open.spotify.com/artist/4pRyem81jKHIJd1dhnwZ7T?si=BGu1jhJ8SnecT9Ca2HdvsQ"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 w-full py-3 px-6 bg-background/30 backdrop-blur-xl rounded-xl border border-white/20 shadow-2xl text-white font-semibold transition-all duration-300 hover:bg-background/50 hover:scale-105"
@@ -117,7 +117,7 @@ const Hero = () => {
               Spotify
             </a>
             <a
-              href="https://instagram.com/YOUR_INSTAGRAM_HANDLE"
+              href="https://www.instagram.com/mimthehuman/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 w-full py-3 px-6 bg-background/30 backdrop-blur-xl rounded-xl border border-white/20 shadow-2xl text-white font-semibold transition-all duration-300 hover:bg-background/50 hover:scale-105"
@@ -126,7 +126,7 @@ const Hero = () => {
               Instagram
             </a>
             <a
-              href="https://music.youtube.com/channel/YOUR_YOUTUBE_MUSIC_ID"
+              href="https://music.youtube.com/channel/UCg4ay-Op0xNcciCRgCo6_cQ?si=uLZgUrAZNyLwwClh"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 w-full py-3 px-6 bg-background/30 backdrop-blur-xl rounded-xl border border-white/20 shadow-2xl text-white font-semibold transition-all duration-300 hover:bg-background/50 hover:scale-105"
