@@ -14,6 +14,144 @@
   },
   "releases": [
     {
+      "title": "By Any Means",
+      "date": "2026",
+      "image": "by-any-means.jpg",
+      "description": "A driving collaboration with JazzPizza",
+      "streamingUrl": "https://open.spotify.com/track/3FJMZGl5WQfjKF4eX3WNXB",
+      "appleMusicUrl": "https://music.apple.com/us/album/by-any-means-feat-jazzpizza/6794716086?i=6794716087",
+      "duration": "3:45",
+      "slug": "by-any-means",
+      "blog": {
+        "content": [
+          "<strong>\"By Any Means\"</strong> is the rock single MIM AL released on <strong>July 31, 2026</strong>. It runs 3:45, it is self-released, and it is the second track to pair the Montreal guitarist and songwriter with <a href=\"https://open.spotify.com/artist/5oIYTm3LRudC943Fklmctb\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:text-secondary transition-colors underline\">JazzPizza</a> — following their first team-up on <a href=\"/blog/odd-directions\" class=\"text-primary hover:text-secondary transition-colors underline\">Odd Directions</a> three months earlier.",
+          "Where <a href=\"/blog/odd-directions\" class=\"text-primary hover:text-secondary transition-colors underline\">Odd Directions</a> was a 2:34 sprint, \"By Any Means\" takes its time. At more than a minute longer it is the heavier and more deliberate of the two collaborations, and Apple Music files it under <strong>Rock</strong> rather than the Alternative tag that covered the spring releases — a fair read of a track that leans hard into the guitar-forward side of MIM AL's writing while JazzPizza's vocal holds the centre.",
+          "It closes out a run of four MIM AL releases in 2026: <a href=\"/blog/odd-directions\" class=\"text-primary hover:text-secondary transition-colors underline\">Odd Directions</a> in April, the self-titled <a href=\"/blog/mim-al-ep\" class=\"text-primary hover:text-secondary transition-colors underline\">MIM AL EP</a> in May, and this single at the end of July. For a project that spent 2024 and 2025 putting out one song at a time, that is the busiest stretch in the catalogue so far.",
+          "\"By Any Means\" is out now on Spotify and Apple Music."
+        ],
+        "inspiration": "A follow-up to Odd Directions, written to push the MIM AL / JazzPizza collaboration somewhere heavier and give the idea more room than a two-and-a-half-minute single allows.",
+        "recordingNotes": "Released July 31, 2026 as a standalone single. Runtime 3:45. Featuring JazzPizza. Self-released (℗ 2026 MIM AL). Genre: Rock.",
+        "musicVideo": "#",
+        "lyrics": "",
+        "assets": []
+      },
+      "releaseDate": "2026-07-31",
+      "genre": "Rock",
+      "label": "Self-released",
+      "credits": [
+        {
+          "role": "Written, performed and produced by",
+          "name": "MIM AL"
+        },
+        {
+          "role": "Featuring",
+          "name": "JazzPizza",
+          "url": "https://open.spotify.com/artist/5oIYTm3LRudC943Fklmctb"
+        }
+      ],
+      "seo": {
+        "description": "By Any Means (feat. JazzPizza) is the July 2026 rock single from Montreal artist MIM AL — 3:45, self-released, the second MIM AL x JazzPizza collaboration. Stream it and read the story behind the track.",
+        "keywords": "By Any Means, MIM AL, JazzPizza, MIM AL By Any Means, rock single 2026, Montreal rock, alternative rock, indie rock 2026, MimTheHuman"
+      }
+    },
+    {
+      "title": "MIM AL",
+      "date": "2026",
+      "image": "mim-al-ep.jpg",
+      "description": "The self-titled EP — SHIMMER, ROSE and IN A WORLD",
+      "streamingUrl": "https://open.spotify.com/album/746sPkFgNP55jws0xOeRir",
+      "appleMusicUrl": "https://music.apple.com/us/album/mim-al-single/1892870074",
+      "duration": "14:35",
+      "slug": "mim-al-ep",
+      "blog": {
+        "content": [
+          "<strong>\"MIM AL\"</strong> is the self-titled EP, released <strong>May 7, 2026</strong>. Three tracks, fourteen minutes and thirty-five seconds, self-released: <strong>SHIMMER</strong> (6:04), <strong>ROSE</strong> (4:16) and <strong>IN A WORLD</strong> (4:15).",
+          "It is the first MIM AL release built as a body of work rather than a single. Everything before it — <a href=\"/blog/chicken-with-its-head-cut-off\" class=\"text-primary hover:text-secondary transition-colors underline\">CHICKEN WITH It's HEAD CUT OFF</a>, <a href=\"/blog/dim-out-the-lights\" class=\"text-primary hover:text-secondary transition-colors underline\">Dim Out the Lights</a>, <a href=\"/blog/not-so-special\" class=\"text-primary hover:text-secondary transition-colors underline\">Not So Special</a>, <a href=\"/blog/nocebo\" class=\"text-primary hover:text-secondary transition-colors underline\">NoCebo</a> — arrived one song at a time. Putting the project's own name on a set of three is the point: this is what MIM AL sounds like when the songs are allowed to sit next to each other.",
+          "<strong>ROSE</strong> came first. It went out as a standalone single on <strong>April 4, 2026</strong>, a month before the EP, and now sits at track two — the lead single that pulled the rest of the record into view.",
+          "<strong>SHIMMER</strong> opens, and at 6:04 it is the longest thing in the MIM AL catalogue by a wide margin — room for the math-rock and midwest-emo threads in the guitar writing to actually unwind instead of being compressed into a three-minute single. <strong>IN A WORLD</strong> closes at 4:15.",
+          "Apple Music classes the EP as <strong>Alternative</strong>. Stream all three tracks on Spotify and Apple Music."
+        ],
+        "inspiration": "The first MIM AL release conceived as a set rather than a single — three songs written to be heard in sequence, led out by ROSE a month ahead of the full EP.",
+        "recordingNotes": "Three-track self-titled EP released May 7, 2026. Total runtime 14:35. Tracklist: SHIMMER (6:04), ROSE (4:16), IN A WORLD (4:15). ROSE was issued separately as a single on April 4, 2026. Self-released (℗ 2026 MIM AL). Genre: Alternative.",
+        "musicVideo": "#",
+        "lyrics": "",
+        "assets": []
+      },
+      "releaseDate": "2026-05-07",
+      "genre": "Alternative",
+      "label": "Self-released",
+      "trackList": [
+        {
+          "number": 1,
+          "name": "SHIMMER",
+          "duration": "6:04"
+        },
+        {
+          "number": 2,
+          "name": "ROSE",
+          "duration": "4:16"
+        },
+        {
+          "number": 3,
+          "name": "IN A WORLD",
+          "duration": "4:15"
+        }
+      ],
+      "credits": [
+        {
+          "role": "Written, performed and produced by",
+          "name": "MIM AL"
+        }
+      ],
+      "seo": {
+        "title": "MIM AL — Self-Titled EP (2026) | SHIMMER, ROSE, IN A WORLD",
+        "description": "MIM AL is the self-titled 2026 EP from the Montreal alternative rock artist — three tracks, 14:35: SHIMMER, ROSE and IN A WORLD. Tracklist, runtimes and the story behind the first MIM AL body of work.",
+        "keywords": "MIM AL EP, MIM AL self-titled, SHIMMER, ROSE, IN A WORLD, MIM AL tracklist, alternative rock EP 2026, Montreal alternative rock, indie rock EP, math rock, midwest emo, MimTheHuman"
+      }
+    },
+    {
+      "title": "Odd Directions",
+      "date": "2026",
+      "image": "odd-directions.jpg",
+      "description": "A short, sharp collaboration with JazzPizza",
+      "streamingUrl": "https://open.spotify.com/track/3R6WIZbAQpW5rKSJfw213C",
+      "appleMusicUrl": "https://music.apple.com/us/album/odd-directions-feat-jazzpizza/1892410226?i=1892410227",
+      "duration": "2:34",
+      "slug": "odd-directions",
+      "blog": {
+        "content": [
+          "<strong>\"Odd Directions\"</strong> is the single MIM AL released on <strong>April 21, 2026</strong>, featuring <a href=\"https://open.spotify.com/artist/5oIYTm3LRudC943Fklmctb\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:text-secondary transition-colors underline\">JazzPizza</a>. At <strong>2:34</strong> it is the shortest release in the catalogue — and the most direct.",
+          "That length is the whole design. There is no second act and no long outro: one idea, stated and carried through to the end, with nothing left over. Set against a track like <a href=\"/blog/chicken-with-its-head-cut-off\" class=\"text-primary hover:text-secondary transition-colors underline\">CHICKEN WITH It's HEAD CUT OFF</a> — nearly twice as long, with a guitar solo and a saxophone break — it shows the other end of how MIM AL writes.",
+          "It was the first of two collaborations with JazzPizza in 2026. The second, <a href=\"/blog/by-any-means\" class=\"text-primary hover:text-secondary transition-colors underline\">By Any Means</a>, landed on July 31 and took the same partnership somewhere heavier and a minute longer.",
+          "\"Odd Directions\" also opened the busiest year in the project's history: this single in April, the self-titled <a href=\"/blog/mim-al-ep\" class=\"text-primary hover:text-secondary transition-colors underline\">MIM AL EP</a> in May, and <a href=\"/blog/by-any-means\" class=\"text-primary hover:text-secondary transition-colors underline\">By Any Means</a> in July.",
+          "Filed under <strong>Alternative</strong>. Out now on Spotify and Apple Music."
+        ],
+        "inspiration": "A first collaboration with JazzPizza, kept deliberately short — one idea carried start to finish with nothing left over.",
+        "recordingNotes": "Released April 21, 2026 as a standalone single. Runtime 2:34. Featuring JazzPizza. Self-released (℗ 2026 MIM AL). Genre: Alternative.",
+        "musicVideo": "#",
+        "lyrics": "",
+        "assets": []
+      },
+      "releaseDate": "2026-04-21",
+      "genre": "Alternative",
+      "label": "Self-released",
+      "credits": [
+        {
+          "role": "Written, performed and produced by",
+          "name": "MIM AL"
+        },
+        {
+          "role": "Featuring",
+          "name": "JazzPizza",
+          "url": "https://open.spotify.com/artist/5oIYTm3LRudC943Fklmctb"
+        }
+      ],
+      "seo": {
+        "description": "Odd Directions (feat. JazzPizza) is the April 2026 single from Montreal artist MIM AL — 2:34, the shortest and most direct track in the catalogue, and the first MIM AL x JazzPizza collaboration.",
+        "keywords": "Odd Directions, MIM AL, JazzPizza, MIM AL Odd Directions, alternative single 2026, Montreal indie rock, math rock, alternative rock 2026, MimTheHuman"
+      }
+    },
+    {
       "title": "CHICKEN WITH It's HEAD CUT OFF",
       "date": "2025",
       "image": "chicken-with-head-cut-off.jpeg",
@@ -48,7 +186,9 @@
             "alt": "Creative concept artwork for CHICKEN WITH It's HEAD CUT OFF"
           }
         ]
-      }
+      },
+      "releaseDate": "2025-03-31",
+      "genre": "Alternative"
     },
     {
       "title": "Not So Special",
@@ -73,7 +213,9 @@
         "musicVideo": "#",
         "lyrics": "Not so special\n\nI hope this time\nLuck is on my side\nI know for sure\nI will be this time\nFor you\n\nYou choose.\nWhat is the right time.\nWhen the sky is clear\nAnd the stars are aligned\nFor you\n\n\nMy eyes are cold\nBut my vision can't deny\nThat you would choose\nThe one who would lie,\nWhen the sky is clear\nAnd the starts are aligned\nIf you dont believe\nIt won't be this time\n\nFor you",
         "assets": []
-      }
+      },
+      "releaseDate": "2025-01-17",
+      "genre": "Rock"
     },
     {
       "title": "Dim Out the Lights",
@@ -105,7 +247,9 @@
             "alt": "Dim Out the Lights album cover"
           }
         ]
-      }
+      },
+      "releaseDate": "2025-02-07",
+      "genre": "Rock"
     },
     {
       "title": "NoCebo",
@@ -116,7 +260,10 @@
       "appleMusicUrl": "https://music.apple.com/us/song/sudden-confusion/1735204987",
       "youtubeMusicUrl": "https://music.youtube.com/watch?v=G7A8Y5Husco&si=RkM7gqPAUIrb_vNM",
       "duration": "3:45",
-      "collaborators": ["Loowi", "MYIASIS"],
+      "collaborators": [
+        "Loowi",
+        "MYIASIS"
+      ],
       "slug": "nocebo",
       "blog": {
         "content": [
@@ -156,7 +303,9 @@
         "recordingNotes": "This track was a collaboration between MIM AL and drummer Carl.",
         "musicVideo": "https://www.youtube.com/watch?v=rfZCimlmh3s",
         "lyrics": ""
-      }
+      },
+      "releaseDate": "2024-03-19",
+      "genre": "Metal"
     },
     {
       "title": "Contrast in May",
@@ -276,7 +425,7 @@
         "description": "Professional tracks for your record, remote or in-studio.",
         "bullets": [
           "Electric/Acoustic/12-string guitar",
-          "Bass lines and rhythm sections", 
+          "Bass lines and rhythm sections",
           "Fast turnaround with revisions",
           "Multiple genres: rock, indie, alternative, math rock"
         ],
@@ -356,14 +505,13 @@
           "email": "press@mimal.music"
         },
         "secondary": {
-          "text": "Download Press Kit", 
+          "text": "Download Press Kit",
           "url": "#"
         }
       }
     }
   },
   "tour": {
-    
     "heading": "Tour Dates",
     "shows": [
       {
@@ -457,7 +605,13 @@
     ],
     "streaming": {
       "heading": "Stream Everywhere",
-      "platforms": ["Spotify", "Apple Music", "YouTube Music", "SoundCloud", "Bandcamp"]
+      "platforms": [
+        "Spotify",
+        "Apple Music",
+        "YouTube Music",
+        "SoundCloud",
+        "Bandcamp"
+      ]
     }
   },
   "otherProjects": {
@@ -482,7 +636,7 @@
           "address": ""
         },
         {
-          "label": "", 
+          "label": "",
           "address": ""
         }
       ]

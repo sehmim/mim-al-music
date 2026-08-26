@@ -2,13 +2,14 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 import contentEn from '../data/content.json';
 import contentFr from '../data/content-fr.json';
 import contentBn from '../data/content-bn.json';
+import type { SiteContent } from '@/types/content';
 
 export type Language = 'en' | 'fr' | 'bn';
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  content: typeof contentEn;
+  content: SiteContent;
   t: (key: string) => string;
 }
 
@@ -34,7 +35,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     localStorage.setItem('mim-al-language', language);
   }, [language]);
 
-  const content = language === 'fr' ? contentFr : language === 'bn' ? contentBn : contentEn;
+  const content = (language === 'fr' ? contentFr : language === 'bn' ? contentBn : contentEn) as unknown as SiteContent;
 
   // Simple translation function for dynamic content
   const t = (key: string): string => {

@@ -2,26 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Play, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import notSoSpecial from "@/assets/not-so-special.jpg";
-import dimOutLights from "@/assets/dim-out-the-lights.jpg";
-import chickenHead from "@/assets/chicken-with-head-cut-off.jpeg";
-import bleezeImage from "@/assets/bleeze.jpg";
-import noceboImage from "@/assets/nocebo.jpg";
-import suddenConfusionImage from "@/assets/sudden-confusion.jpg";
-import contrastInMayImage from "@/assets/contrast-in-may.jpg";
-import ideaImage from "@/assets/idea.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
-
-const imageMap = {
-  "not-so-special.jpg": notSoSpecial,
-  "dim-out-the-lights.jpg": dimOutLights,
-  "chicken-with-head-cut-off.jpeg": chickenHead,
-  "bleeze.jpg": bleezeImage,
-  "nocebo.jpg": noceboImage,
-  "sudden-confusion.jpg": suddenConfusionImage,
-  "contrast-in-may.jpg": contrastInMayImage,
-  "idea.jpg": ideaImage
-};
+import { releaseImages } from "@/lib/release-images";
 
 const LatestReleases = () => {
   const { content } = useLanguage();
@@ -96,7 +78,7 @@ const LatestReleases = () => {
               {/* Album Cover */}
               <div className="relative mb-6 overflow-hidden rounded-lg">
                 <img 
-                  src={imageMap[release.image]} 
+                  src={releaseImages[release.image]} 
                   alt={release.title}
                   className={`w-full aspect-square object-cover transition-transform duration-500 ${
                     activeCard === index 

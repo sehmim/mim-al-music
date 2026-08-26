@@ -1,28 +1,12 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Play, ExternalLink, Music, Calendar, Smartphone, Youtube } from "lucide-react";
+import { ArrowLeft, Play, ExternalLink, Music, Calendar, Smartphone, Youtube, Clock, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import notSoSpecial from "@/assets/not-so-special.jpg";
-import dimOutLights from "@/assets/dim-out-the-lights.jpg";
-import chickenHead from "@/assets/chicken-with-head-cut-off.jpeg";
-import bleezeImage from "@/assets/bleeze.jpg";
-import noceboImage from "@/assets/nocebo.jpg";
-import suddenConfusionImage from "@/assets/sudden-confusion.jpg";
-import contrastInMayImage from "@/assets/contrast-in-may.jpg";
-import ideaImage from "@/assets/idea.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
-
-const imageMap = {
-  "not-so-special.jpg": notSoSpecial,
-  "dim-out-the-lights.jpg": dimOutLights,
-  "chicken-with-head-cut-off.jpeg": chickenHead,
-  "bleeze.jpg": bleezeImage,
-  "nocebo.jpg": noceboImage,
-  "sudden-confusion.jpg": suddenConfusionImage,
-  "contrast-in-may.jpg": contrastInMayImage,
-  "idea.jpg": ideaImage
-};
+import { releaseImages } from "@/lib/release-images";
+import Seo, { SITE_URL } from "@/components/Seo";
+import { buildReleaseJsonLd, releaseSeoDescription, releaseSeoTitle } from "@/lib/release-seo";
 
 const getYoutubeEmbedUrl = (url: string) => {
   if (!url || url === "#") return null;
@@ -52,6 +36,7 @@ const BlogPost = () => {
   const musicVideoEmbed = release?.blog?.musicVideo
     ? getYoutubeEmbedUrl(release.blog.musicVideo)
     : null;
+  const coverImage = release ? releaseImages[release.image] : undefined;
 
   // Scroll to top when component mounts
   useEffect(() => {
@@ -74,6 +59,16 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title={releaseSeoTitle(release)}
+        description={releaseSeoDescription(release)}
+        path={`/blog/${release.slug}`}
+        keywords={release.seo?.keywords}
+        image={coverImage}
+        type={release.trackList ? "music.album" : "music.song"}
+        jsonLd={buildReleaseJsonLd(release, `${SITE_URL}/blog/${release.slug}`)}
+      />
+
       {/* Hero Section */}
       <section className="relative py-20 px-4 bg-gradient-to-b from-muted/20 to-background">
         <div className="max-w-4xl mx-auto">
@@ -87,10 +82,22 @@ const BlogPost = () => {
           </Button>
           
           <div className="text-center max-w-3xl mx-auto">
-            <Badge variant="secondary" className="mb-4">
-              <Calendar className="w-3 h-3 mr-1" />
-              {release.date}
-            </Badge>
+            <div className="flex flex-wrap gap-2 justify-center mb-4">
+              <Badge variant="secondary">
+                <Calendar className="w-3 h-3 mr-1" />
+                {release.date}
+              </Badge>
+              {release.genre && <Badge variant="secondary">{release.genre}</Badge>}
+              {release.duration && (
+                <Badge variant="secondary">
+                  <Clock className="w-3 h-3 mr-1" />
+                  {release.duration}
+                </Badge>
+              )}
+              {release.trackList && (
+                <Badge variant="secondary">{release.trackList.length} tracks</Badge>
+              )}
+            </div>
             
             <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6 leading-tight">
               {release.title}
@@ -156,7 +163,7 @@ const BlogPost = () => {
                       {asset.type === 'image' && (
                         <div>
                           <img 
-                            src={imageMap[asset.url] || `/assets/${asset.url}`}
+                            src={releaseImages[asset.url] || `/assets/${asset.url}`}
                             alt={asset.alt || asset.caption}
                             className="w-full h-64 object-cover"
                           />
@@ -225,6 +232,66 @@ const BlogPost = () => {
                     allowFullScreen
                   />
                 </div>
+              </div>
+            )}
+
+            {/* Tracklist */}
+            {release.trackList && release.trackList.length > 0 && (
+              <div className="mt-16">
+                <h2 className="text-2xl font-display font-bold text-foreground mb-6">
+                  Tracklist
+                </h2>
+                <ol className="bg-card border border-border rounded-lg divide-y divide-border">
+                  {release.trackList.map((track) => (
+                    <li key={track.number} className="flex items-center gap-4 px-6 py-4">
+                      <span className="text-sm font-mono text-muted-foreground w-6 shrink-0">
+                        {track.number}
+                      </span>
+                      <span className="flex-1 font-medium text-foreground">{track.name}</span>
+                      <span className="text-sm text-muted-foreground font-mono">
+                        {track.duration}
+                      </span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            )}
+
+            {/* Credits */}
+            {release.credits && release.credits.length > 0 && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-display font-bold text-foreground mb-6">
+                  Credits
+                </h2>
+                <dl className="bg-card border border-border rounded-lg divide-y divide-border">
+                  {release.credits.map((credit, index) => (
+                    <div key={index} className="px-6 py-4 sm:flex sm:gap-4">
+                      <dt className="text-sm text-muted-foreground sm:w-64 shrink-0">
+                        {credit.role}
+                      </dt>
+                      <dd className="font-medium text-foreground">
+                        {credit.url ? (
+                          <a
+                            href={credit.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:text-secondary transition-colors underline"
+                          >
+                            {credit.name}
+                          </a>
+                        ) : (
+                          credit.name
+                        )}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+                {release.label && (
+                  <p className="mt-4 text-sm text-muted-foreground flex items-center gap-2">
+                    <Users className="w-4 h-4" />
+                    {release.label} · ℗ {release.date} MIM AL
+                  </p>
+                )}
               </div>
             )}
 

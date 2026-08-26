@@ -3,7 +3,7 @@ import { useHighlight } from '@/hooks/use-highlight';
 import { Music, Instagram, Calendar, Play, Disc, Youtube } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import mimAlImg from '@/assets/mim-al.jpg';
-import chickenImg from '@/assets/chicken-with-head-cut-off.jpeg';
+import { releaseImages } from '@/lib/release-images';
 
 const Hero = () => {
   const { content } = useLanguage();
@@ -19,7 +19,7 @@ const Hero = () => {
       type: 'release',
       title: 'Latest Release',
       subtitle: latestRelease.title,
-      image: chickenImg,
+      image: releaseImages[latestRelease.image],
       link: latestRelease.streamingUrl,
       icon: Disc,
     },

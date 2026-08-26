@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+# Full-resolution album art masters (kept locally, not shipped)
+src/assets/originals/

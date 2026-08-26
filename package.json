@@ -9,11 +9,11 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "build:dev": "vite build --mode development",
+    "build": "vite build && node scripts/seo-build.mjs",
+    "build:dev": "vite build --mode development && node scripts/seo-build.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
-    "vercel-build": "rm -rf node_modules package-lock.json && npm install && vite build"
+    "vercel-build": "rm -rf node_modules package-lock.json && npm install && vite build && node scripts/seo-build.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

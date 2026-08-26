@@ -1,3 +1,19 @@
 {
-  "src/components/Hero.tsx": "da739f118a4d5f14dd6a8fd784e896d08ee4eea3"
+  ".gitignore": "dc30209262d30509edb128a22c7dbc9f043cffa6",
+  ".promptvc/last_git_state_claude.json": "a4787b96a78105de19d8af32d7bf0341bd19e441",
+  ".promptvc/last_prompt_count_claude": "56a6051ca2b02b04ef92d5150c9ef600403cb1de",
+  ".promptvc/last_session_file_claude": "0587aa5450f94981cbe5b2183399b348243f49c9",
+  ".promptvc/sessions.json": "16518cb00d0600f0d764a13d90a19746c66c51a0",
+  "index.html": "b9bc656182282bdf673f23ed1618e941bcdabc7f",
+  "package.json": "807b7ccb9b1e3a9bcc3513f8481b6cf95986c149",
+  "public/llm.txt": "2187ed33c0664cfc6df33954538a8ac0068eae29",
+  "public/robots.txt": "90e4abde7679fbab530d2915070b9741aa3bbfbc",
+  "src/components/BlogPost.tsx": "6557e4b3db9ad84a36959d54a6a48814c81382ac",
+  "src/components/Hero.tsx": "94d02f6e201e262cd0e26928a0c87be41dfeed4b",
+  "src/components/LatestReleases.tsx": "414eaa165e35bf38c0665d2a7ae910c7b74c0221",
+  "src/contexts/LanguageContext.tsx": "5185cd9b81eed9fdab50cd762037685705b589b7",
+  "src/data/content-bn.json": "0f4bd8aa2e2fc50423744eb016fb8eb3935ec2f1",
+  "src/data/content-fr.json": "6a37af40b05e17edb66457a92f992bbabe488962",
+  "src/data/content.json": "5f2c7057ae8fa754c0423fce27fe92eb494b8933",
+  "src/pages/Index.tsx": "e65758d53aaf0b694a22bff44bbeb72ffc13bfb2"
 }

@@ -14,6 +14,72 @@
   },
   "releases": [
     {
+      "title": "By Any Means",
+      "date": "2026",
+      "image": "by-any-means.jpg",
+      "description": "Une collaboration percutante avec JazzPizza",
+      "streamingUrl": "https://open.spotify.com/track/3FJMZGl5WQfjKF4eX3WNXB",
+      "appleMusicUrl": "https://music.apple.com/us/album/by-any-means-feat-jazzpizza/6794716086?i=6794716087",
+      "duration": "3:45",
+      "slug": "by-any-means",
+      "blog": {
+        "content": [
+          "Sorti le 31 juillet 2026, « By Any Means » est le deuxième single de MIM AL avec <a href=\"https://open.spotify.com/artist/5oIYTm3LRudC943Fklmctb\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:text-secondary transition-colors underline\">JazzPizza</a>, après leur première collaboration sur <a href=\"/blog/odd-directions\" class=\"text-primary hover:text-secondary transition-colors underline\">Odd Directions</a>.",
+          "Avec ses 3:45, c'est la plus longue et la plus lourde des deux collaborations : elle met en avant le côté guitare de l'écriture de MIM AL, tandis que la voix de JazzPizza garde le morceau ancré.",
+          "Le single est disponible sur Spotify et Apple Music."
+        ],
+        "inspiration": "Une suite à Odd Directions, écrite pour pousser la collaboration MIM AL / JazzPizza vers quelque chose de plus lourd.",
+        "recordingNotes": "Sorti en single le 31 juillet 2026. Avec JazzPizza.",
+        "musicVideo": "#",
+        "lyrics": "",
+        "assets": []
+      }
+    },
+    {
+      "title": "MIM AL",
+      "date": "2026",
+      "image": "mim-al-ep.jpg",
+      "description": "L'EP éponyme — SHIMMER, ROSE et IN A WORLD",
+      "streamingUrl": "https://open.spotify.com/album/746sPkFgNP55jws0xOeRir",
+      "appleMusicUrl": "https://music.apple.com/us/album/mim-al-single/1892870074",
+      "duration": "14:35",
+      "slug": "mim-al-ep",
+      "blog": {
+        "content": [
+          "« MIM AL » est l'EP éponyme, sorti le 7 mai 2026. Trois morceaux, 14 minutes et 35 secondes : <strong>SHIMMER</strong>, <strong>ROSE</strong> et <strong>IN A WORLD</strong>.",
+          "C'est la première sortie de MIM AL conçue comme un ensemble plutôt qu'un simple single — trois chansons faites pour être écoutées ensemble, et la déclaration la plus claire à ce jour de ce qu'est ce projet.",
+          "Écoutez l'EP complet sur Spotify et Apple Music."
+        ],
+        "inspiration": "La première sortie de MIM AL pensée comme un ensemble plutôt qu'un single.",
+        "recordingNotes": "EP éponyme de trois titres sorti le 7 mai 2026. Tracklist : SHIMMER, ROSE, IN A WORLD.",
+        "musicVideo": "#",
+        "lyrics": "",
+        "assets": []
+      }
+    },
+    {
+      "title": "Odd Directions",
+      "date": "2026",
+      "image": "odd-directions.jpg",
+      "description": "Une collaboration courte et tranchante avec JazzPizza",
+      "streamingUrl": "https://open.spotify.com/track/3R6WIZbAQpW5rKSJfw213C",
+      "appleMusicUrl": "https://music.apple.com/us/album/odd-directions-feat-jazzpizza/1892410226?i=1892410227",
+      "duration": "2:31",
+      "slug": "odd-directions",
+      "blog": {
+        "content": [
+          "Sorti le 21 avril 2026, « Odd Directions » est un single de 2:31 avec <a href=\"https://open.spotify.com/artist/5oIYTm3LRudC943Fklmctb\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:text-secondary transition-colors underline\">JazzPizza</a> — la première des deux collaborations entre les deux artistes.",
+          "C'est la sortie la plus courte du catalogue de MIM AL, et la plus directe : une seule idée, tenue du début à la fin, sans rien en trop.",
+          "Disponible sur Spotify et Apple Music."
+        ],
+        "inspiration": "Une première collaboration avec JazzPizza, volontairement courte.",
+        "recordingNotes": "Sorti en single le 21 avril 2026. Avec JazzPizza.",
+        "musicVideo": "#",
+        "lyrics": "",
+        "assets": []
+      }
+    },
+    {
       "title": "CHICKEN WITH It's HEAD CUT OFF",
       "date": "2025",
       "image": "chicken-with-head-cut-off.jpeg",
@@ -110,7 +176,10 @@
       "description": "Instrumental contemplatif explorant le pouvoir de la guérison musicale",
       "streamingUrl": "https://open.spotify.com/track/7cOMfAWQ5NiuT4JX5qbiLh?si=13f879c4dbaf4399",
       "duration": "3:45",
-      "collaborators": ["Loowi", "MYIASIS"],
+      "collaborators": [
+        "Loowi",
+        "MYIASIS"
+      ],
       "slug": "nocebo",
       "blog": {
         "content": [
@@ -264,7 +333,7 @@
         "description": "Pistes professionnelles pour votre enregistrement, à distance ou en studio.",
         "bullets": [
           "Guitare électrique/acoustique/12 cordes",
-          "Lignes de basse et sections rythmiques", 
+          "Lignes de basse et sections rythmiques",
           "Délai de livraison rapide avec révisions",
           "Genres multiples : rock, indie, alternatif, math rock"
         ],
@@ -344,7 +413,7 @@
           "email": "press@mimal.music"
         },
         "secondary": {
-          "text": "Télécharger Kit de Presse", 
+          "text": "Télécharger Kit de Presse",
           "url": "#"
         }
       }
@@ -444,7 +513,13 @@
     ],
     "streaming": {
       "heading": "Écouter Partout",
-      "platforms": ["Spotify", "Apple Music", "YouTube Music", "SoundCloud", "Bandcamp"]
+      "platforms": [
+        "Spotify",
+        "Apple Music",
+        "YouTube Music",
+        "SoundCloud",
+        "Bandcamp"
+      ]
     }
   },
   "otherProjects": {
@@ -469,7 +544,7 @@
           "address": ""
         },
         {
-          "label": "", 
+          "label": "",
           "address": ""
         }
       ]
