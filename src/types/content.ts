@@ -30,6 +30,7 @@ export interface Release {
   streamingUrl: string;
   appleMusicUrl?: string;
   youtubeMusicUrl?: string;
+  tidalUrl?: string;
   duration?: string;
   plays?: string;
   /** Full ISO date, e.g. "2026-07-31". Used for schema.org datePublished. */

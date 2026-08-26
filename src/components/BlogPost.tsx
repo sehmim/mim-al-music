@@ -1,12 +1,13 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Play, ExternalLink, Music, Smartphone, Youtube } from "lucide-react";
+import { ArrowLeft, Play, ExternalLink, Music } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { releaseImages } from "@/lib/release-images";
 import { releaseFormat } from "@/lib/release-format";
+import { releasePlatforms } from "@/lib/platforms";
+import ListenModal from "@/components/ListenModal";
 import Seo, { SITE_URL } from "@/components/Seo";
 import { buildReleaseJsonLd, releaseSeoDescription, releaseSeoTitle } from "@/lib/release-seo";
 import logo from "@/assets/mim-al-logo.png";
-import type { Release } from "@/types/content";
 
 const getYoutubeEmbedUrl = (url: string) => {
   if (!url || url === "#") return null;
@@ -26,15 +27,6 @@ const getYoutubeEmbedUrl = (url: string) => {
     return null;
   }
 };
-
-const streamingLinks = (release: Release) =>
-  [
-    { label: "Spotify", url: release.streamingUrl, Icon: Play },
-    { label: "Apple Music", url: release.appleMusicUrl, Icon: Smartphone },
-    { label: "YouTube Music", url: release.youtubeMusicUrl, Icon: Youtube },
-  ].filter((link): link is { label: string; url: string; Icon: typeof Play } =>
-    Boolean(link.url)
-  );
 
 const Pill = ({ children }: { children: React.ReactNode }) => (
   <span className="rounded-full border border-foreground/[0.28] px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-foreground/75">
@@ -75,7 +67,7 @@ const BlogPost = () => {
   const badges = [release.date, releaseFormat(release), release.genre, release.duration].filter(
     Boolean
   ) as string[];
-  const links = streamingLinks(release);
+  const links = releasePlatforms(release);
 
   return (
     <div className="min-h-screen bg-background">
@@ -315,15 +307,16 @@ const BlogPost = () => {
             sonic experience.
           </p>
           <div className="flex flex-col flex-wrap justify-center gap-2 sm:flex-row">
-            <a
-              href={release.streamingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-hero gap-2"
+            <ListenModal
+              title={`Listen to ${release.title}`}
+              description="Pick your platform and press play."
+              links={links}
             >
-              <Play className="h-4 w-4" />
-              Stream on Spotify
-            </a>
+              <button type="button" className="btn-hero gap-2">
+                <Play className="h-4 w-4" />
+                Listen Now
+              </button>
+            </ListenModal>
             <Link to="/#releases" className="btn-secondary gap-2">
               <ExternalLink className="h-4 w-4" />
               More Releases
