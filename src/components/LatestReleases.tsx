@@ -11,7 +11,7 @@ const LatestReleases = () => {
     <section id="releases" className="section-rule px-5 pb-16 pt-10">
       <div className="mx-auto max-w-[1200px]">
         <div className="mb-5 flex items-baseline justify-between gap-4">
-          <h2 className="section-heading" style={{ fontSize: "clamp(30px, 7vw, 56px)" }}>
+          <h2 className="section-heading" style={{ fontSize: "clamp(30px, 6.5vw, 50px)" }}>
             Releases
           </h2>
           <span className="eyebrow shrink-0">{releases.length} records</span>
@@ -40,7 +40,7 @@ const LatestReleases = () => {
               </div>
 
               <div className="flex flex-col gap-1 px-0.5 pt-2.5">
-                <span className="min-h-[2.5em] font-display text-xs uppercase leading-[1.25] tracking-[0.02em]">
+                <span className="min-h-[2.4em] font-hand text-sm uppercase leading-[1.2]">
                   {release.title}
                 </span>
                 <span className="text-[11px] uppercase tracking-[0.12em] text-foreground/40">

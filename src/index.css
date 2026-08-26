@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Permanent+Marker&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -88,6 +88,19 @@
     font-family: 'Archivo', Helvetica, Arial, sans-serif;
   }
 
+  /* Echoes the marker lettering drawn into the logo. Display sizes only —
+     it has one weight and no small-size legibility to speak of. */
+  .font-hand {
+    font-family: 'Permanent Marker', 'Archivo Black', Helvetica, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  [lang="bn"] .font-hand {
+    font-family: 'Noto Sans Bengali', sans-serif;
+    font-weight: 700;
+  }
+
   .font-bengali {
     font-family: 'Noto Sans Bengali', sans-serif;
   }
@@ -149,8 +162,10 @@
   }
 
   .section-heading {
-    @apply font-display uppercase leading-none tracking-[-0.02em] text-foreground;
-    font-size: clamp(26px, 6vw, 44px);
+    @apply font-hand uppercase text-foreground;
+    font-size: clamp(26px, 5.6vw, 40px);
+    line-height: 1.06;
+    letter-spacing: 0;
   }
 
   .eyebrow {

@@ -38,10 +38,9 @@ const Hero = () => {
         />
 
         <h1
-          className="mim-up m-0 mb-[18px] font-display uppercase leading-[0.84] tracking-[-0.035em]"
+          className="mim-up m-0 mb-[18px] font-hand uppercase leading-[0.9]"
           style={{
-            fontSize: "clamp(52px, 18vw, 180px)",
-            paddingLeft: "0.035em",
+            fontSize: "clamp(46px, 15vw, 152px)",
             animationDelay: "60ms",
           }}
         >

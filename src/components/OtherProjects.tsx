@@ -42,7 +42,7 @@ const OtherProjects = () => {
                 className="block h-[68px] w-[68px] shrink-0 object-cover"
               />
               <div className="flex min-w-0 flex-col gap-[3px]">
-                <span className="font-display text-[13px] uppercase">{project.projectName}</span>
+                <span className="font-hand text-[15px] uppercase leading-[1.15]">{project.projectName}</span>
                 <span className="text-xs leading-[1.4] text-foreground/50">
                   {project.description}
                 </span>

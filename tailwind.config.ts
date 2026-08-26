@@ -20,6 +20,7 @@ export default {
 		extend: {
 			fontFamily: {
 				'display': ['"Archivo Black"', 'Helvetica', 'Arial', 'sans-serif'],
+				'hand': ['"Permanent Marker"', '"Archivo Black"', 'Helvetica', 'sans-serif'],
 				'sans': ['Archivo', 'Helvetica', 'Arial', 'sans-serif'],
 			},
 			colors: {

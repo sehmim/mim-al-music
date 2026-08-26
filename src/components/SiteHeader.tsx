@@ -35,7 +35,7 @@ const SiteHeader = () => {
       <header className="sticky top-0 z-40 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-b border-foreground/[0.12] bg-background/[0.82] px-5 py-3 backdrop-blur-lg">
         <a href="#top" className="flex items-center gap-2.5">
           <img src={logo} alt="" className="block h-[30px] w-[30px]" />
-          <span className="font-display text-sm tracking-[0.14em]">MIM AL</span>
+          <span className="font-hand text-base tracking-[0.06em]">MIM AL</span>
         </a>
 
         <nav className="hidden items-center gap-7 md:flex">
@@ -65,7 +65,7 @@ const SiteHeader = () => {
       {menuOpen && (
         <div className="mim-up fixed inset-0 z-[80] flex flex-col bg-background">
           <div className="flex items-center justify-between border-b border-foreground/[0.12] px-5 py-3">
-            <span className="font-display text-[13px] tracking-[0.14em]">MIM AL</span>
+            <span className="font-hand text-[15px] tracking-[0.06em]">MIM AL</span>
             <button
               type="button"
               onClick={() => setMenuOpen(false)}
@@ -82,7 +82,7 @@ const SiteHeader = () => {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="flex min-h-[60px] items-center border-b border-foreground/10 font-display text-[22px] uppercase tracking-[-0.01em]"
+                className="flex min-h-[60px] items-center border-b border-foreground/10 font-hand text-2xl uppercase"
               >
                 {item.label}
               </a>

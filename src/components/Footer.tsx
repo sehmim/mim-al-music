@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="flex items-center gap-3">
         <img src={logo} alt="" className="block h-[34px] w-[34px]" />
         <div className="flex flex-col">
-          <span className="font-display text-[13px] tracking-[0.12em]">
+          <span className="font-hand text-[15px] tracking-[0.06em]">
             {content.footer.brand.name}
           </span>
           <span className="text-xs text-foreground/45">{content.footer.brand.location}</span>

@@ -39,7 +39,7 @@ const Tour = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 border-t border-foreground/[0.12] px-0.5 py-2.5 transition-colors hover:bg-foreground/5"
               >
-                <span className="w-[66px] shrink-0 whitespace-nowrap font-display text-[13px] uppercase tracking-[0.02em]">
+                <span className="w-[74px] shrink-0 whitespace-nowrap font-hand text-[15px] uppercase">
                   {show.date}
                 </span>
                 <span className="w-[30px] shrink-0 text-[11px] text-foreground/40">
@@ -59,7 +59,7 @@ const Tour = () => {
 
         <div className="mt-[22px] flex flex-wrap items-end justify-between gap-3.5 border-t border-foreground/[0.12] pt-[22px]">
           <div className="max-w-[40ch]">
-            <h3 className="m-0 mb-1.5 font-display text-base uppercase">
+            <h3 className="m-0 mb-1.5 font-hand text-[17px] uppercase">
               {content.tour.newsletter.heading}
             </h3>
             <p className="m-0 text-[13px] leading-[1.45] text-foreground/[0.55]">

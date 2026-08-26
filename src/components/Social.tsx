@@ -21,7 +21,7 @@ const Social = () => {
               className="group flex min-h-[56px] items-center justify-between gap-3 border border-foreground/[0.14] px-4 py-3 transition-colors hover:border-foreground hover:bg-foreground hover:text-background"
             >
               <span className="flex flex-col gap-0.5">
-                <span className="font-display text-[13px] uppercase">{platform.platform}</span>
+                <span className="font-hand text-[15px] uppercase">{platform.platform}</span>
                 <span className="text-[11px] opacity-55">{platform.description}</span>
               </span>
               <span aria-hidden className="text-base leading-none">

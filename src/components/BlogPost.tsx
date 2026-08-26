@@ -60,7 +60,7 @@ const BlogPost = () => {
     return (
       <div className="flex min-h-screen items-center justify-center bg-background">
         <div className="text-center">
-          <h1 className="mb-4 font-display text-2xl uppercase text-foreground">
+          <h1 className="mb-4 font-hand text-2xl uppercase text-foreground">
             Release Not Found
           </h1>
           <Link to="/" className="btn-hero gap-2">
@@ -92,7 +92,7 @@ const BlogPost = () => {
       <header className="sticky top-0 z-40 flex items-center justify-between gap-4 border-b border-foreground/[0.12] bg-background/[0.82] px-5 py-3 backdrop-blur-lg">
         <Link to="/" className="flex items-center gap-2.5">
           <img src={logo} alt="" className="block h-[30px] w-[30px]" />
-          <span className="font-display text-sm tracking-[0.14em]">MIM AL</span>
+          <span className="font-hand text-base tracking-[0.06em]">MIM AL</span>
         </Link>
         <Link
           to="/#releases"
@@ -121,7 +121,7 @@ const BlogPost = () => {
               ))}
             </div>
 
-            <h1 className="m-0 mb-3.5 font-display text-[clamp(28px,6vw,46px)] uppercase leading-[1.02] tracking-[-0.02em]">
+            <h1 className="m-0 mb-3.5 font-hand text-[clamp(26px,5.4vw,42px)] uppercase leading-[1.08]">
               {release.title}
             </h1>
 
@@ -199,7 +199,7 @@ const BlogPost = () => {
                     <div className="p-4">
                       <div className="mb-3 flex items-center gap-2">
                         <Music className="h-4 w-4" />
-                        <span className="font-display text-[13px] uppercase">Audio Preview</span>
+                        <span className="font-hand text-[15px] uppercase">Audio Preview</span>
                         {asset.duration && <Pill>{asset.duration}</Pill>}
                       </div>
                       <audio controls className="mb-3 w-full">
@@ -222,7 +222,7 @@ const BlogPost = () => {
                       </video>
                       <div className="p-3">
                         <div className="mb-1.5 flex items-center gap-2">
-                          <span className="font-display text-[13px] uppercase">Video</span>
+                          <span className="font-hand text-[15px] uppercase">Video</span>
                           {asset.duration && <Pill>{asset.duration}</Pill>}
                         </div>
                         <p className="text-xs text-foreground/50">{asset.caption}</p>
@@ -307,7 +307,7 @@ const BlogPost = () => {
 
       <section className="section-rule px-5 py-12">
         <div className="mx-auto max-w-[720px] text-center">
-          <h2 className="mb-3 font-display text-[clamp(22px,4vw,32px)] uppercase leading-none tracking-[-0.02em]">
+          <h2 className="mb-3 font-hand text-[clamp(20px,3.8vw,30px)] uppercase leading-[1.08]">
             Ready to Experience the Music?
           </h2>
           <p className="mx-auto mb-6 max-w-[46ch] text-[15px] leading-[1.5] text-foreground/[0.55]">

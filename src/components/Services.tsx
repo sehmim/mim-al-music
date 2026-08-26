@@ -22,7 +22,7 @@ const Services = () => {
               key={offer.title}
               className="flex flex-col border border-foreground/[0.14] p-4 transition-colors hover:border-foreground/40"
             >
-              <h3 className="m-0 mb-1.5 font-display text-[13px] uppercase">{offer.title}</h3>
+              <h3 className="m-0 mb-1.5 font-hand text-base uppercase leading-[1.15]">{offer.title}</h3>
               <p className="m-0 mb-3 text-[13px] leading-[1.45] text-foreground/[0.55]">
                 {offer.description}
               </p>
