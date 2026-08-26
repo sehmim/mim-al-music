@@ -1,12 +1,12 @@
-import { useParams, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft, Play, ExternalLink, Music, Calendar, Smartphone, Youtube, Clock, Users } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { useParams, Link } from "react-router-dom";
+import { ArrowLeft, Play, ExternalLink, Music, Smartphone, Youtube } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { releaseImages } from "@/lib/release-images";
+import { releaseFormat } from "@/lib/release-format";
 import Seo, { SITE_URL } from "@/components/Seo";
 import { buildReleaseJsonLd, releaseSeoDescription, releaseSeoTitle } from "@/lib/release-seo";
+import logo from "@/assets/mim-al-logo.png";
+import type { Release } from "@/types/content";
 
 const getYoutubeEmbedUrl = (url: string) => {
   if (!url || url === "#") return null;
@@ -27,35 +27,55 @@ const getYoutubeEmbedUrl = (url: string) => {
   }
 };
 
+const streamingLinks = (release: Release) =>
+  [
+    { label: "Spotify", url: release.streamingUrl, Icon: Play },
+    { label: "Apple Music", url: release.appleMusicUrl, Icon: Smartphone },
+    { label: "YouTube Music", url: release.youtubeMusicUrl, Icon: Youtube },
+  ].filter((link): link is { label: string; url: string; Icon: typeof Play } =>
+    Boolean(link.url)
+  );
+
+const Pill = ({ children }: { children: React.ReactNode }) => (
+  <span className="rounded-full border border-foreground/[0.28] px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-foreground/75">
+    {children}
+  </span>
+);
+
+const SectionTitle = ({ children }: { children: React.ReactNode }) => (
+  <span className="eyebrow mb-2.5 block tracking-[0.2em]">{children}</span>
+);
+
 const BlogPost = () => {
   const { content } = useLanguage();
   const { slug } = useParams();
-  const navigate = useNavigate();
-  
-  const release = content.releases.find(r => r.slug === slug);
+
+  const release = content.releases.find((r) => r.slug === slug);
   const musicVideoEmbed = release?.blog?.musicVideo
     ? getYoutubeEmbedUrl(release.blog.musicVideo)
     : null;
   const coverImage = release ? releaseImages[release.image] : undefined;
 
-  // Scroll to top when component mounts
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [slug]);
-  
   if (!release) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
+      <div className="flex min-h-screen items-center justify-center bg-background">
         <div className="text-center">
-          <h1 className="text-2xl font-display font-bold text-foreground mb-4">Release Not Found</h1>
-          <Button onClick={() => navigate("/")} className="btn-hero">
-            <ArrowLeft className="w-4 h-4 mr-2" />
+          <h1 className="mb-4 font-display text-2xl uppercase text-foreground">
+            Release Not Found
+          </h1>
+          <Link to="/" className="btn-hero gap-2">
+            <ArrowLeft className="h-4 w-4" />
             Back to Home
-          </Button>
+          </Link>
         </div>
       </div>
     );
   }
+
+  const badges = [release.date, releaseFormat(release), release.genre, release.duration].filter(
+    Boolean
+  ) as string[];
+  const links = streamingLinks(release);
 
   return (
     <div className="min-h-screen bg-background">
@@ -69,315 +89,245 @@ const BlogPost = () => {
         jsonLd={buildReleaseJsonLd(release, `${SITE_URL}/blog/${release.slug}`)}
       />
 
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-b from-muted/20 to-background">
-        <div className="max-w-4xl mx-auto">
-          <Button 
-            variant="ghost" 
-            onClick={() => navigate("/")}
-            className="mb-8 text-muted-foreground hover:text-foreground"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Home
-          </Button>
-          
-          <div className="text-center max-w-3xl mx-auto">
-            <div className="flex flex-wrap gap-2 justify-center mb-4">
-              <Badge variant="secondary">
-                <Calendar className="w-3 h-3 mr-1" />
-                {release.date}
-              </Badge>
-              {release.genre && <Badge variant="secondary">{release.genre}</Badge>}
-              {release.duration && (
-                <Badge variant="secondary">
-                  <Clock className="w-3 h-3 mr-1" />
-                  {release.duration}
-                </Badge>
-              )}
-              {release.trackList && (
-                <Badge variant="secondary">{release.trackList.length} tracks</Badge>
-              )}
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6 leading-tight">
-              {release.title}
-            </h1>
-            
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              {release.description}
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 flex-wrap justify-center">
-              <Button 
-                className="btn-hero flex-shrink-0"
-                onClick={() => window.open(release.streamingUrl, '_blank')}
-              >
-                <Play className="w-4 h-4 mr-2" />
-                Spotify
-              </Button>
-              {release.appleMusicUrl && (
-                <Button 
-                  variant="outline" 
-                  className="border-border hover:border-primary/50 flex-shrink-0" 
-                  onClick={() => window.open(release.appleMusicUrl, '_blank')}
-                >
-                  <Smartphone className="w-4 h-4 mr-2" />
-                  Apple Music
-                </Button>
-              )}
-              {release.youtubeMusicUrl && (
-                <Button 
-                  variant="outline" 
-                  className="border-border hover:border-primary/50 flex-shrink-0" 
-                  onClick={() => window.open(release.youtubeMusicUrl, '_blank')}
-                >
-                  <Youtube className="w-4 h-4 mr-2" />
-                  YouTube Music
-                </Button>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
+      <header className="sticky top-0 z-40 flex items-center justify-between gap-4 border-b border-foreground/[0.12] bg-background/[0.82] px-5 py-3 backdrop-blur-lg">
+        <Link to="/" className="flex items-center gap-2.5">
+          <img src={logo} alt="" className="block h-[30px] w-[30px]" />
+          <span className="font-display text-sm tracking-[0.14em]">MIM AL</span>
+        </Link>
+        <Link
+          to="/#releases"
+          className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-foreground/60 transition-colors hover:text-foreground"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          All Releases
+        </Link>
+      </header>
 
-      {/* Blog Content */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="prose prose-lg max-w-none">
-            <div className="space-y-8">
-              {release.blog.content.map((paragraph, index) => (
-                <div 
-                  key={index} 
-                  className="text-muted-foreground leading-relaxed text-lg"
-                  dangerouslySetInnerHTML={{ __html: paragraph }}
-                />
+      {/* Masthead — cover, credits and streaming links, above the fold */}
+      <section className="px-5 pb-12 pt-6">
+        <div className="mx-auto grid max-w-[1000px] grid-cols-1 items-start gap-8 md:grid-cols-2">
+          <img
+            src={coverImage}
+            alt={`${release.title} cover art`}
+            className="block aspect-square w-full border border-foreground/[0.14] object-cover"
+          />
+
+          <div>
+            <span className="eyebrow mb-3 block tracking-[0.18em] text-foreground/50">Release</span>
+
+            <div className="mb-4 flex flex-wrap gap-2">
+              {badges.map((badge) => (
+                <Pill key={badge}>{badge}</Pill>
               ))}
             </div>
-            
-            {/* Assets Gallery */}
-            {release.blog.assets && release.blog.assets.length > 0 && (
-              <div className="mt-16">
-                <div className="grid md:grid-cols-2 gap-6">
-                  {release.blog.assets.map((asset, index) => (
-                    <div key={index} className="bg-card border border-border rounded-lg overflow-hidden">
-                      {asset.type === 'image' && (
-                        <div>
-                          <img 
-                            src={releaseImages[asset.url] || `/assets/${asset.url}`}
-                            alt={asset.alt || asset.caption}
-                            className="w-full h-64 object-cover"
-                          />
-                          <div className="p-4">
-                            <p className="text-sm text-muted-foreground">{asset.caption}</p>
-                          </div>
-                        </div>
-                      )}
-                      
-                      {asset.type === 'audio' && (
-                        <div className="p-6">
-                          <div className="flex items-center gap-3 mb-3">
-                            <Music className="w-5 h-5 text-primary" />
-                            <span className="font-medium text-foreground">Audio Preview</span>
-                            {asset.duration && (
-                              <Badge variant="secondary">{asset.duration}</Badge>
-                            )}
-                          </div>
-                          <audio controls className="w-full mb-3">
-                            <source src={`/assets/${asset.url}`} type="audio/mpeg" />
-                            Your browser does not support the audio element.
-                          </audio>
-                          <p className="text-sm text-muted-foreground">{asset.caption}</p>
-                        </div>
-                      )}
-                      
-                      {asset.type === 'video' && (
-                        <div>
-                          <video 
-                            controls 
-                            className="w-full h-64 object-cover"
-                            poster={`/assets/${asset.url.replace('.mp4', '-thumb.jpg')}`}
-                          >
-                            <source src={`/assets/${asset.url}`} type="video/mp4" />
-                            Your browser does not support the video element.
-                          </video>
-                          <div className="p-4">
-                            <div className="flex items-center gap-2 mb-2">
-                              <span className="font-medium text-foreground">Video</span>
-                              {asset.duration && (
-                                <Badge variant="secondary">{asset.duration}</Badge>
-                              )}
-                            </div>
-                            <p className="text-sm text-muted-foreground">{asset.caption}</p>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
 
-            {/* Music Video */}
-            {musicVideoEmbed && (
-              <div className="mt-12">
-                <h3 className="text-2xl font-display font-bold text-foreground mb-6">
-                  Video
-                </h3>
-                <div className="aspect-video w-full overflow-hidden rounded-lg border border-border bg-black">
-                  <iframe
-                    className="w-full h-full"
-                    src={musicVideoEmbed}
-                    title={`${release.title} video`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              </div>
-            )}
+            <h1 className="m-0 mb-3.5 font-display text-[clamp(28px,6vw,46px)] uppercase leading-[1.02] tracking-[-0.02em]">
+              {release.title}
+            </h1>
 
-            {/* Tracklist */}
+            <p className="mb-6 text-base leading-relaxed text-foreground/[0.66] [text-wrap:pretty]">
+              {release.description}
+            </p>
+
             {release.trackList && release.trackList.length > 0 && (
-              <div className="mt-16">
-                <h2 className="text-2xl font-display font-bold text-foreground mb-6">
-                  Tracklist
-                </h2>
-                <ol className="bg-card border border-border rounded-lg divide-y divide-border">
+              <div className="mb-7">
+                <SectionTitle>Tracklist</SectionTitle>
+                <ol className="flex flex-col">
                   {release.trackList.map((track) => (
-                    <li key={track.number} className="flex items-center gap-4 px-6 py-4">
-                      <span className="text-sm font-mono text-muted-foreground w-6 shrink-0">
-                        {track.number}
-                      </span>
-                      <span className="flex-1 font-medium text-foreground">{track.name}</span>
-                      <span className="text-sm text-muted-foreground font-mono">
-                        {track.duration}
-                      </span>
+                    <li
+                      key={track.number}
+                      className="grid grid-cols-[26px_1fr_auto] items-center gap-3 border-t border-foreground/[0.12] py-3"
+                    >
+                      <span className="text-xs text-foreground/40">{track.number}</span>
+                      <span className="text-[15px]">{track.name}</span>
+                      <span className="text-xs text-foreground/40">{track.duration}</span>
                     </li>
                   ))}
                 </ol>
               </div>
             )}
 
-            {/* Credits */}
-            {release.credits && release.credits.length > 0 && (
-              <div className="mt-12">
-                <h2 className="text-2xl font-display font-bold text-foreground mb-6">
-                  Credits
-                </h2>
-                <dl className="bg-card border border-border rounded-lg divide-y divide-border">
-                  {release.credits.map((credit, index) => (
-                    <div key={index} className="px-6 py-4 sm:flex sm:gap-4">
-                      <dt className="text-sm text-muted-foreground sm:w-64 shrink-0">
-                        {credit.role}
-                      </dt>
-                      <dd className="font-medium text-foreground">
-                        {credit.url ? (
-                          <a
-                            href={credit.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-primary hover:text-secondary transition-colors underline"
-                          >
-                            {credit.name}
-                          </a>
-                        ) : (
-                          credit.name
-                        )}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-                {release.label && (
-                  <p className="mt-4 text-sm text-muted-foreground flex items-center gap-2">
-                    <Users className="w-4 h-4" />
-                    {release.label} · ℗ {release.date} MIM AL
-                  </p>
-                )}
-              </div>
-            )}
-
-            {/* Recording Notes */}
-            <div className="mt-8 p-8 bg-primary/5 rounded-lg border border-primary/10">
-              <h3 className="text-xl font-display font-bold text-foreground mb-4">
-                Recording Notes
-              </h3>
-              <div 
-                className="text-muted-foreground leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: release.blog.recordingNotes }}
-              />
+            <SectionTitle>Listen</SectionTitle>
+            <div className="flex flex-wrap gap-2">
+              {links.map(({ label, url, Icon }) => (
+                <a
+                  key={label}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary gap-2"
+                >
+                  <Icon className="h-4 w-4" />
+                  {label}
+                </a>
+              ))}
             </div>
-            
-            {/* Lyrics Section */}
-            {release.blog.lyrics && (
-              <div className="mt-16">
-                <h3 className="text-2xl font-display font-bold text-foreground mb-8">
-                  Lyrics
-                </h3>
-                <div className="bg-background border border-border rounded-lg p-8">
-                  <pre className="whitespace-pre-wrap font-mono text-sm text-muted-foreground leading-relaxed">
-                    {release.blog.lyrics}
-                  </pre>
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </section>
-      
-      {/* Call to Action */}
-      <section className="py-20 px-4 bg-gradient-to-t from-muted/20 to-background">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl font-display font-bold text-foreground mb-4">
+
+      {/* The story — the part search engines actually index */}
+      <article className="section-rule px-5 py-12">
+        <div className="mx-auto max-w-[720px]">
+          <div className="space-y-6">
+            {release.blog.content.map((paragraph, index) => (
+              <div
+                key={index}
+                className="text-[17px] leading-[1.65] text-foreground/[0.72] [&_a]:underline [&_a]:decoration-foreground/30 [&_a]:underline-offset-4 [&_a:hover]:decoration-foreground [&_strong]:font-semibold [&_strong]:text-foreground"
+                dangerouslySetInnerHTML={{ __html: paragraph }}
+              />
+            ))}
+          </div>
+
+          {release.blog.assets && release.blog.assets.length > 0 && (
+            <div className="mt-12 grid gap-4 md:grid-cols-2">
+              {release.blog.assets.map((asset, index) => (
+                <div key={index} className="overflow-hidden border border-foreground/[0.14]">
+                  {asset.type === "image" && (
+                    <div>
+                      <img
+                        src={releaseImages[asset.url] || `/assets/${asset.url}`}
+                        alt={asset.alt || asset.caption}
+                        loading="lazy"
+                        className="h-64 w-full object-cover"
+                      />
+                      <p className="p-3 text-xs text-foreground/50">{asset.caption}</p>
+                    </div>
+                  )}
+
+                  {asset.type === "audio" && (
+                    <div className="p-4">
+                      <div className="mb-3 flex items-center gap-2">
+                        <Music className="h-4 w-4" />
+                        <span className="font-display text-[13px] uppercase">Audio Preview</span>
+                        {asset.duration && <Pill>{asset.duration}</Pill>}
+                      </div>
+                      <audio controls className="mb-3 w-full">
+                        <source src={`/assets/${asset.url}`} type="audio/mpeg" />
+                        Your browser does not support the audio element.
+                      </audio>
+                      <p className="text-xs text-foreground/50">{asset.caption}</p>
+                    </div>
+                  )}
+
+                  {asset.type === "video" && (
+                    <div>
+                      <video
+                        controls
+                        className="h-64 w-full object-cover"
+                        poster={`/assets/${asset.url.replace(".mp4", "-thumb.jpg")}`}
+                      >
+                        <source src={`/assets/${asset.url}`} type="video/mp4" />
+                        Your browser does not support the video element.
+                      </video>
+                      <div className="p-3">
+                        <div className="mb-1.5 flex items-center gap-2">
+                          <span className="font-display text-[13px] uppercase">Video</span>
+                          {asset.duration && <Pill>{asset.duration}</Pill>}
+                        </div>
+                        <p className="text-xs text-foreground/50">{asset.caption}</p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+
+          {musicVideoEmbed && (
+            <div className="mt-12">
+              <SectionTitle>Video</SectionTitle>
+              <div className="aspect-video w-full overflow-hidden border border-foreground/[0.14] bg-black">
+                <iframe
+                  className="h-full w-full"
+                  src={musicVideoEmbed}
+                  title={`${release.title} video`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          )}
+
+          {release.credits && release.credits.length > 0 && (
+            <div className="mt-12">
+              <SectionTitle>Credits</SectionTitle>
+              <dl className="flex flex-col">
+                {release.credits.map((credit, index) => (
+                  <div
+                    key={index}
+                    className="border-t border-foreground/[0.12] py-3 sm:flex sm:gap-4"
+                  >
+                    <dt className="shrink-0 text-[13px] text-foreground/45 sm:w-64">
+                      {credit.role}
+                    </dt>
+                    <dd className="text-[15px]">
+                      {credit.url ? (
+                        <a
+                          href={credit.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline decoration-foreground/30 underline-offset-4 transition-colors hover:decoration-foreground"
+                        >
+                          {credit.name}
+                        </a>
+                      ) : (
+                        credit.name
+                      )}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+              {release.label && (
+                <p className="mt-3 text-[11px] uppercase tracking-[0.14em] text-foreground/40">
+                  {release.label} · ℗ {release.date} MIM AL
+                </p>
+              )}
+            </div>
+          )}
+
+          <div className="mt-12 border border-foreground/[0.14] p-5">
+            <SectionTitle>Recording Notes</SectionTitle>
+            <div
+              className="text-[15px] leading-[1.6] text-foreground/[0.66]"
+              dangerouslySetInnerHTML={{ __html: release.blog.recordingNotes }}
+            />
+          </div>
+
+          {release.blog.lyrics && (
+            <div className="mt-12">
+              <SectionTitle>Lyrics</SectionTitle>
+              <pre className="whitespace-pre-wrap border border-foreground/[0.14] p-5 font-sans text-[15px] leading-[1.7] text-foreground/[0.66]">
+                {release.blog.lyrics}
+              </pre>
+            </div>
+          )}
+        </div>
+      </article>
+
+      <section className="section-rule px-5 py-12">
+        <div className="mx-auto max-w-[720px] text-center">
+          <h2 className="mb-3 font-display text-[clamp(22px,4vw,32px)] uppercase leading-none tracking-[-0.02em]">
             Ready to Experience the Music?
-          </h3>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Stream "{release.title}" on all major platforms and dive into the full sonic experience.
+          </h2>
+          <p className="mx-auto mb-6 max-w-[46ch] text-[15px] leading-[1.5] text-foreground/[0.55]">
+            Stream &ldquo;{release.title}&rdquo; on all major platforms and dive into the full
+            sonic experience.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              className="btn-hero" 
-              size="lg"
-              onClick={() => window.open(release.streamingUrl, '_blank')}
+          <div className="flex flex-col flex-wrap justify-center gap-2 sm:flex-row">
+            <a
+              href={release.streamingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-hero gap-2"
             >
-              <Play className="w-5 h-5 mr-2" />
+              <Play className="h-4 w-4" />
               Stream on Spotify
-            </Button>
-            {release.appleMusicUrl && (
-              <Button 
-                variant="outline" 
-                className="border-border hover:border-primary/50" 
-                size="lg"
-                onClick={() => window.open(release.appleMusicUrl, '_blank')}
-              >
-                <Smartphone className="w-5 h-5 mr-2" />
-                Apple Music
-              </Button>
-            )}
-            {release.youtubeMusicUrl && (
-              <Button 
-                variant="outline" 
-                className="border-border hover:border-primary/50" 
-                size="lg"
-                onClick={() => window.open(release.youtubeMusicUrl, '_blank')}
-              >
-                <Youtube className="w-5 h-5 mr-2" />
-                YouTube Music
-              </Button>
-            )}
-            <Button 
-              variant="outline" 
-              className="border-border hover:border-primary/50" 
-              size="lg"
-              onClick={() => {
-                navigate("/");
-                // Small delay to ensure navigation completes, then trigger show all
-                setTimeout(() => {
-                  window.dispatchEvent(new CustomEvent('showAllReleases'));
-                }, 100);
-              }}
-            >
-              <ExternalLink className="w-5 h-5 mr-2" />
+            </a>
+            <Link to="/#releases" className="btn-secondary gap-2">
+              <ExternalLink className="h-4 w-4" />
               More Releases
-            </Button>
+            </Link>
           </div>
         </div>
       </section>

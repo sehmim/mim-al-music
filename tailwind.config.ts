@@ -19,8 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'display': ['Orbitron', 'monospace'],
-				'sans': ['Inter', 'sans-serif'],
+				'display': ['"Archivo Black"', 'Helvetica', 'Arial', 'sans-serif'],
+				'sans': ['Archivo', 'Helvetica', 'Arial', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -57,22 +57,22 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 			},
-			backgroundImage: {
-				'gradient-electric': 'var(--gradient-electric)',
-				'gradient-dark': 'var(--gradient-dark)',
-				'gradient-glow': 'var(--gradient-glow)',
-			},
-			boxShadow: {
-				'electric': 'var(--shadow-electric)',
-				'pink': 'var(--shadow-pink)',
-				'dark': 'var(--shadow-dark)',
-			},
 			borderRadius: {
 				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				md: 'var(--radius)',
+				sm: 'var(--radius)'
 			},
 			keyframes: {
+				'mim-up': {
+					from: {
+						opacity: '0',
+						transform: 'translateY(14px)'
+					},
+					to: {
+						opacity: '1',
+						transform: 'none'
+					}
+				},
 				'accordion-down': {
 					from: {
 						height: '0'
@@ -91,6 +91,7 @@ export default {
 				}
 			},
 			animation: {
+				'mim-up': 'mim-up 700ms ease both',
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			}

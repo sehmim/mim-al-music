@@ -1,74 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;700;900&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Mim Al Rock Musician Design System - Moody & Electric */
+/* MIM AL Design System — monochrome print / cream paper + ink */
 
 @layer base {
   :root {
-    /* Base Colors - Deep blacks and charcoals */
-    --background: 0 0% 8%;
-    --foreground: 0 0% 95%;
+    /* Paper (#EFEDE8) and ink (#0A0A0A) */
+    --background: 43 18% 92%;
+    --foreground: 0 0% 4%;
 
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 95%;
+    --card: 43 18% 92%;
+    --card-foreground: 0 0% 4%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 43 18% 94%;
+    --popover-foreground: 0 0% 4%;
 
-    /* Electric Accents */
-    --primary: 195 100% 50%; /* Electric Blue */
-    --primary-foreground: 0 0% 8%;
+    /* Ink is the only "accent" — the design is strictly monochrome */
+    --primary: 0 0% 4%;
+    --primary-foreground: 43 18% 92%;
 
-    --secondary: 320 100% 50%; /* Hot Pink */
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 43 14% 87%;
+    --secondary-foreground: 0 0% 4%;
 
-    --accent: 195 100% 50%;
-    --accent-foreground: 0 0% 8%;
+    --accent: 43 14% 87%;
+    --accent-foreground: 0 0% 4%;
 
-    /* Muted tones */
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 43 14% 88%;
+    --muted-foreground: 40 5% 42%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 95%;
+    --destructive: 0 62% 42%;
+    --destructive-foreground: 43 18% 92%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 15%;
-    --ring: 195 100% 50%;
+    --border: 45 8% 83%;
+    --input: 45 8% 83%;
+    --ring: 0 0% 4%;
 
-    /* Rock-style gradients */
-    --gradient-electric: linear-gradient(135deg, hsl(195 100% 50%), hsl(320 100% 50%));
-    --gradient-dark: linear-gradient(180deg, hsl(0 0% 8%), hsl(0 0% 5%));
-    --gradient-glow: radial-gradient(circle at center, hsl(195 100% 50% / 0.2), transparent 70%);
+    /* Hairlines and washes used directly in components */
+    --rule: 10 10 10;
+    --radius: 0rem;
 
-    /* Shadows with electric glow */
-    --shadow-electric: 0 0 30px hsl(195 100% 50% / 0.3);
-    --shadow-pink: 0 0 30px hsl(320 100% 50% / 0.3);
-    --shadow-dark: 0 10px 30px hsl(0 0% 0% / 0.5);
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 43 18% 92%;
+    --sidebar-foreground: 0 0% 4%;
+    --sidebar-primary: 0 0% 4%;
+    --sidebar-primary-foreground: 43 18% 92%;
+    --sidebar-accent: 43 14% 87%;
+    --sidebar-accent-foreground: 0 0% 4%;
+    --sidebar-border: 45 8% 83%;
+    --sidebar-ring: 0 0% 4%;
   }
-
-  /* Light mode disabled - keeping dark rock aesthetic */
 }
 
 @layer base {
@@ -76,391 +58,170 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground font-sans;
-    background: hsl(var(--background));
-    background-image: var(--gradient-dark);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Anchored sections must clear the sticky header. */
+  section[id] {
+    scroll-margin-top: 68px;
+  }
+
+  ::selection {
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
   }
 
   /* Typography */
   .font-display {
-    font-family: 'Orbitron', monospace;
+    font-family: 'Archivo Black', Helvetica, Arial, sans-serif;
+    font-weight: 400;
   }
 
   .font-sans {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Archivo', Helvetica, Arial, sans-serif;
   }
 
   .font-bengali {
     font-family: 'Noto Sans Bengali', sans-serif;
   }
 
-  /* Bengali text styling */
   [lang="bn"] {
     font-family: 'Noto Sans Bengali', sans-serif;
   }
 
   [lang="bn"] .font-display {
     font-family: 'Noto Sans Bengali', sans-serif;
+    font-weight: 700;
   }
 
-  /* Glitch effect for headers */
-  .glitch {
-    position: relative;
-    animation: glitch 2s infinite;
-  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
 
-  .glitch::before,
-  .glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-
-  .glitch::after {
-    animation: glitch-2 0.5s infinite;
-    color: hsl(var(--secondary));
-    z-index: -2;
-  }
-
-  /* Static glitch (no movement) - intensified color flicker and slices */
-  .glitch-static {
-    position: relative;
-    isolation: isolate;
-  }
-
-  .glitch-static::before,
-  .glitch-static::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .glitch-static::before {
-    color: hsl(var(--primary));
-    z-index: -1;
-    text-shadow: 0 0 20px hsl(var(--primary) / 1), 0 0 40px hsl(var(--primary) / 0.8), 0 0 60px hsl(var(--primary) / 0.6);
-    mix-blend-mode: screen;
-    animation: glitch-flicker-1 0.4s infinite steps(1, end);
-    clip-path: polygon(0 0,100% 0,100% 35%,0 40%);
-    filter: brightness(1.2) saturate(1.3);
-  }
-
-  .glitch-static::after {
-    color: hsl(var(--secondary));
-    z-index: -2;
-    text-shadow: 0 0 20px hsl(var(--secondary) / 1), 0 0 40px hsl(var(--secondary) / 0.8), 0 0 60px hsl(var(--secondary) / 0.6);
-    mix-blend-mode: screen;
-    animation: glitch-flicker-2 0.45s infinite steps(1, end);
-    clip-path: polygon(0 60%,100% 55%,100% 100%,0 100%);
-    filter: brightness(1.2) saturate(1.3);
-  }
-
-  /* Optional middle slice via child span for extra pop */
-  .glitch-static > .slice {
-    position: absolute;
-    inset: 0;
-    color: hsl(var(--foreground));
-    text-shadow: 0 0 18px hsl(var(--secondary) / 1), 0 0 36px hsl(var(--primary) / 0.8), 0 0 54px hsl(var(--secondary) / 0.6);
-    mix-blend-mode: lighten;
-    clip-path: polygon(0 38%,100% 42%,100% 58%,0 54%);
-    animation: glitch-flicker-3 0.35s infinite steps(1, end);
-    filter: brightness(1.3) saturate(1.4);
-    pointer-events: none;
-  }
-
-  /* Hero title enhanced styling */
-  .hero-title-enhanced {
-    text-shadow: 0 0 30px hsl(var(--primary) / 1), 0 0 60px hsl(var(--primary) / 0.8), 0 0 90px hsl(var(--primary) / 0.6), 0 8px 16px rgba(0,0,0,0.8);
-    filter: drop-shadow(0 0 20px hsl(var(--primary) / 0.8)) drop-shadow(0 0 40px hsl(var(--secondary) / 0.6));
-  }
-
-  /* Electric glow animations */
-  .electric-glow {
-    box-shadow: var(--shadow-electric);
-  }
-
-  .pink-glow {
-    box-shadow: var(--shadow-pink);
-  }
-
-  /* Gradient glow background effects */
-  .gradient-glow-bg {
-    background: var(--gradient-glow);
-  }
-
-  /* Rock-style button hover effects */
-  .rock-hover {
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .rock-hover::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--gradient-electric);
-    transition: left 0.5s ease;
-    z-index: -1;
-  }
-
-  .rock-hover:hover::before {
-    left: 0;
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
 @layer components {
-  /* Hero button variant */
+  /* Pill buttons — solid ink and outlined ink */
   .btn-hero {
-    @apply bg-transparent border-2 border-primary text-primary font-bold px-8 py-3 rounded-lg;
-    @apply hover:bg-primary hover:text-primary-foreground transition-all duration-300;
-    @apply rock-hover electric-glow font-display;
+    @apply inline-flex items-center justify-center rounded-full bg-foreground px-5 text-background;
+    @apply text-xs font-semibold uppercase tracking-[0.1em];
+    @apply transition-colors duration-200 hover:bg-black hover:text-background;
+    min-height: 48px;
   }
 
-  /* Secondary button variant */
   .btn-secondary {
-    @apply bg-transparent border-2 border-secondary text-secondary font-bold px-6 py-2 rounded-lg;
-    @apply hover:bg-secondary hover:text-secondary-foreground transition-all duration-300;
-    @apply rock-hover pink-glow;
+    @apply inline-flex items-center justify-center rounded-full border border-foreground/30 bg-transparent px-5 text-foreground;
+    @apply text-xs font-semibold uppercase tracking-[0.1em];
+    @apply transition-colors duration-200 hover:bg-foreground hover:text-background hover:border-foreground;
+    min-height: 48px;
   }
 
-  /* Album card styling */
+  /* Hairline-bordered panel */
   .album-card {
-    @apply bg-card/50 backdrop-blur-sm border border-border rounded-xl p-6;
-    @apply hover:border-primary/50 transition-all duration-300;
-    @apply hover:shadow-[0_0_30px_hsl(var(--primary)/0.2)];
+    @apply border border-foreground/[0.14] bg-transparent p-5;
+    @apply transition-colors duration-200 hover:border-foreground/40;
   }
 
-  /* Upcoming show styling - lighter background */
-  .album-card.upcoming-show {
-    @apply bg-card/70 backdrop-blur-sm border border-primary/30;
-    background: linear-gradient(135deg, 
-      rgba(255, 255, 255, 0.08) 0%, 
-      rgba(255, 255, 255, 0.04) 50%, 
-      rgba(0, 0, 0, 0.05) 100%
-    );
-    box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1),
-      0 0 20px hsl(var(--primary) / 0.1);
-  }
-
-  .album-card.upcoming-show:hover {
-    @apply border-primary/50;
-    box-shadow: 
-      0 12px 40px rgba(0, 0, 0, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.15),
-      0 0 30px hsl(var(--primary) / 0.2);
-  }
-
-  /* Status badge alignment */
   .album-card .status-badge {
-    @apply px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap;
-    min-width: 80px;
-    text-align: center;
+    @apply whitespace-nowrap rounded-full border border-foreground/25 px-3 py-1;
+    @apply text-[10px] font-medium uppercase tracking-[0.16em] text-foreground/60;
   }
 
-  /* Mobile active card styling */
-  .album-card.mobile-active {
-    @apply scale-105 shadow-2xl shadow-primary/20 border-primary/50;
+  /* Section rules and headings */
+  .section-rule {
+    @apply border-t border-foreground/[0.12];
   }
 
-  /* Section headings */
   .section-heading {
-    @apply text-3xl md:text-4xl font-display font-bold mb-8;
-    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+    @apply font-display uppercase leading-none tracking-[-0.02em] text-foreground;
+    font-size: clamp(26px, 6vw, 44px);
+  }
+
+  .eyebrow {
+    @apply text-[11px] uppercase tracking-[0.16em] text-foreground/40;
   }
 }
 
-/* Keyframes for animations */
-@keyframes glitch {
-  0%, 74%, 76%, 100% {
-    transform: translate(0);
-  }
-  75% {
-    transform: translate(-2px, 2px);
-  }
-}
-
-@keyframes glitch-1 {
-  0%, 74%, 76%, 100% {
-    transform: translate(0);
-  }
-  75% {
-    transform: translate(2px, -2px);
-  }
-}
-
-@keyframes glitch-2 {
-  0%, 74%, 76%, 100% {
-    transform: translate(0);
-  }
-  75% {
-    transform: translate(-2px, -2px);
-  }
-}
-
-@keyframes pulse-electric {
+/* Entrance animation used by the hero */
+@keyframes mimUp {
   from {
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    opacity: 0;
+    transform: translateY(14px);
   }
   to {
-    box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+    opacity: 1;
+    transform: none;
   }
 }
 
-@keyframes pulse-pink {
-  from {
-    box-shadow: 0 0 20px hsl(var(--secondary) / 0.3);
-  }
-  to {
-    box-shadow: 0 0 40px hsl(var(--secondary) / 0.6);
-  }
+.mim-up {
+  animation: mimUp 700ms ease both;
 }
 
-/* Glitch flicker keyframes (no movement) */
-@keyframes glitch-flicker-1 {
-  0%, 12%, 20%, 28%, 100% { opacity: 0.8; }
-  10%, 18%, 26% { opacity: 0.4; }
+/* Section reveal driven by use-highlight */
+.highlight-section,
+.highlight-text,
+.highlight-image {
+  transition: border-color 400ms ease, opacity 400ms ease;
 }
 
-@keyframes glitch-flicker-2 {
-  0%, 14%, 22%, 30%, 100% { opacity: 0.8; }
-  8%, 16%, 24% { opacity: 0.5; }
+.highlight-section.highlighted,
+.highlight-image.highlighted {
+  border-color: hsl(var(--foreground) / 0.4);
 }
 
-@keyframes glitch-flicker-3 {
-  0%, 18%, 36%, 100% { opacity: 0.85; }
-  12%, 30% { opacity: 0.3; }
-}
-
-/* Language dropdown styling */
+/* Language dropdown */
 .language-dropdown-trigger {
-  @apply bg-background/20 backdrop-blur-sm border border-white/20;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.language-dropdown-trigger:hover {
-  @apply bg-background/30 border-white/30;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
-
-.language-dropdown-content {
-  @apply bg-background/90 backdrop-blur-sm border border-white/20;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  animation: dropdownFadeIn 0.2s ease-out;
-}
-
-.language-dropdown-item {
-  @apply hover:bg-primary/10 focus:bg-primary/10;
+  @apply rounded-full border border-foreground/25 bg-background/80 backdrop-blur-md;
+  @apply text-xs font-semibold uppercase tracking-[0.1em];
   transition: all 0.2s ease;
 }
 
-.language-dropdown-item:hover {
-  transform: translateX(2px);
+.language-dropdown-trigger:hover {
+  @apply border-foreground bg-foreground text-background;
+}
+
+.language-dropdown-content {
+  @apply border border-foreground/20 bg-background/95 backdrop-blur-md;
+  animation: dropdownFadeIn 0.18s ease-out;
+}
+
+.language-dropdown-item {
+  @apply cursor-pointer focus:bg-foreground focus:text-background;
 }
 
 @keyframes dropdownFadeIn {
   from {
     opacity: 0;
-    transform: translateY(-8px) scale(0.95);
+    transform: translateY(-6px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: none;
   }
 }
 
-/* Highlighting effects for sections */
-.highlight-section {
-  transition: all 0.6s ease-in-out;
-  position: relative;
-}
-
-.highlight-section.highlighted {
-  transform: scale(1.02);
-  box-shadow: 
-    0 0 40px hsl(var(--primary) / 0.3),
-    0 0 80px hsl(var(--primary) / 0.2),
-    inset 0 0 20px hsl(var(--primary) / 0.1);
-  border-color: hsl(var(--primary) / 0.5);
-}
-
-.highlight-text {
-  transition: all 0.6s ease-in-out;
-}
-
-.highlight-text.highlighted {
-  color: hsl(var(--primary));
-  text-shadow: 
-    0 0 10px hsl(var(--primary) / 0.8),
-    0 0 20px hsl(var(--primary) / 0.6),
-    0 0 30px hsl(var(--primary) / 0.4);
-  transform: translateY(-2px);
-}
-
-.highlight-image {
-  transition: all 0.6s ease-in-out;
-  position: relative;
-}
-
-.highlight-image.highlighted {
-  transform: scale(1.05);
-  box-shadow: 
-    0 0 30px hsl(var(--primary) / 0.4),
-    0 0 60px hsl(var(--primary) / 0.3),
-    0 0 90px hsl(var(--primary) / 0.2);
-  border-color: hsl(var(--primary) / 0.6);
-}
-
-.highlight-image.highlighted::before {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  background: linear-gradient(45deg, 
-    hsl(var(--primary) / 0.3), 
-    hsl(var(--secondary) / 0.3), 
-    hsl(var(--primary) / 0.3)
-  );
-  border-radius: inherit;
-  z-index: -1;
-  animation: highlight-glow 2s ease-in-out infinite;
-}
-
-@keyframes highlight-glow {
-  0%, 100% {
-    opacity: 0.6;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.02);
-  }
-}
-
-/* Mobile responsiveness for language dropdown */
 @media (max-width: 640px) {
-  .language-dropdown-trigger {
-    @apply text-xs px-2 py-1;
-  }
-  
   .language-dropdown-trigger span {
     @apply hidden;
   }
-  
+
   .language-dropdown-trigger .lucide {
     @apply mr-0;
   }

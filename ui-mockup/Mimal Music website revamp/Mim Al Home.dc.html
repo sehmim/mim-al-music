@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Black&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #EFEDE8; color: #0A0A0A; font-family: Archivo, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #0A0A0A; text-decoration: none; }
+  a:hover { color: #000000; }
+  ::selection { background: #0A0A0A; color: #EFEDE8; }
+  @keyframes mimUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+</style>
+</helmet>
+<div style="background: #EFEDE8; color: #0A0A0A; min-height: 100vh; overflow-x: hidden">
+
+  <header style="position: sticky; top: 0; z-index: 40; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; padding: 12px 20px; background: rgba(236,234,229,0.82); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(10,10,10,0.12)">
+    <a href="#top" style="display: flex; align-items: center; gap: 10px">
+      <img src="art/logo.png" alt="Mim Al" style="width: 30px; height: 30px; display: block" />
+      <span style="font-family: 'Archivo Black', Helvetica, sans-serif; font-size: 14px; letter-spacing: 0.14em">MIM AL</span>
+    </a>
+    <button type="button" onClick="{{ toggleMenu }}" aria-label="Menu" style="width: 44px; height: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; background: transparent; border: 1px solid rgba(10,10,10,0.24); border-radius: 999px; cursor: pointer" style-hover="border-color: #0A0A0A">
+      <span style="display: block; width: 16px; height: 1.5px; background: #0A0A0A"></span>
+      <span style="display: block; width: 16px; height: 1.5px; background: #0A0A0A"></span>
+    </button>
+  </header>
+
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 80; background: #EFEDE8; display: flex; flex-direction: column; animation: mimUp 200ms ease both">
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid rgba(10,10,10,0.12)">
+        <span style="font-family: 'Archivo Black', Helvetica, sans-serif; font-size: 13px; letter-spacing: 0.14em">MIM AL</span>
+        <button type="button" onClick="{{ closeMenu }}" aria-label="Close menu" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: transparent; border: 1px solid rgba(10,10,10,0.24); color: #0A0A0A; border-radius: 999px; font-size: 15px; cursor: pointer" style-hover="background: #0A0A0A; color: #EFEDE8">✕</button>
+      </div>
+      <nav style="display: flex; flex-direction: column; padding: 8px 20px">
+        <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="5">
+          <a href="{{ item.href }}" onClick="{{ closeMenu }}" style="display: flex; align-items: center; min-height: 60px; border-bottom: 1px solid rgba(10,10,10,0.1); font-family: 'Archivo Black', Helvetica, sans-serif; font-size: 22px; text-transform: uppercase; letter-spacing: -0.01em">{{ item.label }}</a>
+        </sc-for>
+      </nav>
+      <div style="margin-top: auto; padding: 20px; display: flex; gap: 8px">
+        <a href="https://open.spotify.com/artist/4pRyem81jKHIJd1dhnwZ7T?si=SbsYITmBTL6tPorhOoKqNQ" target="_blank" rel="noopener" style="flex: 1; display: inline-flex; align-items: center; justify-content: center; min-height: 48px; background: #0A0A0A; color: #EFEDE8; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 999px">Listen</a>
+        <a href="mailto:Sehmim.al@gmail.com?subject=Booking Inquiry - Mim Al" style="flex: 1; display: inline-flex; align-items: center; justify-content: center; min-height: 48px; border: 1px solid rgba(10,10,10,0.3); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 999px">Booking</a>
+      </div>
+    </div>
+  </sc-if>
+
+  <section id="top" style="position: relative; min-height: 82vh; display: flex; flex-direction: column; justify-content: center; padding: 64px 20px 48px; overflow: hidden">
+    <div style="position: absolute; inset: -10%; background-image: url('art/logo.png'); background-repeat: repeat; background-size: 190px 190px; opacity: {{ tileOpacity }}; pointer-events: none"></div>
+    <div style="position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 10%, rgba(236,234,229,0.15) 0%, rgba(236,234,229,0.86) 55%, #EFEDE8 100%); pointer-events: none"></div>
+    <div style="position: relative; max-width: 1200px; margin: 0 auto; width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center">
+      <img src="art/logo-trim.png" alt="Mim Al illustration" style="width: clamp(180px, 52vw, 320px); max-width: 100%; display: block; margin: 0 auto 16px; animation: mimUp 700ms ease both" />
+      <h1 style="font-family: 'Archivo Black', Helvetica, sans-serif; font-size: clamp(52px, 18vw, 180px); line-height: 0.84; letter-spacing: -0.035em; padding-left: 0.035em; margin: 0 0 18px; text-transform: uppercase; animation: mimUp 700ms 60ms ease both">Mim Al</h1>
+      <p style="max-width: 42ch; font-size: clamp(15px, 2.4vw, 19px); line-height: 1.5; color: rgba(10,10,10,0.66); margin: 0 auto 26px; text-wrap: pretty">Instrumental Guitarist, singer song writter, producer, session guitarist from Canada</p>
+      <div style="display: flex; gap: 8px; justify-content: center; width: 100%; max-width: 420px">
+        <a href="https://open.spotify.com/artist/4pRyem81jKHIJd1dhnwZ7T?si=SbsYITmBTL6tPorhOoKqNQ" target="_blank" rel="noopener" style="flex: 1; display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 18px; background: #0A0A0A; color: #EFEDE8; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 999px; white-space: nowrap" style-hover="background: #000000">Listen Now</a>
+        <a href="https://www.instagram.com/mimthehuman/" target="_blank" rel="noopener" style="flex: 1; display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 18px; border: 1px solid rgba(10,10,10,0.32); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 999px; white-space: nowrap" style-hover="border-color: #0A0A0A">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="releases" style="padding: 40px 20px 64px; border-top: 1px solid rgba(10,10,10,0.12)">
+    <div style="max-width: 1200px; margin: 0 auto">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 20px">
+        <h2 style="font-family: 'Archivo Black', Helvetica, sans-serif; font-size: clamp(30px, 7vw, 56px); letter-spacing: -0.02em; margin: 0; text-transform: uppercase">Releases</h2>
+        <span style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(10,10,10,0.42)">{{ releaseCount }} records</span>
+      </div>
+      <div style="filter: {{ coverFilter }}; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(150px, 47%), 1fr)); gap: 12px">
+        <sc-for list="{{ releases }}" as="rel" hint-placeholder-count="6">
+          <div role="button" tabindex="0" onClick="{{ rel.open }}" style="cursor: pointer; position: relative" style-hover="transform: translateY(-3px)">
+            <div style="position: relative; aspect-ratio: 1 / 1; overflow: hidden; background: #DCD9D2; border: 1px solid rgba(10,10,10,0.12)">
+              <img src="{{ rel.image }}" alt="{{ rel.title }}" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 600ms cubic-bezier(0.2,0.7,0.2,1)" style-hover="transform: scale(1.06)" />
+              <div style="position: absolute; inset: 0; display: flex; align-items: flex-end; padding: 10px; background: linear-gradient(to top, rgba(236,234,229,0.7), rgba(236,234,229,0) 55%); opacity: 0; transition: opacity 260ms ease" style-hover="opacity: 1">
+                <span style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #0A0A0A">View</span>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px; padding: 10px 2px 0">
+              <span style="font-family: 'Archivo Black', Helvetica, sans-serif; font-size: 12px; line-height: 1.25; letter-spacing: 0.02em; text-transform: uppercase">{{ rel.title }}</span>
+              <span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(10,10,10,0.42)">{{ rel.meta }}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" style="padding: 44px 20px; border-top: 1px solid rgba(10,10,10,0.12)">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px; align-items: center">
+      <div>
+        <h2 style="font-family: 'Archivo Black', Helvetica, sans-serif; font-size: clamp(26px, 6vw, 44px); letter-spacing: -0.02em; margin: 0 0 14px; text-transform: uppercase; line-height: 1">About the Artist</h2>
+        <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: rgba(10,10,10,0.78); text-wrap: pretty">Behind MIM AL lives MimTheHuman—the authentic voice that refuses to settle for surface-level art.</p>
+        <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.5; color: rgba(10,10,10,0.58); text-wrap: pretty">Mim Al is a Bangladeshi-Canadian guitarist, singer-songwriter, and producer known for crafting dynamic indie rock, math rock, midwest emo, and alternative rock compositions that push boundaries.</p>
+        <a href="https://open.spotify.com/artist/4pRyem81jKHIJd1dhnwZ7T?si=SbsYITmBTL6tPorhOoKqNQ" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border: 1px solid rgba(10,10,10,0.3); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 999px" style-hover="background: #0A0A0A; color: #EFEDE8; border-color: #0A0A0A">Follow on Spotify</a>
+      </div>
+      <img src="art/mim-al.jpg" alt="Mim Al performing" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: center 30%; display: block; border: 1px solid rgba(10,10,10,0.14)" />
+    </div>
+  </section>
+
+  <section id="tour" style="padding: 44px 20px; border-top: 1px solid rgba(10,10,10,0.12)">
+    <div style="max-width: 1200px; margin: 0 auto">
+      <h2 style="font-family: 'Archivo Black', Helvetica, sans-serif; font-size: clamp(26px, 6vw, 44px); letter-spacing: -0.02em; margin: 0 0 16px; text-transform: uppercase; line-height: 1">Tour Dates</h2>
+      <div style="display: flex; flex-direction: column">
+        <sc-for list="{{ shows }}" as="show" hint-placeholder-count="4">
+          <a href="{{ show.ticketUrl }}" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 12px; padding: 11px 2px; border-top: 1px solid rgba(10,10,10,0.12)" style-hover="background: rgba(10,10,10,0.05)">
+            <span style="flex: 0 0 66px; font-family: 'Archivo Black', Helvetica, sans-serif; font-size: 13px; letter-spacing: 0.02em; text-transform: uppercase; white-space: nowrap">{{ show.date }}</span>
+            <span style="flex: 0 0 30px; font-size: 11px; color: rgba(10,10,10,0.4)">{{ show.year }}</span>
+            <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px">
+              <span style="font-size: 14px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{ show.venue }}</span>
+              <span style="font-size: 11px; color: rgba(10,10,10,0.4); overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{ show.city }}</span>
+            </span>
+            <span style="flex: 0 0 auto; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(10,10,10,0.45); white-space: nowrap">{{ show.status }}</span>
+          </a>
+        </sc-for>
+      </div>
+      <div style="border-top: 1px solid rgba(10,10,10,0.12); padding-top: 22px; margin-top: 22px; display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end; justify-content: space-between">
+        <div style="max-width: 40ch">
+          <h3 style="font-family: 'Archivo Black', Helvetica, sans-serif; font-size: 16px; margin: 0 0 6px; text-transform: uppercase">Never Miss a Show</h3>
+          <p style="margin: 0; font-size: 13px; line-height: 1.45; color: rgba(10,10,10,0.55)">Get notified when new tour dates are announced in your area.</p>
+        </div>
+        <form onSubmit="{{ onSubscribe }}" style="display: flex; gap: 8px; flex: 1 1 320px; max-width: 460px">
+          <input type="email" placeholder="Your email address" required="" style="flex: 1; min-width: 0; min-height: 48px; padding: 0 16px; background: transparent; border: 1px solid rgba(10,10,10,0.28); color: #0A0A0A; font-family: Archivo, sans-serif; font-size: 14px; border-radius: 999px" />
+          <button type="submit" style="min-height: 48px; padding: 0 22px; background: #0A0A0A; color: #EFEDE8; border: none; font-family: Archivo, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 999px; cursor: pointer" style-hover="background: #000000">{{ subscribeLabel }}</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 44px 20px; border-top: 1px solid rgba(10,10,10,0.12)">
+    <div style="max-width: 1200px; margin: 0 auto">
+      <h2 style="font-family: 'Archivo Black', Helvetica, sans-serif; font-size: clamp(26px, 6vw, 44px); letter-spacing: -0.02em; margin: 0 0 16px; text-transform: uppercase; line-height: 1">Other Projects</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 10px">
+        <sc-for list="{{ projects }}" as="p" hint-placeholder-count="2">
+          <a href="{{ p.projectLink }}" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 12px; padding: 10px; border: 1px solid rgba(10,10,10,0.14)" style-hover="border-color: rgba(10,10,10,0.4)">
+            <img src="{{ p.image }}" alt="{{ p.projectName }}" style="flex: 0 0 68px; width: 68px; height: 68px; object-fit: cover; display: block" />
+            <div style="display: flex; flex-direction: column; gap: 3px; min-width: 0">
+              <span style="font-family: 'Archivo Black', Helvetica, sans-serif; font-size: 13px; text-transform: uppercase">{{ p.projectName }}</span>
+              <span style="font-size: 12px; line-height: 1.4; color: rgba(10,10,10,0.5)">{{ p.description }}</span>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="follow" style="padding: 44px 20px; border-top: 1px solid rgba(10,10,10,0.12)">
+    <div style="max-width: 1200px; margin: 0 auto">
+      <h2 style="font-family: 'Archivo Black', Helvetica, sans-serif; font-size: clamp(26px, 6vw, 44px); letter-spacing: -0.02em; margin: 0 0 16px; text-transform: uppercase; line-height: 1">Follow &amp; Subscribe</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 8px">
+        <sc-for list="{{ socials }}" as="s" hint-placeholder-count="3">
+          <a href="{{ s.url }}" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; padding: 12px 16px; border: 1px solid rgba(10,10,10,0.14)" style-hover="background: #0A0A0A; color: #EFEDE8; border-color: #0A0A0A">
+            <div style="display: flex; flex-direction: column; gap: 2px">
+              <span style="font-family: 'Archivo Black', Helvetica, sans-serif; font-size: 13px; text-transform: uppercase">{{ s.platform }}</span>
+              <span style="font-size: 11px; opacity: 0.55">{{ s.description }}</span>
+            </div>
+            <span style="font-size: 16px; line-height: 1">&#8599;</span>
+          </a>
+        </sc-for>
+      </div>
+      <p style="margin: 16px 0 0; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(10,10,10,0.35)">Stream everywhere — Spotify, Apple Music, YouTube Music, SoundCloud, Bandcamp</p>
+    </div>
+  </section>
+
+  <footer style="padding: 28px 20px 40px; border-top: 1px solid rgba(10,10,10,0.12); display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto">
+    <div style="display: flex; align-items: center; gap: 12px">
+      <img src="art/logo.png" alt="" style="width: 34px; height: 34px; display: block" />
+      <div style="display: flex; flex-direction: column">
+        <span style="font-family: 'Archivo Black', Helvetica, sans-serif; font-size: 13px; letter-spacing: 0.12em">MIM AL</span>
+        <span style="font-size: 12px; color: rgba(10,10,10,0.45)">Montreal, QC</span>
+      </div>
+    </div>
+    <span style="font-size: 12px; color: rgba(10,10,10,0.4)">© 2025 Mim Al. All rights reserved.</span>
+  </footer>
+
+  <sc-if value="{{ sheetOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 90; background: #EFEDE8; overflow-y: auto; animation: mimUp 260ms ease both">
+      <div style="position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; background: rgba(236,234,229,0.9); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(10,10,10,0.12)">
+        <span style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(10,10,10,0.5)">Release</span>
+        <button type="button" onClick="{{ closeSheet }}" aria-label="Close" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: transparent; border: 1px solid rgba(10,10,10,0.28); color: #0A0A0A; border-radius: 999px; font-size: 16px; cursor: pointer" style-hover="background: #0A0A0A; color: #EFEDE8">✕</button>
+      </div>
+      <div style="max-width: 1000px; margin: 0 auto; padding: 24px 20px 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 32px; align-items: start">
+        <img src="{{ active.image }}" alt="{{ active.title }}" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; border: 1px solid rgba(10,10,10,0.14)" />
+        <div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px">
+            <sc-for list="{{ active.badges }}" as="badge" hint-placeholder-count="2">
+              <span style="padding: 6px 12px; border: 1px solid rgba(10,10,10,0.28); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 999px; color: rgba(10,10,10,0.75)">{{ badge }}</span>
+            </sc-for>
+          </div>
+          <h2 style="font-family: 'Archivo Black', Helvetica, sans-serif; font-size: clamp(28px, 6vw, 46px); line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 14px; text-transform: uppercase">{{ active.title }}</h2>
+          <p style="margin: 0 0 26px; font-size: 16px; line-height: 1.6; color: rgba(10,10,10,0.66); text-wrap: pretty">{{ active.description }}</p>
+          <sc-if value="{{ active.hasTracks }}" hint-placeholder-val="{{ true }}">
+            <div style="margin-bottom: 28px">
+              <span style="display: block; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(10,10,10,0.42); margin-bottom: 8px">Tracklist</span>
+              <div style="display: flex; flex-direction: column">
+                <sc-for list="{{ active.tracks }}" as="t" hint-placeholder-count="4">
+                  <div style="display: grid; grid-template-columns: 26px 1fr auto; gap: 12px; align-items: center; padding: 12px 0; border-top: 1px solid rgba(10,10,10,0.12)">
+                    <span style="font-size: 12px; color: rgba(10,10,10,0.4)">{{ t.n }}</span>
+                    <span style="font-size: 15px">{{ t.name }}</span>
+                    <span style="font-size: 12px; color: rgba(10,10,10,0.4)">{{ t.dur }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+          <span style="display: block; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(10,10,10,0.42); margin-bottom: 10px">Listen</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px">
+            <sc-for list="{{ active.links }}" as="l" hint-placeholder-count="3">
+              <a href="{{ l.url }}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border: 1px solid rgba(10,10,10,0.3); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 999px" style-hover="background: #0A0A0A; color: #EFEDE8; border-color: #0A0A0A">{{ l.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;monoCovers&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Releases&quot;},&quot;tileOpacity&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.07,&quot;min&quot;:0,&quot;max&quot;:0.25,&quot;step&quot;:0.01,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;showPastShows&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Tour&quot;}}">
+const SPOTIFY_ARTIST = "https://open.spotify.com/artist/4pRyem81jKHIJd1dhnwZ7T?si=SbsYITmBTL6tPorhOoKqNQ";
+
+const RELEASES = [
+  {
+    title: "CHICKEN WITH It's HEAD CUT OFF", year: "2025", type: "Single", duration: "4:52",
+    image: "art/chicken.jpg",
+    description: "Chaotic energy meets purposeful madness. A collaboration with Montreal's Yung Kang Ra, fusing the raw aggression of metal with the grit and swagger of hip hop.",
+    tracks: [{ n: "1", name: "CHICKEN WITH It's HEAD CUT OFF (feat. Yung Kang Ra)", dur: "4:52" }],
+    links: [
+      { label: "Spotify", url: "https://open.spotify.com/track/5GgVx2r2VRldqxXcA2Z0KY?si=691bb9305e1943f3" },
+      { label: "Apple Music", url: "https://music.apple.com/us/song/chicken-with-its-head-cut-off-feat-yung-kang-ra/1803476811" },
+      { label: "YouTube Music", url: "https://music.youtube.com/watch?v=pOVr7HvUxH8" }
+    ]
+  },
+  {
+    title: "Not So Special", year: "2025", type: "Single", duration: "4:04",
+    image: "art/not-so-special.jpg",
+    description: "A raw exploration of feeling ordinary in an extraordinary world.",
+    tracks: [{ n: "1", name: "Not So Special", dur: "4:04" }],
+    links: [
+      { label: "Spotify", url: "https://open.spotify.com/track/4djpxwXjiMc6IR6XbpUc6i?si=e39ba646bffc4434" },
+      { label: "Apple Music", url: "https://music.apple.com/us/song/not-so-special/1788687386" },
+      { label: "YouTube Music", url: "https://music.youtube.com/watch?v=7QUUfkExtZc" }
+    ]
+  },
+  {
+    title: "Dim Out the Lights", year: "2025", type: "Single", duration: "3:47",
+    image: "art/dim-out-the-lights.jpg",
+    description: "When darkness becomes your comfort zone.",
+    tracks: [{ n: "1", name: "Dim Out the Lights", dur: "3:47" }],
+    links: [
+      { label: "Spotify", url: "https://open.spotify.com/track/6RlBBsV7eof5HRTh87NG44?si=007a9a254f0145f0" },
+      { label: "Apple Music", url: "https://music.apple.com/us/song/dim-out-the-lights/1792248168" },
+      { label: "YouTube Music", url: "https://music.youtube.com/watch?v=K7f50qKPJ0E" }
+    ]
+  },
+  {
+    title: "NoCebo", year: "2024", type: "Single", duration: "3:45",
+    image: "art/nocebo.jpg",
+    description: "Contemplative instrumental exploring the power of musical healing. With Loowi on keys and MYIASIS on drums.",
+    tracks: [{ n: "1", name: "NoCebo", dur: "3:45" }],
+    links: [
+      { label: "Spotify", url: "https://open.spotify.com/track/7cOMfAWQ5NiuT4JX5qbiLh?si=13f879c4dbaf4399" },
+      { label: "YouTube Music", url: "https://music.youtube.com/watch?v=G7A8Y5Husco" }
+    ]
+  },
+  {
+    title: "Contrast in May", year: "2021", type: "EP", duration: "10:57",
+    image: "art/contrast-in-may.jpg",
+    description: "4-track EP exploring seasonal emotions through instrumental guitar.",
+    tracks: [
+      { n: "1", name: "Bleeze (Fall)", dur: "" },
+      { n: "2", name: "Green (Summer)", dur: "" },
+      { n: "3", name: "Hidden Tattoos (Spring)", dur: "" },
+      { n: "4", name: "Feeling Doodoo (Winter)", dur: "" }
+    ],
+    links: [
+      { label: "Spotify", url: "https://open.spotify.com/album/4CtaVYDyx6NPP9fZjWWkKd?si=GlNeOmGdQUS0ustLjvL-KQ" },
+      { label: "YouTube Music", url: "https://music.youtube.com/watch?v=MQsYyNFCSxo" }
+    ]
+  },
+  {
+    title: "Bleeze", year: "2020", type: "Single", duration: "3:00",
+    image: "art/bleeze.jpg",
+    description: "The breakout single that started it all.",
+    tracks: [{ n: "1", name: "Bleeze", dur: "3:00" }],
+    links: [
+      { label: "Spotify", url: "https://open.spotify.com/track/239Df3gmlDv2ixHorci8yw?si=61fc2419951c4892" },
+      { label: "YouTube", url: "https://www.youtube.com/watch?v=SGq1u1k5SOc" }
+    ]
+  },
+  { title: "By Any Means", year: "", type: "Release", duration: "", image: "art/by-any-means.jpg", description: "", tracks: [], links: [{ label: "Spotify", url: SPOTIFY_ARTIST }] },
+  { title: "Odd Directions", year: "", type: "Release", duration: "", image: "art/odd-directions.jpg", description: "", tracks: [], links: [{ label: "Spotify", url: SPOTIFY_ARTIST }] },
+  { title: "Mim Al EP", year: "", type: "EP", duration: "", image: "art/mim-al-ep.jpg", description: "", tracks: [], links: [{ label: "Spotify", url: SPOTIFY_ARTIST }] }
+];
+
+const SHOWS = [
+  { date: "JAN 9", year: "2026", venue: "Barfly", city: "Montreal, QC", status: "New Show", ticketUrl: "https://www.instagram.com/mimthehuman/" },
+  { date: "DEC 3", year: "2025", venue: "L'Escogriffe Bar", city: "Montreal, QC", status: "Past Show", ticketUrl: "https://www.youtube.com/shorts/a3-yqYkVMjc?t=23&feature=share" },
+  { date: "SEP 28", year: "2025", venue: "Turbo Haus", city: "Montreal, QC", status: "Past Show", ticketUrl: "https://www.instagram.com/p/DO_roPGEc6W/" },
+  { date: "AUG 31", year: "2025", venue: "P'tit Ours", city: "Montreal, QC", status: "Past Show", ticketUrl: "https://www.instagram.com/mimthehuman/" },
+  { date: "OCT 20", year: "2024", venue: "La Sala Rossa", city: "Montreal, QC", status: "Past Show", ticketUrl: "https://www.instagram.com/mimthehuman/" },
+  { date: "SEP 17", year: "2024", venue: "Casa Del Popolo", city: "Montreal, QC", status: "Past Show", ticketUrl: "https://www.youtube.com/watch?v=zW2MA6EUZAI" },
+  { date: "MAY 22", year: "2024", venue: "Toscadura", city: "Montreal, QC", status: "Past Show", ticketUrl: "https://www.instagram.com/mimthehuman/" }
+];
+
+const SERVICES = [
+  {
+    title: "Session Guitarist / Bassist",
+    description: "Professional tracks for your record, remote or in-studio.",
+    bullets: ["Electric/Acoustic/12-string guitar", "Bass lines and rhythm sections", "Fast turnaround with revisions", "Multiple genres: rock, indie, alternative, math rock"],
+    ctas: [
+      { label: "Request a Quote", url: "mailto:Sehmim.al@gmail.com?subject=Session%20Guitar/Bass%20Inquiry" },
+      { label: "Hear Samples", url: SPOTIFY_ARTIST }
+    ]
+  },
+  {
+    title: "Mixing & Mastering",
+    description: "Radio-ready mixes and competitive masters tailored to your sound.",
+    bullets: ["Stem mixing and full production", "Vocal tuning and editing", "Streaming-optimized mastering", "Multiple format delivery"],
+    ctas: [{ label: "Start a Mix", url: "mailto:Sehmim.al@gmail.com?subject=Mixing%20and%20Mastering%20Inquiry" }]
+  },
+  {
+    title: "Studio Artist",
+    description: "Collaborations, co-writing, and studio features.",
+    bullets: ["Lead lines and solos", "Layered textures and ambience", "Arrangement support", "Co-writing and composition"],
+    ctas: [{ label: "Collaborate", url: "mailto:Sehmim.al@gmail.com?subject=Studio%20Artist%20Collaboration" }]
+  }
+];
+
+const PROJECTS = [
+  { projectName: "Sum & Substance", image: "art/sum-and-substance.jpg", projectLink: "https://www.instagram.com/sum.and.subs/", description: "Alternative rock band exploring the depths of human experience through powerful melodies and introspective lyrics." },
+  { projectName: "Spectral Lights", image: "art/spectral-lights.jpg", projectLink: "https://www.instagram.com/spectral.lights/", description: "Experimental electronic and ambient project creating ethereal soundscapes and atmospheric compositions." }
+];
+
+const SOCIALS = [
+  { platform: "Spotify", url: SPOTIFY_ARTIST, description: "Latest tracks & playlists" },
+  { platform: "Instagram", url: "https://www.instagram.com/mimthehuman/", description: "Behind the scenes" },
+  { platform: "Email", url: "mailto:Sehmim.al@gmail.com?subject=Booking Inquiry - Mim Al", description: "Booking inquiries" }
+];
+
+class Component extends DCLogic {
+  state = { activeIndex: null, subscribed: false, menuOpen: false };
+
+  lock(on) { document.body.style.overflow = on ? "hidden" : ""; }
+
+  componentWillUnmount() { this.lock(false); }
+
+  renderVals() {
+    const monoCovers = this.props.monoCovers ?? false;
+    const showPast = this.props.showPastShows ?? true;
+    const shows = showPast ? SHOWS : SHOWS.filter(s => s.status !== "Past Show");
+    const idx = this.state.activeIndex;
+    const a = idx === null ? null : RELEASES[idx];
+
+    return {
+      tileOpacity: this.props.tileOpacity ?? 0.07,
+      coverFilter: monoCovers ? "grayscale(1)" : "none",
+      releaseCount: String(RELEASES.length),
+      releases: RELEASES.map((r, i) => ({
+        title: r.title,
+        image: r.image,
+        meta: [r.year, r.type].filter(Boolean).join(" · "),
+        open: () => { this.lock(true); this.setState({ activeIndex: i }); }
+      })),
+      shows,
+      projects: PROJECTS,
+      socials: SOCIALS,
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => { const on = !this.state.menuOpen; this.lock(on); this.setState({ menuOpen: on }); },
+      closeMenu: () => { this.lock(false); this.setState({ menuOpen: false }); },
+      navItems: [
+        { label: "Releases", href: "#releases" },
+        { label: "About", href: "#about" },
+        { label: "Tour", href: "#tour" },
+        { label: "Follow", href: "#follow" }
+      ],
+      sheetOpen: idx !== null,
+      closeSheet: () => { this.lock(false); this.setState({ activeIndex: null }); },
+      active: a ? {
+        title: a.title,
+        image: a.image,
+        description: a.description,
+        badges: [a.year, a.type, a.duration].filter(Boolean),
+        hasTracks: a.tracks.length > 0,
+        tracks: a.tracks,
+        links: a.links
+      } : { title: "", image: "", description: "", badges: [], hasTracks: false, tracks: [], links: [] },
+      subscribeLabel: this.state.subscribed ? "Subscribed" : "Subscribe",
+      onSubscribe: (e) => { e.preventDefault(); this.setState({ subscribed: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

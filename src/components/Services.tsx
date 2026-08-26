@@ -1,60 +1,71 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Button } from "@/components/ui/button";
-import { useHighlight } from "@/hooks/use-highlight";
 
 const Services = () => {
   const { content } = useLanguage();
-  const { ref, isHighlighted } = useHighlight<HTMLDivElement>();
 
   return (
-    <section className="py-20 px-4 relative">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/10 to-transparent" />
-      
-      <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="section-heading text-center">
-          {content.services.heading}
-        </h2>
+    <section id="services" className="section-rule px-5 py-11">
+      <div className="mx-auto max-w-[1200px]">
+        <div className="mb-4 flex flex-wrap items-end justify-between gap-4">
+          <h2 className="section-heading">{content.services.heading}</h2>
+          <p className="max-w-[46ch] text-[13px] leading-[1.45] text-foreground/[0.55]">
+            {content.services.subheading}
+          </p>
+        </div>
 
-        <p className="text-center text-muted-foreground max-w-2xl mx-auto mt-4">
-          {content.services.subheading}
-        </p>
-
-        <div 
-          ref={ref}
-          className={`grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 highlight-section ${
-            isHighlighted ? 'highlighted' : ''
-          }`}
+        <div
+          className="grid gap-2.5"
+          style={{ gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))" }}
         >
-          {content.services.offers.map((offer: any, idx: number) => (
-            <div key={idx} className="album-card p-6 h-full flex flex-col">
-              <h3 className="text-xl font-semibold mb-2">{offer.title}</h3>
-              <p className="text-muted-foreground mb-4 flex-1">{offer.description}</p>
-              <ul className="mb-6 list-disc pl-5 space-y-1 text-sm text-muted-foreground">
-                {offer.bullets.map((bullet: string, i: number) => (
-                  <li key={i}>{bullet}</li>
+          {content.services.offers.map((offer) => (
+            <div
+              key={offer.title}
+              className="flex flex-col border border-foreground/[0.14] p-4 transition-colors hover:border-foreground/40"
+            >
+              <h3 className="m-0 mb-1.5 font-display text-[13px] uppercase">{offer.title}</h3>
+              <p className="m-0 mb-3 text-[13px] leading-[1.45] text-foreground/[0.55]">
+                {offer.description}
+              </p>
+
+              <ul className="mb-5 flex flex-1 flex-col gap-1.5">
+                {offer.bullets.map((bullet: string) => (
+                  <li
+                    key={bullet}
+                    className="flex gap-2 text-[12px] leading-[1.4] text-foreground/[0.6]"
+                  >
+                    <span aria-hidden className="text-foreground/30">
+                      —
+                    </span>
+                    {bullet}
+                  </li>
                 ))}
               </ul>
-              <div className="flex flex-col gap-3">
+
+              <div className="flex flex-wrap gap-2">
                 {offer.ctas?.map((cta: { label: string; url: string }, i: number) => (
-                  <Button key={i} asChild variant={i === 0 ? "default" : "outline"}>
-                    <a href={cta.url} target="_blank" rel="noreferrer">
-                      {cta.label}
-                    </a>
-                  </Button>
+                  <a
+                    key={cta.url}
+                    href={cta.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={i === 0 ? "btn-hero" : "btn-secondary"}
+                  >
+                    {cta.label}
+                  </a>
                 ))}
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button size="lg" asChild>
-            <a href={content.services.primaryCta.url} target="_blank" rel="noreferrer">
-              {content.services.primaryCta.label}
-            </a>
-          </Button>
-        </div>
+        <a
+          href={content.services.primaryCta.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-hero mt-4"
+        >
+          {content.services.primaryCta.label}
+        </a>
       </div>
     </section>
   );

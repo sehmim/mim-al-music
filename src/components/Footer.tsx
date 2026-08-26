@@ -1,32 +1,22 @@
-import { Music, Mail, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import logo from "@/assets/mim-al-logo.png";
 
 const Footer = () => {
   const { content } = useLanguage();
-  
+
   return (
-    <footer className="py-16 px-4 border-t border-border relative">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-card/20 to-transparent" />
-      
-      <div className="max-w-6xl mx-auto relative z-10">
-        {/* Bottom Section */}
-        <div className="pt-8 border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-muted-foreground text-sm">
-              {content.footer.legal.copyright}
-            </div>
-            
-            <div className="flex gap-6 text-sm">
-              {content.footer.legal.links.map((link, index) => (
-                <a key={index} href={link.url} className="text-muted-foreground hover:text-primary transition-colors">
-                  {link.text}
-                </a>
-              ))}
-            </div>
-          </div>
+    <footer className="section-rule mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-4 px-5 pb-10 pt-7">
+      <div className="flex items-center gap-3">
+        <img src={logo} alt="" className="block h-[34px] w-[34px]" />
+        <div className="flex flex-col">
+          <span className="font-display text-[13px] tracking-[0.12em]">
+            {content.footer.brand.name}
+          </span>
+          <span className="text-xs text-foreground/45">{content.footer.brand.location}</span>
         </div>
       </div>
+
+      <span className="text-xs text-foreground/40">{content.footer.legal.copyright}</span>
     </footer>
   );
 };

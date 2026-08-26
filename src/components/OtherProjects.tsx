@@ -1,69 +1,53 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useHighlight } from "@/hooks/use-highlight";
 import projectsData from "@/data/projects.json";
 
-// Import project images
 import sumAndSubstanceImg from "@/assets/sum-and-substance.jpg";
 import sirLouieBandImg from "@/assets/sir-louie-band.png";
 import spectralLightsImg from "@/assets/spectral-lights.jpg";
 import mimthehumanImg from "@/assets/mimthehuman-placeholder.jpg";
 
-// Create image mapping
-const projectImages: { [key: string]: string } = {
+const projectImages: Record<string, string> = {
   "sum-and-substance.jpg": sumAndSubstanceImg,
   "sir-louie-band.png": sirLouieBandImg,
   "spectral-lights.jpg": spectralLightsImg,
   "mimthehuman-placeholder.jpg": mimthehumanImg,
 };
 
-// Individual Project Card Component
-const ProjectCard = ({ project }: { project: any }) => {
-  const { ref, isHighlighted } = useHighlight<HTMLAnchorElement>();
-  
-  return (
-    <a
-      ref={ref}
-      href={project.projectLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`album-card group text-center hover:scale-105 transition-all duration-300 block cursor-pointer highlight-section ${
-        isHighlighted ? 'highlighted' : ''
-      }`}
-    >
-      <div className="relative mb-4 overflow-hidden rounded-lg">
-        <img
-          src={projectImages[project.projectImg] || project.projectImg}
-          alt={`${project.projectName} project image`}
-          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      </div>
-      
-      <h3 className="text-xl font-display font-bold text-primary group-hover:text-secondary transition-colors">
-        {project.projectName}
-      </h3>
-    </a>
-  );
-};
-
 const OtherProjects = () => {
   const { content } = useLanguage();
 
   return (
-    <section className="py-20 px-4 relative">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-secondary/20 to-primary/20" />
-      </div>
-      
-      <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="section-heading text-center mb-12">
+    <section id="projects" className="section-rule px-5 py-11">
+      <div className="mx-auto max-w-[1200px]">
+        <h2 className="section-heading mb-4">
           {content.otherProjects?.heading || "Other Projects"}
         </h2>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {projectsData.projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+
+        <div
+          className="grid gap-2.5"
+          style={{ gridTemplateColumns: "repeat(auto-fit, minmax(min(240px, 100%), 1fr))" }}
+        >
+          {projectsData.projects.map((project) => (
+            <a
+              key={project.projectName}
+              href={project.projectLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 border border-foreground/[0.14] p-2.5 transition-colors hover:border-foreground/40"
+            >
+              <img
+                src={projectImages[project.projectImg] || project.projectImg}
+                alt={project.projectName}
+                loading="lazy"
+                className="block h-[68px] w-[68px] shrink-0 object-cover"
+              />
+              <div className="flex min-w-0 flex-col gap-[3px]">
+                <span className="font-display text-[13px] uppercase">{project.projectName}</span>
+                <span className="text-xs leading-[1.4] text-foreground/50">
+                  {project.description}
+                </span>
+              </div>
+            </a>
           ))}
         </div>
       </div>
@@ -72,4 +56,3 @@ const OtherProjects = () => {
 };
 
 export default OtherProjects;
-

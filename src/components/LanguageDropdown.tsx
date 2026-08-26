@@ -33,7 +33,7 @@ const LanguageDropdown: React.FC = () => {
           <Button
             variant="outline"
             size="sm"
-            className="language-dropdown-trigger bg-background/20 backdrop-blur-sm border border-white/20 hover:bg-background/30 hover:border-white/30 transition-all duration-300 shadow-lg"
+            className="language-dropdown-trigger"
             aria-label="Select language"
           >
             <Languages className="w-4 h-4 mr-2" />
@@ -44,22 +44,20 @@ const LanguageDropdown: React.FC = () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent 
           align="end" 
-          className="language-dropdown-content bg-background/90 backdrop-blur-sm border border-white/20 shadow-xl min-w-[160px]"
+          className="language-dropdown-content min-w-[160px]"
         >
           {languages.map((lang) => (
             <DropdownMenuItem
               key={lang.code}
               onClick={() => handleLanguageChange(lang.code)}
-              className="language-dropdown-item cursor-pointer hover:bg-primary/10 focus:bg-primary/10 transition-colors"
+              className="language-dropdown-item"
             >
               <div className="flex items-center justify-between w-full">
                 <div className="flex items-center gap-2">
                   <span className="text-lg">{lang.flag}</span>
                   <span className="font-medium">{lang.label}</span>
                 </div>
-                {language === lang.code && (
-                  <Check className="w-4 h-4 text-primary" />
-                )}
+                {language === lang.code && <Check className="w-4 h-4" />}
               </div>
             </DropdownMenuItem>
           ))}

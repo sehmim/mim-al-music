@@ -1,136 +1,55 @@
-import { Button } from "@/components/ui/button";
-import { Play, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { releaseImages } from "@/lib/release-images";
+import { releaseFormat } from "@/lib/release-format";
 
 const LatestReleases = () => {
   const { content } = useLanguage();
-  const [showAll, setShowAll] = useState(false);
-  const [activeCard, setActiveCard] = useState<number | null>(null);
-  const cardRefs = useRef<(HTMLAnchorElement | null)[]>([]);
-  const displayedReleases = showAll ? content.releases : content.releases.slice(0, 3);
-
-  // Listen for custom event to show all releases
-  useEffect(() => {
-    const handleShowAllReleases = () => {
-      setShowAll(true);
-    };
-
-    window.addEventListener('showAllReleases', handleShowAllReleases);
-    
-    return () => {
-      window.removeEventListener('showAllReleases', handleShowAllReleases);
-    };
-  }, []);
-
-  // Mobile hover effect using Intersection Observer
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const cardIndex = cardRefs.current.findIndex(ref => ref === entry.target);
-            if (cardIndex !== -1) {
-              setActiveCard(cardIndex);
-            }
-          }
-        });
-      },
-      {
-        threshold: 0.6, // Trigger when 60% of the card is visible
-        rootMargin: '-20% 0px -20% 0px' // Only trigger when card is in center area
-      }
-    );
-
-    cardRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [displayedReleases]);
+  const releases = content.releases;
 
   return (
-    <section className="py-20 px-4 relative">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/5 to-transparent" />
-      
-      <div className="max-w-7xl mx-auto relative z-10">
-        <h2 className="section-heading text-center">
-          Releases
-        </h2>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {displayedReleases.map((release, index) => (
-            <Link 
-              key={index} 
-              to={`/blog/${release.slug}`} 
-              ref={(el) => (cardRefs.current[index] = el)}
-              className={`album-card group block transition-all duration-500 ${
-                activeCard === index 
-                  ? 'scale-105 shadow-2xl shadow-primary/20 border-primary/50' 
-                  : 'hover:scale-105'
-              }`}
+    <section id="releases" className="section-rule px-5 pb-16 pt-10">
+      <div className="mx-auto max-w-[1200px]">
+        <div className="mb-5 flex items-baseline justify-between gap-4">
+          <h2 className="section-heading" style={{ fontSize: "clamp(30px, 7vw, 56px)" }}>
+            Releases
+          </h2>
+          <span className="eyebrow shrink-0">{releases.length} records</span>
+        </div>
+
+        <div
+          className="grid gap-3"
+          style={{ gridTemplateColumns: "repeat(auto-fill, minmax(min(150px, 47%), 1fr))" }}
+        >
+          {releases.map((release) => (
+            <Link
+              key={release.slug}
+              to={`/blog/${release.slug}`}
+              className="group relative block transition-transform duration-200 hover:-translate-y-[3px]"
             >
-              {/* Album Cover */}
-              <div className="relative mb-6 overflow-hidden rounded-lg">
-                <img 
-                  src={releaseImages[release.image]} 
+              <div className="relative aspect-square overflow-hidden border border-foreground/[0.12] bg-muted">
+                <img
+                  src={releaseImages[release.image]}
                   alt={release.title}
-                  className={`w-full aspect-square object-cover transition-transform duration-500 ${
-                    activeCard === index 
-                      ? 'scale-110' 
-                      : 'group-hover:scale-110'
-                  }`}
+                  loading="lazy"
+                  className="block h-full w-full object-cover transition-transform duration-[600ms] ease-[cubic-bezier(0.2,0.7,0.2,1)] group-hover:scale-[1.06]"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-t from-background/80 to-transparent transition-opacity duration-300 ${
-                  activeCard === index 
-                    ? 'opacity-100' 
-                    : 'opacity-0 group-hover:opacity-100'
-                }`} />
-                
-                {/* Play Button Overlay */}
-                <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
-                  activeCard === index 
-                    ? 'opacity-100' 
-                    : 'opacity-0 group-hover:opacity-100'
-                }`}>
-                  <Button className="btn-hero">
-                    <Play className="w-6 h-6" />
-                  </Button>
+                <div className="absolute inset-0 flex items-end bg-gradient-to-t from-background/70 to-transparent to-[55%] p-2.5 opacity-0 transition-opacity duration-[260ms] group-hover:opacity-100">
+                  <span className="text-[10px] uppercase tracking-[0.2em]">Read</span>
                 </div>
               </div>
-              
-              {/* Album Info */}
-              <div className="">
-                <div>
-                  <h3 className="text-xl font-display font-bold text-foreground mb-1">
-                    {release.title}
-                  </h3>
-                  <p className="text-sm text-primary font-medium">
-                    {release.date}
-                  </p>
-                </div>
+
+              <div className="flex flex-col gap-1 px-0.5 pt-2.5">
+                <span className="min-h-[2.5em] font-display text-xs uppercase leading-[1.25] tracking-[0.02em]">
+                  {release.title}
+                </span>
+                <span className="text-[11px] uppercase tracking-[0.12em] text-foreground/40">
+                  {[release.date, releaseFormat(release)].filter(Boolean).join(" · ")}
+                </span>
               </div>
             </Link>
           ))}
         </div>
-        
-        {/* Call to Action */}
-        {content.releases.length > 3 && (
-          <div className="text-center mt-16">
-            <Button 
-              className="btn-secondary" 
-              size="lg"
-              onClick={() => setShowAll(!showAll)}
-            >
-              {showAll ? 'Show Less' : 'View All Releases'}
-            </Button>
-          </div>
-        )}
       </div>
     </section>
   );
