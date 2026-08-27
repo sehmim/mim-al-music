@@ -422,8 +422,18 @@
     "heading": "Dates de Tournée",
     "shows": [
       {
+        "date": "SEPT 13",
+        "year": "2026",
+        "isoDate": "2026-09-13",
+        "venue": "Turbo Haüs",
+        "city": "Montréal, QC",
+        "status": "Billets",
+        "ticketUrl": "https://www.eventbrite.com/e/the-lucky-tour-montreal-turbo-haus-tickets-1995478191989?aff=oddtdtcreator"
+      },
+      {
         "date": "JANV 9",
         "year": "2026",
+        "isoDate": "2026-01-09",
         "venue": "Barfly",
         "city": "Montréal, QC",
         "status": "Nouveau Spectacle",
@@ -432,7 +442,8 @@
       {
         "date": "SEPT 28",
         "year": "2025",
-        "venue": "Turbo Haus",
+        "isoDate": "2025-09-28",
+        "venue": "Turbo Haüs",
         "city": "Montréal, QC",
         "status": "Nouveau Spectacle",
         "ticketUrl": "https://www.instagram.com/p/DO_roPGEc6W/"
@@ -440,6 +451,7 @@
       {
         "date": "MAI 22",
         "year": "2025",
+        "isoDate": "2025-05-22",
         "venue": "Toscadura",
         "city": "Montréal, QC",
         "status": "Spectacle Passé",
@@ -448,6 +460,7 @@
       {
         "date": "AOÛT 31",
         "year": "2025",
+        "isoDate": "2025-08-31",
         "venue": "P'tit Ours",
         "city": "Montréal, QC",
         "status": "Spectacle Passé",
@@ -456,6 +469,7 @@
       {
         "date": "DÉC 3",
         "year": "2025",
+        "isoDate": "2025-12-03",
         "venue": "L'Escogriffe Bar",
         "city": "Montréal, QC",
         "status": "Spectacle Passé",
@@ -464,6 +478,7 @@
       {
         "date": "SEPT 17",
         "year": "2024",
+        "isoDate": "2024-09-17",
         "venue": "Casa Del Popolo",
         "city": "Montréal, QC",
         "status": "Spectacle Passé",
@@ -472,6 +487,7 @@
       {
         "date": "OCT 20",
         "year": "2024",
+        "isoDate": "2024-10-20",
         "venue": "La Sala Rossa",
         "city": "Montréal, QC",
         "status": "Spectacle Passé",

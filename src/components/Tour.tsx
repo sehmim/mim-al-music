@@ -1,11 +1,17 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEmailCapture } from "@/hooks/use-email-capture";
 
-const isShowPast = (show: { date: string; year: string }) => {
-  const showDate = new Date(`${show.date} ${show.year}`);
+/**
+ * The displayed date is translated ("AOÛT 31", "সেপ্টেম্বর 13"), so it can't be
+ * parsed — `isoDate` is the machine-readable one. Reading it as local midnight
+ * keeps a show "upcoming" for the whole of its own day.
+ */
+const showDate = (show: { isoDate: string }) => new Date(`${show.isoDate}T00:00:00`);
+
+const isShowPast = (show: { isoDate: string }) => {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
-  return showDate < today;
+  return showDate(show) < today;
 };
 
 const pastShowLabel = (language: string) =>
@@ -18,8 +24,7 @@ const Tour = () => {
 
   // Newest show first.
   const sortedShows = [...content.tour.shows].sort(
-    (a, b) =>
-      new Date(`${b.date} ${b.year}`).getTime() - new Date(`${a.date} ${a.year}`).getTime()
+    (a, b) => showDate(b).getTime() - showDate(a).getTime()
   );
 
   return (
@@ -33,7 +38,7 @@ const Tour = () => {
 
             return (
               <a
-                key={`${show.date}-${show.year}-${index}`}
+                key={`${show.isoDate}-${index}`}
                 href={show.ticketUrl}
                 target="_blank"
                 rel="noopener noreferrer"

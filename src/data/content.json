@@ -514,8 +514,18 @@
     "heading": "Tour Dates",
     "shows": [
       {
+        "date": "SEP 13",
+        "year": "2026",
+        "isoDate": "2026-09-13",
+        "venue": "Turbo Haüs",
+        "city": "Montreal, QC",
+        "status": "Tickets",
+        "ticketUrl": "https://www.eventbrite.com/e/the-lucky-tour-montreal-turbo-haus-tickets-1995478191989?aff=oddtdtcreator"
+      },
+      {
         "date": "JAN 9",
         "year": "2026",
+        "isoDate": "2026-01-09",
         "venue": "Barfly",
         "city": "Montreal, QC",
         "status": "New Show",
@@ -524,7 +534,8 @@
       {
         "date": "Sep 28",
         "year": "2025",
-        "venue": "Turbo Haus",
+        "isoDate": "2025-09-28",
+        "venue": "Turbo Haüs",
         "city": "Montreal, QC",
         "status": "New Show",
         "ticketUrl": "https://www.instagram.com/p/DO_roPGEc6W/"
@@ -532,6 +543,7 @@
       {
         "date": "MAY 22",
         "year": "2024",
+        "isoDate": "2024-05-22",
         "venue": "Toscadura",
         "city": "Montreal, QC",
         "status": "Past Show",
@@ -540,6 +552,7 @@
       {
         "date": "AUG 31",
         "year": "2025",
+        "isoDate": "2025-08-31",
         "venue": "P'tit Ours",
         "city": "Montreal, QC",
         "status": "Past Show",
@@ -548,6 +561,7 @@
       {
         "date": "DEC 3",
         "year": "2025",
+        "isoDate": "2025-12-03",
         "venue": "L'Escogriffe Bar",
         "city": "Montreal, QC",
         "status": "Past Show",
@@ -556,6 +570,7 @@
       {
         "date": "SEP 17",
         "year": "2024",
+        "isoDate": "2024-09-17",
         "venue": "Casa Del Popolo",
         "city": "Montreal, QC",
         "status": "Past Show",
@@ -564,6 +579,7 @@
       {
         "date": "OCT 20",
         "year": "2024",
+        "isoDate": "2024-10-20",
         "venue": "La Sala Rossa",
         "city": "Montreal, QC",
         "status": "Past Show",
