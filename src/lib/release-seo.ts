@@ -33,7 +33,14 @@ export const buildReleaseJsonLd = (release: Release, url: string) => {
     ?.filter((c) => c.role.toLowerCase().startsWith("featuring"))
     .map((c) => ({ "@type": "MusicGroup", name: c.name, ...(c.url ? { sameAs: c.url } : {}) }));
 
-  const sameAs = [release.streamingUrl, release.appleMusicUrl, release.youtubeMusicUrl].filter(Boolean);
+  // Only real per-release URLs belong here — the Tidal artist-page fallback used
+  // in the UI would be wrong as a sameAs for a single record.
+  const sameAs = [
+    release.streamingUrl,
+    release.appleMusicUrl,
+    release.youtubeMusicUrl,
+    release.tidalUrl,
+  ].filter(Boolean);
 
   const work = release.trackList
     ? {

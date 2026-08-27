@@ -1,7 +1,9 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import logoTile from "@/assets/mim-al-logo.png";
 import logoTrim from "@/assets/logo-trim.png";
-import { SPOTIFY_ARTIST_URL, INSTAGRAM_URL } from "@/lib/links";
+import { INSTAGRAM_URL } from "@/lib/links";
+import { artistPlatforms } from "@/lib/platforms";
+import ListenModal from "@/components/ListenModal";
 
 const Hero = () => {
   const { content } = useLanguage();
@@ -52,14 +54,15 @@ const Hero = () => {
         </p>
 
         <div className="flex w-full max-w-[420px] justify-center gap-2">
-          <a
-            href={SPOTIFY_ARTIST_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-hero flex-1 whitespace-nowrap"
+          <ListenModal
+            title={`Listen to ${content.hero.title}`}
+            description="Pick your platform — every record is on all four."
+            links={artistPlatforms}
           >
-            {content.hero.buttons.primary}
-          </a>
+            <button type="button" className="btn-hero flex-1 whitespace-nowrap">
+              {content.hero.buttons.primary}
+            </button>
+          </ListenModal>
           <a
             href={INSTAGRAM_URL}
             target="_blank"
