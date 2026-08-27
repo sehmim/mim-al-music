@@ -253,8 +253,18 @@
     "heading": "ট্যুরের তারিখ",
     "shows": [
       {
+        "date": "সেপ্টেম্বর 13",
+        "year": "2026",
+        "isoDate": "2026-09-13",
+        "venue": "Turbo Haüs",
+        "city": "মন্ট্রিয়ল, QC",
+        "status": "টিকিট",
+        "ticketUrl": "https://www.eventbrite.com/e/the-lucky-tour-montreal-turbo-haus-tickets-1995478191989?aff=oddtdtcreator"
+      },
+      {
         "date": "জানুয়ারি 9",
         "year": "2026",
+        "isoDate": "2026-01-09",
         "venue": "Barfly",
         "city": "মন্ট্রিয়ল, QC",
         "status": "নতুন শো",
@@ -263,7 +273,8 @@
       {
         "date": "সেপ্টেম্বর 28",
         "year": "2025",
-        "venue": "Turbo Haus",
+        "isoDate": "2025-09-28",
+        "venue": "Turbo Haüs",
         "city": "মন্ট্রিয়ল, QC",
         "status": "নতুন শো",
         "ticketUrl": "https://www.instagram.com/p/DO_roPGEc6W/"
@@ -271,6 +282,7 @@
       {
         "date": "মে 22",
         "year": "2025",
+        "isoDate": "2025-05-22",
         "venue": "Toscadura",
         "city": "মন্ট্রিয়ল, QC",
         "status": "পূর্বের শো",
@@ -279,6 +291,7 @@
       {
         "date": "আগস্ট 31",
         "year": "2025",
+        "isoDate": "2025-08-31",
         "venue": "P'tit Ours",
         "city": "মন্ট্রিয়ল, QC",
         "status": "পূর্বের শো",
@@ -287,6 +300,7 @@
       {
         "date": "ডিসেম্বর 3",
         "year": "2025",
+        "isoDate": "2025-12-03",
         "venue": "L'Escogriffe Bar",
         "city": "মন্ট্রিয়ল, QC",
         "status": "পূর্বের শো",
@@ -295,6 +309,7 @@
       {
         "date": "সেপ্টেম্বর 17",
         "year": "2024",
+        "isoDate": "2024-09-17",
         "venue": "Casa Del Popolo",
         "city": "মন্ট্রিয়ল, QC",
         "status": "পূর্বের শো",
@@ -303,6 +318,7 @@
       {
         "date": "অক্টোবর 20",
         "year": "2024",
+        "isoDate": "2024-10-20",
         "venue": "La Sala Rossa",
         "city": "মন্ট্রিয়ল, QC",
         "status": "পাস্ট শো",
