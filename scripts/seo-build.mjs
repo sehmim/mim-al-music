@@ -18,9 +18,12 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = resolve(root, "dist");
 const SITE_URL = "https://mimal.music";
 
-/** Load release-seo.ts so the prerendered head and the runtime head agree. */
-const loadSeoHelpers = async () => {
-  const source = await readFile(resolve(root, "src/lib/release-seo.ts"), "utf8");
+/**
+ * Load an import-free TS helper (release-seo.ts, live-seo.ts) so the
+ * prerendered head and the runtime head agree.
+ */
+const loadTsModule = async (file) => {
+  const source = await readFile(resolve(root, file), "utf8");
   const { code } = await transform(source, { loader: "ts", format: "esm" });
   return import(`data:text/javascript;base64,${Buffer.from(code).toString("base64")}`);
 };
@@ -65,7 +68,8 @@ const buildHead = (html, { title, description, keywords, url, image, type, jsonL
 };
 
 const main = async () => {
-  const { buildReleaseJsonLd, releaseSeoDescription, releaseSeoTitle } = await loadSeoHelpers();
+  const { buildReleaseJsonLd, releaseSeoDescription, releaseSeoTitle } = await loadTsModule("src/lib/release-seo.ts");
+  const { buildLiveJsonLd, liveSeoDescription, liveSeoTitle } = await loadTsModule("src/lib/live-seo.ts");
   const content = JSON.parse(await readFile(resolve(root, "src/data/content.json"), "utf8"));
   const shell = await readFile(resolve(DIST, "index.html"), "utf8");
 
@@ -98,6 +102,23 @@ const main = async () => {
     urls.push({ loc: url, lastmod: release.releaseDate, changefreq: "monthly", priority: "0.8" });
   }
 
+  // Live album page: one hand-built route outside the releases list.
+  const live = JSON.parse(await readFile(resolve(root, "src/data/live-breakglass.json"), "utf8"));
+  const liveUrl = `${SITE_URL}${live.path}`;
+  const liveHtml = buildHead(shell, {
+    title: liveSeoTitle(live),
+    description: liveSeoDescription(live),
+    keywords: live.seo.keywords,
+    url: liveUrl,
+    image: coverUrl("breakglass-take-1.jpg"),
+    type: "music.album",
+    jsonLd: buildLiveJsonLd(live, liveUrl),
+  });
+  const liveDir = resolve(DIST, live.path.replace(/^\//, ""));
+  await mkdir(liveDir, { recursive: true });
+  await writeFile(resolve(liveDir, "index.html"), liveHtml);
+  urls.push({ loc: liveUrl, lastmod: live.releaseDate || undefined, changefreq: "weekly", priority: "0.9" });
+
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls
@@ -117,7 +138,9 @@ ${urls
 </urlset>
 `;
   await writeFile(resolve(DIST, "sitemap.xml"), sitemap);
-  console.log(`SEO: prerendered ${content.releases.length} release pages, sitemap has ${urls.length} URLs`);
+  console.log(
+    `SEO: prerendered ${content.releases.length} release pages and ${live.path}, sitemap has ${urls.length} URLs`
+  );
 };
 
 main().catch((error) => {
