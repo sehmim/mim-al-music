@@ -5,7 +5,8 @@ import CrackCanvas from "@/components/live/CrackCanvas";
 import LiveVideo from "@/components/live/LiveVideo";
 import PlatformDrawer from "@/components/live/PlatformDrawer";
 import PlatformIcon from "@/components/live/PlatformIcon";
-import ReleaseSection from "@/components/live/ReleaseSection";
+import AlbumDetails from "@/components/live/AlbumDetails";
+import HeroRelease from "@/components/live/HeroRelease";
 import Timecode from "@/components/live/Timecode";
 import { useReleased } from "@/hooks/use-release";
 import logo from "@/assets/logo-trim.png";
@@ -103,7 +104,7 @@ const Take = ({ song, released }: { song: LiveSong; released: boolean }) => {
   );
 };
 
-/** Shows once the hero has scrolled away; hides over the release section, the album section and the footer. */
+/** Shows once the hero (with its own pre-save and signup) has scrolled away; hides over the stream section and footer. */
 const useDock = () => {
   const heroRef = useRef<HTMLElement>(null);
   const albumRef = useRef<HTMLElement>(null);
@@ -111,7 +112,6 @@ const useDock = () => {
   const [heroGone, setHeroGone] = useState(false);
   const [albumIn, setAlbumIn] = useState(false);
   const [footIn, setFootIn] = useState(false);
-  const [releaseIn, setReleaseIn] = useState(false);
 
   useEffect(() => {
     if (!("IntersectionObserver" in window)) return;
@@ -123,15 +123,13 @@ const useDock = () => {
     };
     const observers = [
       watch(heroRef.current, (e) => setHeroGone(!e.isIntersecting)),
-      // The release section carries its own pre-save and signup, so the dock steps aside there.
-      watch(document.getElementById("release"), (e) => setReleaseIn(e.isIntersecting)),
       watch(albumRef.current, (e) => setAlbumIn(e.isIntersecting), "0px 0px -20% 0px"),
       watch(footRef.current, (e) => setFootIn(e.isIntersecting)),
     ];
     return () => observers.forEach((o) => o?.disconnect());
   }, []);
 
-  return { heroRef, albumRef, footRef, dockOn: heroGone && !releaseIn && !albumIn && !footIn };
+  return { heroRef, albumRef, footRef, dockOn: heroGone && !albumIn && !footIn };
 };
 
 const LiveBreakglass = () => {
@@ -198,41 +196,14 @@ const LiveBreakglass = () => {
                   <span className="lb-t-big">Breakglass</span>
                   <span className="lb-t-big">Studios</span>
                 </h1>
-                <p className="lb-hero-sub">{LIVE.tagline}</p>
-                <div className="lb-cta-row">
-                  <a className="lb-pill lb-pill-cream" href={`#${SONGS[0].id}`}>
-                    <PlayGlyph />
-                    Watch
-                  </a>
-                  <a className="lb-pill lb-pill-ghost" href={released ? "#listen" : "#release"}>
-                    Listen
-                  </a>
-                </div>
               </div>
 
-              <div className="lb-setlist-head">
-                <span className="lb-eyebrow">Setlist</span>
-                <span className="lb-eyebrow">{SONGS.length} songs</span>
-              </div>
-              <ol className="lb-setlist">
-                {SONGS.map((song) => (
-                  <li key={song.id}>
-                    <a href={`#${song.id}`}>
-                      <span className="lb-sl-n">{pad(song.number)}</span>
-                      <span className="lb-sl-t">{song.title}</span>
-                      {song.duration && <span className="lb-sl-d">{song.duration}</span>}
-                      <span className="lb-sl-p">
-                        <PlayGlyph />
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </ol>
+              <HeroRelease released={released} />
             </div>
           </div>
         </section>
 
-        <ReleaseSection released={released} />
+        <AlbumDetails released={released} />
 
         <section className="lb-session" id="session" aria-labelledby="lb-session-title">
           <div className="lb-wrap lb-sec-head">
