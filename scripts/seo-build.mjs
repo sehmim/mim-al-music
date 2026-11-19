@@ -110,7 +110,7 @@ const main = async () => {
     description: liveSeoDescription(live),
     keywords: live.seo.keywords,
     url: liveUrl,
-    image: coverUrl("breakglass-take-1.jpg"),
+    image: coverUrl("breakglass-cover.jpg"),
     type: "music.album",
     jsonLd: buildLiveJsonLd(live, liveUrl),
   });

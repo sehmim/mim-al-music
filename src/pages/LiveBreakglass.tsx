@@ -5,12 +5,17 @@ import CrackCanvas from "@/components/live/CrackCanvas";
 import LiveVideo from "@/components/live/LiveVideo";
 import PlatformDrawer from "@/components/live/PlatformDrawer";
 import PlatformIcon from "@/components/live/PlatformIcon";
+import ReleaseSection from "@/components/live/ReleaseSection";
 import Timecode from "@/components/live/Timecode";
+import { useReleased } from "@/hooks/use-release";
 import logo from "@/assets/logo-trim.png";
 import { INSTAGRAM_URL, SPOTIFY_ARTIST_URL, YOUTUBE_ARTIST_URL } from "@/lib/links";
 import {
+  COVER,
+  COVER_SMALL,
   HERO_STILL,
   LIVE,
+  RELEASE_AT,
   SONGS,
   albumPlatform,
   albumPlatforms,
@@ -20,7 +25,6 @@ import {
   type PlatformKey,
 } from "@/lib/live-breakglass";
 import { buildLiveJsonLd, liveSeoDescription, liveSeoTitle } from "@/lib/live-seo";
-import ogImage from "@/assets/breakglass/breakglass-take-1.jpg";
 import "./live-breakglass.css";
 
 const PAGE_URL = `${SITE_URL}${LIVE.path}`;
@@ -48,17 +52,9 @@ const MoreGlyph = () => (
   </svg>
 );
 
-/** The acoustic panels on the Breakglass live floor, used as the cover mark. */
-const Panels = () => (
-  <span className="lb-panels" aria-hidden="true">
-    <i />
-    <i />
-  </span>
-);
-
 const pad = (n: number) => String(n).padStart(2, "0");
 
-const Take = ({ song }: { song: LiveSong }) => {
+const Take = ({ song, released }: { song: LiveSong; released: boolean }) => {
   const spotify = songPlatform(song, "spotify");
 
   return (
@@ -82,7 +78,7 @@ const Take = ({ song }: { song: LiveSong }) => {
         {spotify && (
           <a className="lb-pill lb-pill-ink lb-listen-main" href={spotify.url} target="_blank" rel="noopener noreferrer">
             <PlatformIcon platform="spotify" />
-            Spotify <small>{spotify.exact ? "Live version" : "Artist page"}</small>
+            Spotify <small>{spotify.exact ? (released ? "Live version" : "Pre-save") : "Artist page"}</small>
           </a>
         )}
         <div className="lb-listen-alt">
@@ -107,7 +103,7 @@ const Take = ({ song }: { song: LiveSong }) => {
   );
 };
 
-/** Shows once the hero has scrolled away, hides again over the album section and footer. */
+/** Shows once the hero has scrolled away; hides over the release section, the album section and the footer. */
 const useDock = () => {
   const heroRef = useRef<HTMLElement>(null);
   const albumRef = useRef<HTMLElement>(null);
@@ -115,6 +111,7 @@ const useDock = () => {
   const [heroGone, setHeroGone] = useState(false);
   const [albumIn, setAlbumIn] = useState(false);
   const [footIn, setFootIn] = useState(false);
+  const [releaseIn, setReleaseIn] = useState(false);
 
   useEffect(() => {
     if (!("IntersectionObserver" in window)) return;
@@ -126,17 +123,20 @@ const useDock = () => {
     };
     const observers = [
       watch(heroRef.current, (e) => setHeroGone(!e.isIntersecting)),
+      // The release section carries its own pre-save and signup, so the dock steps aside there.
+      watch(document.getElementById("release"), (e) => setReleaseIn(e.isIntersecting)),
       watch(albumRef.current, (e) => setAlbumIn(e.isIntersecting), "0px 0px -20% 0px"),
       watch(footRef.current, (e) => setFootIn(e.isIntersecting)),
     ];
     return () => observers.forEach((o) => o?.disconnect());
   }, []);
 
-  return { heroRef, albumRef, footRef, dockOn: heroGone && !albumIn && !footIn };
+  return { heroRef, albumRef, footRef, dockOn: heroGone && !releaseIn && !albumIn && !footIn };
 };
 
 const LiveBreakglass = () => {
   const { heroRef, albumRef, footRef, dockOn } = useDock();
+  const released = useReleased(RELEASE_AT);
   const spotifyAlbum = albumPlatform("spotify");
   const otherPlatforms = albumPlatforms().filter((p) => p.key !== "spotify");
   const credits = [...LIVE.credits, { role: "Release", names: [LIVE.year] }];
@@ -148,7 +148,7 @@ const LiveBreakglass = () => {
         description={liveSeoDescription(LIVE)}
         path={LIVE.path}
         keywords={LIVE.seo.keywords}
-        image={ogImage}
+        image={COVER}
         type="music.album"
         jsonLd={JSON_LD}
       />
@@ -204,7 +204,7 @@ const LiveBreakglass = () => {
                     <PlayGlyph />
                     Watch
                   </a>
-                  <a className="lb-pill lb-pill-ghost" href="#listen">
+                  <a className="lb-pill lb-pill-ghost" href={released ? "#listen" : "#release"}>
                     Listen
                   </a>
                 </div>
@@ -232,6 +232,8 @@ const LiveBreakglass = () => {
           </div>
         </section>
 
+        <ReleaseSection released={released} />
+
         <section className="lb-session" id="session" aria-labelledby="lb-session-title">
           <div className="lb-wrap lb-sec-head">
             <h2 className="lb-sec-title" id="lb-session-title">
@@ -240,7 +242,7 @@ const LiveBreakglass = () => {
             <span className="lb-eyebrow">{SONGS.length} takes · Full video</span>
           </div>
           {SONGS.map((song) => (
-            <Take key={song.id} song={song} />
+            <Take key={song.id} song={song} released={released} />
           ))}
         </section>
 
@@ -256,11 +258,7 @@ const LiveBreakglass = () => {
             {spotifyAlbum && (
               <a className="lb-feature" href={spotifyAlbum.url} target="_blank" rel="noopener noreferrer">
                 <span className="lb-cover" aria-hidden="true">
-                  <Panels />
-                  <span className="lb-cover-dot" />
-                  <span className="lb-cover-txt">
-                    <small>{LIVE.artist} · Live at</small>Breakglass Studios
-                  </span>
+                  <img src={COVER_SMALL} alt="" loading="lazy" decoding="async" />
                 </span>
                 <span className="lb-feature-body">
                   <span className="lb-feature-plat">
@@ -274,7 +272,7 @@ const LiveBreakglass = () => {
                 </span>
                 <span className="lb-pill lb-pill-cream">
                   <PlayGlyph />
-                  {spotifyAlbum.exact ? "Play the album" : "Follow on Spotify"}
+                  {!spotifyAlbum.exact ? "Follow on Spotify" : released ? "Play the album" : "Pre-save the album"}
                 </span>
               </a>
             )}
@@ -381,7 +379,7 @@ const LiveBreakglass = () => {
         <div className="lb-dock" data-on={dockOn} aria-hidden={!dockOn}>
           <div className="lb-dock-in">
             <span className="lb-dock-cover" aria-hidden="true">
-              <Panels />
+              <img src={COVER_SMALL} alt="" loading="lazy" decoding="async" />
             </span>
             <span className="lb-dock-txt">
               <strong>{LIVE.shortTitle}</strong>
@@ -397,7 +395,7 @@ const LiveBreakglass = () => {
               tabIndex={dockOn ? 0 : -1}
             >
               <PlatformIcon platform="spotify" />
-              Spotify
+              {released ? "Spotify" : "Pre-save"}
             </a>
           </div>
         </div>

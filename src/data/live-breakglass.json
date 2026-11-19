@@ -4,7 +4,11 @@
   "shortTitle": "Live at Breakglass",
   "artist": "MIM AL",
   "year": "2026",
-  "releaseDate": "",
+  "releaseDate": "2026-11-25",
+  "releaseAt": "2026-11-25T00:00:00-05:00",
+  "releaseTimeZone": "America/Toronto",
+  "presaveUrl": "https://distrokid.com/hyperfollow/mimal/mim-al-live-at-breakglass-studios-2",
+  "signupEndpoint": "https://formsubmit.co/ajax/sehmim.al@gmail.com",
   "studio": "Breakglass Studios",
   "city": "Montréal",
   "tagline": "Three songs, played live in one room by a five-piece band.",
@@ -16,7 +20,7 @@
     "keywords": "MIM AL live, Live at Breakglass Studios, Breakglass Studios Montreal, MIM AL live session, Melodies to Hum, Thicc Thing, Round About, Montreal math rock live, live studio session"
   },
   "albumLinks": {
-    "spotify": "",
+    "spotify": "https://distrokid.com/hyperfollow/mimal/mim-al-live-at-breakglass-studios-2",
     "appleMusic": "",
     "youtubeMusic": "",
     "youtube": "",
@@ -31,38 +35,89 @@
       "id": "melodies-to-hum",
       "title": "Melodies to Hum",
       "duration": "",
-      "youtubeUrl": "",
+      "youtubeUrl": "https://youtu.be/KH2zqAKqcww",
       "poster": "take-1",
-      "links": { "spotify": "", "appleMusic": "", "youtubeMusic": "", "tidal": "" }
+      "links": {
+        "spotify": "",
+        "appleMusic": "",
+        "youtubeMusic": "",
+        "tidal": ""
+      }
     },
     {
       "id": "thicc-thing",
       "title": "Thicc Thing",
       "duration": "",
-      "youtubeUrl": "",
+      "youtubeUrl": "https://youtu.be/pqnYtkPNQnY",
       "poster": "take-2",
-      "links": { "spotify": "", "appleMusic": "", "youtubeMusic": "", "tidal": "" }
+      "links": {
+        "spotify": "",
+        "appleMusic": "",
+        "youtubeMusic": "",
+        "tidal": ""
+      }
     },
     {
       "id": "round-about",
       "title": "Round About",
       "duration": "",
-      "youtubeUrl": "",
+      "youtubeUrl": "https://youtu.be/MiBDVi2uUEk",
       "poster": "take-3",
-      "links": { "spotify": "", "appleMusic": "", "youtubeMusic": "", "tidal": "" }
+      "links": {
+        "spotify": "",
+        "appleMusic": "",
+        "youtubeMusic": "",
+        "tidal": ""
+      }
     }
   ],
   "lineup": [
-    { "role": "Lead guitar", "name": "Mim Al" },
-    { "role": "Rhythm guitar", "name": "Stephan Grapinet" },
-    { "role": "Bass", "name": "Jensen Grieve" },
-    { "role": "Drums", "name": "Emilio Leto" },
-    { "role": "Saxophone", "name": "Nathan Bissonnette" }
+    {
+      "role": "Lead guitar",
+      "name": "Mim Al"
+    },
+    {
+      "role": "Rhythm guitar",
+      "name": "Stephan Grapinet"
+    },
+    {
+      "role": "Bass",
+      "name": "Jensen Grieve"
+    },
+    {
+      "role": "Drums",
+      "name": "Emilio Leto"
+    },
+    {
+      "role": "Saxophone",
+      "name": "Nathan Bissonnette"
+    }
   ],
   "credits": [
-    { "role": "Recorded at", "names": ["Breakglass Studios"] },
-    { "role": "Recording engineers", "names": ["Sir Louie", "Ricardo Manuel"] },
-    { "role": "Mix & master", "names": ["Mim Al"] },
-    { "role": "Video", "names": ["Josh Krischner"] }
+    {
+      "role": "Recorded at",
+      "names": [
+        "Breakglass Studios"
+      ]
+    },
+    {
+      "role": "Recording engineers",
+      "names": [
+        "Sir Louie",
+        "Ricardo Manuel"
+      ]
+    },
+    {
+      "role": "Mix & master",
+      "names": [
+        "Mim Al"
+      ]
+    },
+    {
+      "role": "Video",
+      "names": [
+        "Josh Krischner"
+      ]
+    }
   ]
 }
