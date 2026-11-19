@@ -1,7 +1,7 @@
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 import PlatformIcon from "@/components/live/PlatformIcon";
 import { useCountdown } from "@/hooks/use-release";
-import { COVER, LIVE, PRESAVE_URL, RELEASE_AT, RELEASE_DAY, SIGNUP_ENDPOINT, SONGS } from "@/lib/live-breakglass";
+import { LIVE, PRESAVE_URL, RELEASE_AT, RELEASE_DAY, SIGNUP_ENDPOINT, SONGS } from "@/lib/live-breakglass";
 
 const STORAGE_KEY = "lb-breakglass-signup";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -170,62 +170,46 @@ const Signup = () => {
   );
 };
 
-interface ReleaseSectionProps {
+interface HeroReleaseProps {
   released: boolean;
 }
 
-/** Album art with the release countdown and email signup; after release, "Out now" with listen links. */
-const ReleaseSection = ({ released }: ReleaseSectionProps) => (
-  <section className="lb-release" id="release" aria-labelledby="lb-release-title">
-    <div className="lb-wrap lb-release-grid">
-      <figure className="lb-release-art">
-        <img
-          src={COVER}
-          alt={`${LIVE.artist}, ${LIVE.title} album cover: guitar pedalboards and cables on the studio floor`}
-          width={1200}
-          height={1200}
-          loading="lazy"
-          decoding="async"
-        />
-      </figure>
-
-      <div className="lb-release-body">
-        <span className="lb-eyebrow">Live album · {SONGS.length} songs</span>
-        {released ? (
-          <>
-            <h2 className="lb-sec-title" id="lb-release-title">
-              Out now
-            </h2>
-            <p className="lb-release-date">Released {RELEASE_DAY}</p>
-            <div className="lb-release-actions">
-              <a className="lb-pill lb-pill-cream lb-release-cta" href={PRESAVE_URL} target="_blank" rel="noopener noreferrer">
-                <PlatformIcon platform="spotify" />
-                Listen now
-              </a>
-              <a className="lb-pill lb-pill-ghost" href={`#${SONGS[0].id}`}>
-                Watch the session
-              </a>
-            </div>
-          </>
-        ) : (
-          <>
-            <h2 className="lb-sec-title" id="lb-release-title">
-              Out in
-            </h2>
-            <Countdown />
-            <p className="lb-release-date">{RELEASE_DAY} · 12 AM ET</p>
-            <div className="lb-release-actions">
-              <Signup />
-              <a className="lb-pill lb-pill-ghost" href={PRESAVE_URL} target="_blank" rel="noopener noreferrer">
-                <PlatformIcon platform="spotify" />
-                Pre-save on Spotify
-              </a>
-            </div>
-          </>
-        )}
-      </div>
-    </div>
-  </section>
+/**
+ * The hero's call to action. Before release: the countdown, "Notify me" email
+ * signup and Spotify pre-save. After release: "Out now" with listen and watch links.
+ */
+const HeroRelease = ({ released }: HeroReleaseProps) => (
+  <div className="lb-hero-release">
+    <span className="lb-eyebrow">Live album · {SONGS.length} songs</span>
+    {released ? (
+      <>
+        <p className="lb-out-label">Out now</p>
+        <p className="lb-release-date">Released {RELEASE_DAY}</p>
+        <div className="lb-release-actions">
+          <a className="lb-pill lb-pill-cream lb-release-cta" href={PRESAVE_URL} target="_blank" rel="noopener noreferrer">
+            <PlatformIcon platform="spotify" />
+            Listen now
+          </a>
+          <a className="lb-pill lb-pill-ghost" href={`#${SONGS[0].id}`}>
+            Watch the session
+          </a>
+        </div>
+      </>
+    ) : (
+      <>
+        <p className="lb-out-label">Out in</p>
+        <Countdown />
+        <p className="lb-release-date">{RELEASE_DAY} · 12 AM ET</p>
+        <div className="lb-release-actions">
+          <Signup />
+          <a className="lb-pill lb-pill-ghost" href={PRESAVE_URL} target="_blank" rel="noopener noreferrer">
+            <PlatformIcon platform="spotify" />
+            Pre-save on Spotify
+          </a>
+        </div>
+      </>
+    )}
+  </div>
 );
 
-export default ReleaseSection;
+export default HeroRelease;
