@@ -3,6 +3,9 @@ import heroStill from "@/assets/breakglass/breakglass-hero.jpg";
 import take1 from "@/assets/breakglass/breakglass-take-1.jpg";
 import take2 from "@/assets/breakglass/breakglass-take-2.jpg";
 import take3 from "@/assets/breakglass/breakglass-take-3.jpg";
+import cover from "@/assets/breakglass/breakglass-cover.jpg";
+// Not "breakglass-cover-sm": seo-build matches emitted files by name prefix.
+import coverSmall from "@/assets/breakglass/breakglass-thumb.jpg";
 import {
   APPLE_MUSIC_ARTIST_URL,
   SPOTIFY_ARTIST_URL,
@@ -88,6 +91,22 @@ const POSTERS: Record<string, string> = {
 };
 
 export const HERO_STILL = heroStill;
+export const COVER = cover;
+export const COVER_SMALL = coverSmall;
+
+/** Release moment as a timestamp. The offset in the JSON pins it to Eastern time. */
+export const RELEASE_AT = Date.parse(live.releaseAt);
+
+/** e.g. "Wednesday, November 25", in the release's own time zone whatever the visitor's. */
+export const RELEASE_DAY = new Intl.DateTimeFormat("en-CA", {
+  weekday: "long",
+  month: "long",
+  day: "numeric",
+  timeZone: live.releaseTimeZone,
+}).format(RELEASE_AT);
+
+export const PRESAVE_URL = live.presaveUrl;
+export const SIGNUP_ENDPOINT = live.signupEndpoint;
 
 /** Accepts watch, youtu.be, embed, shorts and live URLs, or a bare 11-character id. */
 export const parseYoutubeId = (value?: string): string | null => {
