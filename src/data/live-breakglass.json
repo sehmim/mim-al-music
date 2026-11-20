@@ -16,8 +16,8 @@
   "notes": "The band set up together on the live floor at Breakglass Studios and played every song live on camera. Recorded by Sir Louie and Ricardo Manuel, mixed and mastered by Mim Al, filmed by Josh Krischner.",
   "seo": {
     "title": "MIM AL — Live at Breakglass Studios (Live Session)",
-    "description": "Watch MIM AL live at Breakglass Studios: full live videos of Melodies to Hum, Thicc Thing and Round About with a five-piece band. Stream the live album on Spotify, Apple Music, YouTube Music, Tidal and more.",
-    "keywords": "MIM AL live, Live at Breakglass Studios, Breakglass Studios Montreal, MIM AL live session, Melodies to Hum, Thicc Thing, Round About, Montreal math rock live, live studio session"
+    "description": "Watch MIM AL live at Breakglass Studios: full live videos of Melodies to Hum, Round About and Thicc Thing with a five-piece band. Stream the live album on Spotify, Apple Music, YouTube Music, Tidal and more.",
+    "keywords": "MIM AL live, Live at Breakglass Studios, Breakglass Studios Montreal, MIM AL live session, Melodies to Hum, Round About, Thicc Thing, Montreal math rock live, live studio session"
   },
   "albumLinks": {
     "spotify": "https://distrokid.com/hyperfollow/mimal/mim-al-live-at-breakglass-studios-2",
@@ -45,11 +45,11 @@
       }
     },
     {
-      "id": "thicc-thing",
-      "title": "Thicc Thing",
+      "id": "round-about",
+      "title": "Round About",
       "duration": "",
-      "youtubeUrl": "https://youtu.be/pqnYtkPNQnY",
-      "poster": "take-2",
+      "youtubeUrl": "https://youtu.be/MiBDVi2uUEk",
+      "poster": "take-3",
       "links": {
         "spotify": "",
         "appleMusic": "",
@@ -58,11 +58,11 @@
       }
     },
     {
-      "id": "round-about",
-      "title": "Round About",
+      "id": "thicc-thing",
+      "title": "Thicc Thing",
       "duration": "",
-      "youtubeUrl": "https://youtu.be/MiBDVi2uUEk",
-      "poster": "take-3",
+      "youtubeUrl": "https://youtu.be/pqnYtkPNQnY",
+      "poster": "take-2",
       "links": {
         "spotify": "",
         "appleMusic": "",
